@@ -1,0 +1,305 @@
+.slider {
+  padding-bottom: 4rem;
+  .slider-header {
+    background-color: $ofer-green;
+    color: $white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .slider-header-title,
+    .slider-header-download {
+      padding: 0.8rem 1.2rem;
+    }
+    .slider-header-cities {
+      padding: 0.4rem 0.8rem;
+    }
+    .slider-header-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      h2.titulo-slider{
+        font-size: 1.4em;
+        a{
+          text-decoration: none;
+          color: $white;
+          transition: .2s;
+          &:hover{
+            color: $lighter-green;
+          }
+        }
+      }
+    }
+    .slider-header-download {
+      background-color: $light-blue;
+      color: $white;
+      font-size: 0.9rem;
+      transition: .2s;
+      cursor: pointer;
+      a{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-go-app,
+      .header-img-app,
+      span {
+        transition: .2s;
+      }
+      .header-goo-app {
+        font-weight: 700;
+      }
+      .header-img-app {
+        width: 2.8rem;
+        margin: 0 0.8rem;
+      }
+      span {
+        float: right;
+        color: $black;
+        font-weight: 700;
+      }
+      &:hover{
+        .header-go-app {
+          filter: invert(45%) sepia(75%) saturate(835%) hue-rotate(162deg) brightness(101%) contrast(102%);
+        }
+        .header-img-app {
+          box-shadow: 0 0 12px $ofer-blue;
+        }
+        span{
+          color: $ofer-blue;
+        }
+      }
+    }
+    .slider-header-cities {
+      width: 100%;
+      background-color: $lighter-green;
+      ul {
+        list-style-type: none;
+        white-space: nowrap;
+        overflow: auto;
+        padding: 8px 0;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        li {
+          display: inline-block;
+          color: $black;
+          a {
+            text-decoration: none;
+            color: $black;
+            font-size: 1em;
+            transition: .2s;
+            &:hover{
+              color: $ofer-green;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider-main {
+    position: relative;
+    &:before {
+      width: 20%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(220, 245, 191, 1),
+        rgba(220, 245, 191, 0)
+      );
+    }
+    &:after {
+      width: 20%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        rgba(220, 245, 191, 1),
+        rgba(220, 245, 191, 0)
+      );
+    }
+    .glider {
+      .slide {
+        margin: 1rem 0.5rem;
+        display: inline-block;
+        box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+        position: relative;
+        left: 0;
+        &.visible,.center{
+          transition: transform 0.3s ease;
+        }
+        &:hover{
+          box-shadow: 0 0.1rem 0.4rem rgba(3, 169, 244, 0.2);
+          .slide-image {
+            opacity: .6;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+          display: flex;
+          height: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .slide-image {
+          transition: .2s;
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .slide-content {
+          position: relative;
+          bottom: 2.8rem;
+          padding: 1.2rem;
+          height: inherit;
+          .slide-ofer {
+            width: 100%;
+            background-color: $white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+            span {
+              font-weight: 700;
+              font-size: 1.2em;
+              &.disc {
+                color: $ofer-green;
+              }
+              &.orig-price {
+                color: $gray;
+                font-weight: 400;
+                display: inline-flex;
+              }
+              &.disc-price {
+                color: $ofer-blue;
+              }
+            }
+          }
+          .slide-txt {
+            h3 {
+              font-size: 1rem;
+              font-weight: 400;
+              margin: 1rem 0;
+              line-height: 1.2em;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+              text-overflow: ellipsis;
+              &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                padding-left: 5px;
+              }
+            }
+            .location {
+              display: flex;
+              img {
+                margin-right: 0.5rem;
+                height: 1rem;
+              }
+              span {
+                font-size: 0.8rem;
+                line-height: 1.2em;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+        .slide-btn {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          bottom: 1.2rem;
+          button {
+            font-size: 0.8rem;
+            background-color: $ofer-blue;
+            color: $white;
+            padding: 0.8rem 2rem;
+            border-radius: 0.4rem;
+            border: 0;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      .slide.more{
+        a{
+          background-color: $lighter-blue;
+          border: 1px solid $ofer-blue;
+          text-align: center;
+          padding: 5rem 2rem;
+          .slide-content{
+            position: initial;
+            .slide-txt{
+              p{
+                font-size: 1.2em;
+                font-weight: 700;
+                color: $ofer-blue;
+              }
+            }
+          }
+        }
+      }
+    }
+    /* Estilos de la barra de desplazamiento */
+    .glider::-webkit-scrollbar {
+      height: 8px;
+    }
+    .glider::-webkit-scrollbar-thumb {
+      background-color: $ofer-green;
+    }
+  }
+  /*glider-dots*/
+  .glider-dots {
+    .glider-dot {
+      background-color: $lighter-green;
+    }
+    .glider-dot.active {
+      background-color: $ofer-green;
+      transform: scale(1.2);
+    }
+  }
+  .glider-arrows {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    .prev,
+    .next {
+      width: 80px;
+      position: relative;
+      cursor: pointer;
+      &.disabled {
+        opacity: 0.1;
+      }
+    }
+    .prev {
+      left: -2px;
+      float: left;
+      background-image: linear-gradient(
+        to right,
+        rgba(220, 245, 191, 1),
+        rgba(220, 245, 191, 0)
+      );
+    }
+    .next {
+      right: -2px;
+      float: right;
+      background-image: linear-gradient(
+        to left,
+        rgba(220, 245, 191, 1),
+        rgba(220, 245, 191, 0)
+      );
+    }
+  }
+}

@@ -1,0 +1,121 @@
+---
+pagination:
+  data: felids
+  size: 1
+  alias: felid
+eleventyComputed:
+  permalink: "/felino/{{ felid.id }}/"
+  title: "{{ felid.scientificName }}"
+---
+{{#> base}}
+{{> header}}
+{{> nav}}
+<main class="felid-detail">
+  <article class="felid-article">
+    <header class="felid-header">
+      <h1>{{felid.scientificName}}</h1>
+      {{#if felid.names.es}}
+      <p class="common-name">{{felid.names.es}}</p>
+      {{/if}}
+    </header>
+
+    <div class="felid-content">
+      <div class="felid-image-container">
+        {{#if felid.image}}
+        <img src="{{felid.image}}" alt="{{felid.scientificName}}" class="felid-main-image"/>
+        {{else}}
+        <img src="/assets/images/{{felid.id}}.svg" alt="{{felid.scientificName}}" class="felid-main-image"/>
+        {{/if}}
+      </div>
+
+      <div class="felid-info">
+        <section class="taxonomy">
+          <h2>Taxonomía</h2>
+          <dl>
+            <dt>Nombre científico:</dt>
+            <dd>{{felid.scientificName}}</dd>
+
+            <dt>Género:</dt>
+            <dd>{{felid.genus}}</dd>
+
+            <dt>Linaje:</dt>
+            <dd>{{felid.lineage}}</dd>
+
+            <dt>Subfamilia:</dt>
+            <dd>{{felid.subfamily}}</dd>
+          </dl>
+        </section>
+
+        {{#if felid.iucnStatus}}
+        <section class="conservation">
+          <h2>Estado de Conservación</h2>
+          <p class="iucn-status iucn-{{felid.iucnStatus}}">{{felid.iucnStatus}}</p>
+        </section>
+        {{/if}}
+
+        {{#if felid.names}}
+        <section class="common-names">
+          <h2>Nombres Comunes</h2>
+          <dl>
+            {{#if felid.names.en}}
+            <dt>English:</dt>
+            <dd>{{felid.names.en}}</dd>
+            {{/if}}
+            {{#if felid.names.es}}
+            <dt>Español:</dt>
+            <dd>{{felid.names.es}}</dd>
+            {{/if}}
+            {{#if felid.names.fr}}
+            <dt>Français:</dt>
+            <dd>{{felid.names.fr}}</dd>
+            {{/if}}
+            {{#if felid.names.de}}
+            <dt>Deutsch:</dt>
+            <dd>{{felid.names.de}}</dd>
+            {{/if}}
+            {{#if felid.names.pt}}
+            <dt>Português:</dt>
+            <dd>{{felid.names.pt}}</dd>
+            {{/if}}
+            {{#if felid.names.ja}}
+            <dt>日本語:</dt>
+            <dd>{{felid.names.ja}}</dd>
+            {{/if}}
+            {{#if felid.names.zh}}
+            <dt>中文:</dt>
+            <dd>{{felid.names.zh}}</dd>
+            {{/if}}
+            {{#if felid.names.ar}}
+            <dt>العربية:</dt>
+            <dd>{{felid.names.ar}}</dd>
+            {{/if}}
+          </dl>
+        </section>
+        {{/if}}
+
+        {{#if felid.wikipedia}}
+        <section class="external-links">
+          <h2>Enlaces Externos</h2>
+          <ul>
+            {{#if felid.wikipedia.es}}
+            <li><a href="{{felid.wikipedia.es}}" target="_blank" rel="noopener">Wikipedia (ES)</a></li>
+            {{/if}}
+            {{#if felid.wikipedia.en}}
+            <li><a href="{{felid.wikipedia.en}}" target="_blank" rel="noopener">Wikipedia (EN)</a></li>
+            {{/if}}
+            {{#if felid.wikidataURI}}
+            <li><a href="{{felid.wikidataURI}}" target="_blank" rel="noopener">Wikidata</a></li>
+            {{/if}}
+          </ul>
+        </section>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="felid-navigation">
+      <a href="/felinos" class="btn-back">← Volver al listado</a>
+    </div>
+  </article>
+</main>
+{{> footer}}
+{{/base}}

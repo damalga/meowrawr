@@ -1,0 +1,437 @@
+@media (max-width: 1200px) {
+  body {
+    header,
+    .hero .tickets {
+      width: 100%;
+    }
+    header {
+      .header-search-desktop {
+        width: 48%;
+      }
+      .header-plus {
+        width: 28%;
+      }
+      .header-search-mobile {
+        display: none;
+        background-color: $ofer-blue;
+        overflow: hidden;
+      }
+    }
+    nav {
+      ul {
+        width: 100%;
+      }
+    }
+    .hero {
+      .tickets {
+        .ticket-container {
+          margin: 0 -0.8rem;
+          &::after {
+            top: 1.8rem;
+          }
+          .ticket {
+            padding: 2rem 3.2rem 2rem 1.2rem;
+          }
+        }
+      }
+    }
+    main,
+    .contact {
+      width: 100%;
+    }
+    .contact {
+      padding: 0 24px;
+    }
+    .prefooter {
+      .prefooter-wrapper {
+        width: 100%;
+        padding: 0;
+      }
+    }
+    footer {
+      .footer-wrapper {
+        width: 100%;
+        display: block;
+        .footer-logos-desktop {
+          width: 60%;
+          margin: 0 auto;
+          margin-bottom: 2rem;
+        }
+        .footer-links {
+          text-align: center;
+          ul {
+            li {
+              display: inline;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    header {
+      padding: 0 24px;
+    }
+    .publi{
+      div[class^="publi-"]{
+        .slide{
+          .slide-image{
+            width: 100%;
+          }
+        }
+      }
+    }
+    main{
+      .static-page{
+        width: 100%;
+      }
+    }
+    .hero {
+      .tickets {
+        .ticket-container {
+          margin: -0.8rem;
+          &::after {
+            top: 1.8rem;
+          }
+          .ticket {
+            padding: 2rem 3.2rem 2rem 1.2rem;
+          }
+        }
+      }
+    }
+    .contact {
+      .contact-form {
+        width: 100%;
+      }
+      .gracias{
+        width: 100%;
+      }
+    }
+    .boost {
+      .boost-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 764px) {
+  body {
+    header {
+      padding: 0;
+      display: block;
+      .header-logo {
+        width: 45%;
+        padding: 1rem;
+        float: left;
+      }
+      .header-search-desktop {
+        display: none;
+      }
+      .header-search-mobile {
+        display: block;
+        padding: 1rem 1.5rem 0;
+      }
+      .header-plus {
+        width: 55%;
+        padding: 1rem;
+        float: right;
+        .header-plus-txt {
+          font-size: 0.8em;
+        }
+      }
+    }
+    .hero {
+      .tickets {
+        .ticket-container {
+          margin: -1.2rem -0.8rem;
+        }
+      }
+    }
+    nav {
+      padding-bottom: .5rem;
+      ul {
+        li {
+          a {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+    .contact {
+      .contact-form {
+        padding: 2rem 1rem;
+        .contact-form-header {
+          margin-bottom: 1.5rem;
+          .contact-form-title {
+            font-size: 1.6em;
+          }
+          .contact-form-subtitle {
+            font-size: 1em;
+          }
+        }
+        .contact-form-inputs {
+          display: block;
+          padding: 0 2rem;
+          [class^="contact-form-col"] {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+    main {
+      .slider {
+        .slider-header {
+          .slider-header-title {
+            h2.titulo-slider{
+              font-size: 1.2em;
+            }
+          }
+          .slider-header-download {
+            .header-goo-app {
+              width: 12px;
+            }
+            .header-img-app {
+              width: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+    .boost {
+      .boost-wrapper {
+        .boost-header{
+          .boost-header-txt{
+            .boost-header-title{
+              font-size: 1.8rem;
+            }
+            .boost-header-subtitle{
+              font-size: 1rem;
+            }
+          }
+        }
+        .question {
+          font-size: 1.4rem;
+          line-height: 1.7rem;
+          margin-top: 3rem;
+        }
+        .boost-list{
+          display: block;
+        }
+      }
+    }
+    .prefooter {
+      .prefooter-wrapper {
+        height: auto;
+        padding: 2rem 0;
+      }
+    }
+    footer {
+      .footer-wrapper {
+        .footer-logos-desktop,
+        .footer-logos-mobile {
+          width: 75%;
+          margin: 0 auto 1.5rem;
+        }
+        .footer-logos-desktop {
+          .logo-meowrawr {
+            width: 100%;
+          }
+        }
+        .footer-logos-mobile {
+          display: block;
+          img.logo-meowrawr{
+            margin-top: 1rem;
+          }
+        }
+        .footer-links {
+          margin-bottom: 2rem;
+          ul {
+            li {
+              display: block;
+              margin-bottom: 1.6rem;
+              a{
+                font-size: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    nav {
+      ul {
+        padding: 1rem 24px;
+      }
+    }
+    .hero {
+      padding: 2rem 0 3rem;
+      .veil{
+        display: block;
+      }
+      .tickets {
+        .ticket-container {
+          margin: -2rem -1rem;
+        }
+        .felids-selector{
+          .felids-input{
+            width: 340px;
+            font-size: 1.1em;
+            padding: 1rem 1.5rem;
+          }
+        }
+      }
+    }
+    .publi{
+      div[class^="publi-"]{
+        .slide-image{
+          display: none;
+        }
+        .slide-image-mobile{
+          display: block;
+        }
+        .dots{
+          display: flex;
+        }
+      }
+    }
+    main {
+      .slider {
+        .slider-header {
+          .slider-header-download {
+            .header-img-app {
+              width: 2.4rem;
+              margin-right: 0;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+        .glider-arrows {
+          .prev, .next {
+            width: 48px;
+          }
+        }
+      }
+      .cards{
+        .card{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    .hero {
+      height: 440px;
+      .tickets {
+        .felids-selector{
+          .felids-input{
+            width: 320px;
+            height: 4rem;
+            font-size: 1em;
+          }
+          .felids-arrow{
+            width: .8rem;
+          }
+        }
+      }
+    }
+    main {
+      &.index {
+        .index-item {
+          width: 100%;
+          height: 100px;
+          margin: 0 0 1rem 0;
+        }
+      }
+      .slider {
+        .slider-header {
+          .slider-header-title {
+            padding: 0.8rem ;
+            h2.titulo-slider{
+              font-size: 1em;
+            }
+          }
+          .slider-header-download{
+            padding: 0.8rem 0.6rem;
+          }
+          .slider-header-cities {
+            font-size: 0.9em;
+            padding: 0.4rem 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  body{
+    .hero{
+      .tickets{
+        .felids-selector{
+          .felids-input{
+            width: 300px;
+          }
+        }
+      }
+    }
+    main{
+      padding: 0;
+      .slider{
+        .slider-header{
+          .slider-header-title{
+            padding: .8rem .6rem;
+          }
+        }
+      }
+    }
+    .contact{
+      .contact-form{
+        margin-bottom: 3rem;
+        .contact-form-inputs{
+          padding: 0;
+        }
+      }
+    }
+    .boost{
+      .boost-wrapper{
+        .boost-header{
+          .boost-header-img{
+            min-width: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*EXTRA*/
+@media (min-width: 36em) {
+  main{
+    .slider{
+      .slider-main{
+        &::-webkit-scrollbar-thumb{
+          opacity: 1;
+          height: 6px;
+          width: 10px;
+          background-color: $ofer-green;
+        }
+      }
+    }
+  }
+}

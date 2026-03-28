@@ -1,0 +1,20 @@
+<a href="/felino/{{this.id}}">
+  <div class="slide-image">
+    <img src="{{felid-image this}}" alt="{{this.scientificName}}"/>
+  </div>
+  <div class="slide-content">
+    <div class="slide-txt">
+      <h3>{{this.scientificName}}</h3>
+      <div class="location">
+        <img src="/assets/images/location.svg" alt="lineage icon"/>
+        <span><b>{{this.genus}}</b> - Linaje: {{this.lineage}}</span>
+      </div>
+      <div class="scientific-info">
+        <span>Subfamilia: {{this.subfamily}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-btn">
+    <button>VER DETALLES</button>
+  </div>
+</a>

@@ -1,0 +1,7 @@
+// Mixins
+@mixin province-style($color) {
+    span {
+      font-weight: bold;
+      color: $color;
+    }
+  }

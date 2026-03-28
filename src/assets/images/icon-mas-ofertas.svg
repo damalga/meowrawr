@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206.51" height="144.992" viewBox="0 0 206.51 144.992">
+  <g id="icon-mas-ofertas" transform="translate(-609 -16538)">
+    <path id="icon-etiqueta" d="M151.913,100h0v0L0,100V0H152.063L187,34.852V65l-35.086,35Zm5-65a15,15,0,1,0,15.038,15A15.034,15.034,0,0,0,156.916,35Z" transform="matrix(0.966, -0.259, 0.259, 0.966, 609, 16586.398)" fill="#bbeaff" opacity="0.7"/>
+    <path id="Elipse_50" data-name="Elipse 50" d="M24,5A19,19,0,0,0,10.565,37.435a19,19,0,0,0,26.87-26.87A18.876,18.876,0,0,0,24,5m0-5A24,24,0,1,1,0,24,24,24,0,0,1,24,0Z" transform="translate(680 16589.01)" fill="#03a9f4"/>
+    <circle id="Elipse_51" data-name="Elipse 51" cx="3.5" cy="3.5" r="3.5" transform="translate(690 16610.01)" fill="#03a9f4"/>
+    <circle id="Elipse_52" data-name="Elipse 52" cx="3.5" cy="3.5" r="3.5" transform="translate(700 16610.01)" fill="#03a9f4"/>
+    <circle id="Elipse_53" data-name="Elipse 53" cx="3.5" cy="3.5" r="3.5" transform="translate(710 16610.01)" fill="#03a9f4"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+main{
+  .static-page{
+    width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    section{
+      margin-bottom: 2rem;
+    }
+    h1{
+      font-size: 1.4em;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid $black;
+    }
+    h2{
+      font-size: 1.6em;
+      font-weight: 400;
+      margin-bottom: .8rem;
+    }
+    h3{
+      margin-bottom: .6rem;
+    }
+    p{
+      color: $black;
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-bottom: 1rem;
+      a{
+        color: $ofer-blue;
+        text-decoration: none;
+      }
+    }
+    .tabulation{
+      padding-left: 2rem;
+    }
+    .dot{
+      color: $ofer-blue;
+      margin-right: .2rem;
+    }
+    ul{
+      margin-bottom: 2rem;
+      li{
+        line-height: 1.5em;
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}

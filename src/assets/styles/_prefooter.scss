@@ -1,0 +1,34 @@
+.prefooter{
+  background: linear-gradient(180deg, $dark-green 0%, $ofer-green 100%);
+  padding: 0 2rem;
+  nav.prefooter-wrapper{
+    max-width: 1200px;
+    height: 180px;
+    margin: 0 auto;
+    padding: 0 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: unset;
+    .prefooter-title{
+      color: $ofer-green;
+      font-size: 1.5em;
+      display: inline-block;
+    }
+    .prefooter-list{
+      .prefooter-list-item{
+        display: inline-block;
+        margin: .4rem .6rem;
+        font-size: 1em;
+        a{
+          color: $white;
+          text-decoration: none;
+          transition: .2s;
+          &:hover{
+            color: $ofer-green;
+          }
+        }
+      }
+    }
+  }
+}

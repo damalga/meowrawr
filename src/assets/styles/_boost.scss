@@ -1,0 +1,123 @@
+.boost {
+  background: $ofer-green; /* Fallback color */
+  background: linear-gradient(to bottom, $lighter-green, $ofer-green);
+  .boost-wrapper {
+    width: 848px;
+    margin: 0 auto;
+    padding: 0 24px;
+    /*boost-header*/
+    .boost-header{
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      .boost-header-img{
+        width: 20%;
+        min-width: 150px;
+        img{
+          width: 100%;
+        }
+      }
+      .boost-header-txt{
+        width: 80%;
+        .boost-header-title,
+        .boost-header-subtitle{
+          display: block;
+        }
+        .boost-header-title{
+          color: $dark-green;
+          font-size: 2em;
+          line-height: 2.2rem;
+          margin-bottom: .8rem;
+        }
+        .boost-header-subtitle{
+          font-size: 1.2em;
+          line-height: 1.2rem;
+          margin-bottom: 1rem;
+        }
+        button{
+          background-color: $ofer-green;
+          padding: 0.8rem 2.8rem;
+          border-radius: .4rem;
+          border: 0;
+          cursor: pointer;
+          a{
+            color: $white;
+            text-decoration: none;
+            font-size: .8rem;
+          }
+          &:hover {
+            opacity: .7;
+          }
+        }
+      }
+    }
+    /*end-boost-header*/
+    .question{
+      font-size: 1.6em;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    /*boost-list*/
+    .boost-list{
+      padding: 8px 0;
+      list-style-type: none;
+      white-space: nowrap;
+      overflow: auto;
+      display: flex;
+      justify-content: space-between;
+      &::-webkit-scrollbar{
+        display: none;
+      }
+      .boost-list-item{
+        display: inline-block;
+        text-align: center;
+        width: 250px;
+        padding: 0 0.8rem;
+        cursor: pointer;
+        &:hover{
+          .boost-list-item-img{
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+          }
+          .boost-list-item-txt{
+            color: $lighter-green;
+          }
+        }
+        .boost-list-item-img-container{
+          width: 160px;
+          height: 160px;
+          margin: 0 auto;
+        }
+        .boost-list-item-img,
+        .boost-list-item-txt{
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          z-index: 1;
+          transition: .2s;
+        }
+        .boost-list-item-img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        .boost-list-item-txt{
+          color: $white;
+          font-size: 1.2em;
+          line-height: 1.5rem;
+          padding: 1rem 0;
+        }
+        .boost-list-item-bg{
+          background-color: $ofer-green;
+          width: 100%;
+          height: 150px;
+          position: relative;
+          bottom: 150px;
+          border-radius: .2rem;
+        }
+      }
+    }
+    /*end-boost-list*/
+  }
+}

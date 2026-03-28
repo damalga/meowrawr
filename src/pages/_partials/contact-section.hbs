@@ -1,0 +1,75 @@
+<div class="contact">
+  <form action="" class="contact-form">
+    <!--header-->
+    <div class="contact-form-header">
+      <label class="contact-form-title">¿Tienes alguna duda?</label>
+      <label class="contact-form-subtitle">Déjanos un mensaje y nos pondremos en
+        contacto contigo</label>
+    </div>
+    <!--end-header-->
+    <!--inputs-->
+    <div class="contact-form-inputs">
+      <!--column-1-->
+      <div class="contact-form-col-1">
+        <div class="contact-form-name">
+          <label>Nombre y Apellidos *</label>
+          <input type="text" placeholder="Nombre y Apellidos" />
+          <label class="disp-none">Campo Requerido</label>
+        </div>
+        <div class="contact-form-email">
+          <label>Email *</label>
+          <input class="error" type="text" placeholder="usuario@dominio.com" />
+          <label class="disp-none">Campo Requerido</label>
+        </div>
+        <div class="contact-form-phone">
+          <label>Teléfono</label>
+          <input type="text" placeholder="Teléfono" />
+        </div>
+        <div class="contact-form-reason">
+          <label>Motivo *</label>
+          <select
+            name="motivo"
+            id="contact-form-reason-select"
+            form="contact-form-reason-select"
+          >
+            <option value="motivo-1">Cuenta de usuario</option>
+            <option value="motivo-2">Motivo 2</option>
+            <option value="motivo-3">Motivo 3</option>
+            <option value="motivo-4">Motivo 4</option>
+          </select>
+          <label class="disp-none">Campo Requerido</label>
+        </div>
+      </div>
+      <!--end-column-1-->
+      <!--column-2-->
+      <div class="contact-form-col-2">
+        <div class="contact-form-msg">
+          <label>Mensaje *</label>
+          <textarea
+            name=""
+            id="contact-form-txt"
+            placeholder="Indique su mensaje"
+          ></textarea>
+          <label class="disp-none">Campo Requerido</label>
+        </div>
+        <div class="contact-form-captcha">
+          <label>Captcha *</label>
+          <div class="captcha-placeholder">
+            <!-- Captcha placeholder - implementation pending -->
+          </div>
+        </div>
+        <div class="contact-form-accept">
+          <input type="checkbox" />
+          <label>Acepto las <a href="#">condiciones</a>.*</label>
+        </div>
+        <div class="contact-form-mandatory disp-none">
+          <label>Los campos marcados con * son obligatorios</label>
+        </div>
+        <button type="submit" class="contact-btn">
+          <a href="">ENVIAR</a>
+        </button>
+      </div>
+    </div>
+    <!--end-inputs-->
+  </form>
+</div>

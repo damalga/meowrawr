@@ -1,0 +1,24 @@
+<section id="hero" class="hero">
+  <div class="veil"></div>
+  <div id="tickets" class="tickets">
+    <!--Tickets de felinos simplificados-->
+    {{#each (random-felids felids 6)}}
+    <div class="ticket-simple">
+      <a href="/felino/{{this.id}}">
+        <span>{{this.scientificName}}</span>
+      </a>
+    </div>
+    {{/each}}
+    <div class="felids-selector">
+      <input class="felids-input" value="Elige un felino del que saber más" readonly>
+      <img src="../assets/images/arrow-white.svg" class="felids-arrow" alt="down arrow white">
+      <ul class="felids-options disp-none">
+        {{#each felids}}
+        <li class="option" value="{{this.scientificName}}">
+          <a href="/felino/{{this.id}}">{{this.scientificName}}</a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+nav.main-nav {
+  background-color: $ofer-blue;
+  ul.main-nav-ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: .8rem 24px;
+    list-style-type: none;
+    white-space: nowrap;
+    overflow: auto;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    li.main-nav-ul-li {
+      margin-right: 2rem;
+      display: inline;
+      a {
+        text-decoration: none;
+        color: $white;
+        font-weight: 700;
+        font-size: .9em;
+        transition: .2s;
+        &:hover{
+          opacity: .6;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+header.index{
+  padding: .6rem 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  .header-logo{
+    padding: 0 24px;
+  }
+}
+main.index{
+  h2.title{
+    display: block;
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  .index-item{
+    width: 30%;
+    height: 80px;
+    display: inline-block;
+    background: $ofer-blue;
+    margin: 0 .8rem .8rem 0;
+    float: left;
+    a{
+      color: $white;
+      display: block;
+      font-weight: 700;
+      padding: 1.2rem 1.2rem 2.4rem;
+      text-decoration: none;
+    }
+  }
+}

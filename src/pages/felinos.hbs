@@ -1,0 +1,16 @@
+{{#> base}}
+{{> header}}
+{{> nav}}
+<main>
+  <h1 class="titulo-listado">Meowrawr: Las 41 Especies de Felinos (CCTF 2017)</h1>
+  <section class="cards">
+    {{#each felids}}
+    <!--card-->
+    <div class="card">
+      {{> card}}
+    </div>
+    {{/each}}
+  </section>
+</main>
+{{> footer}}
+{{/base}}

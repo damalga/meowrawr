@@ -1,0 +1,76 @@
+.publi {
+  max-width: 1024px;
+  padding: 1rem 0;
+  margin: 0 auto 1.5rem;
+  .slide{
+    padding: 1rem 0;
+    margin: 0 2px;
+    .slide-image{
+      text-align: center;
+      margin: 0 auto;
+      box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+      &:hover{
+        scale: 1.015;
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+        transition: all .2s;
+      }
+    }
+    .slide-image-mobile{
+      display: none;
+    }
+  }
+  .glider{
+    overflow-x: hidden;
+  }
+
+  .publi-1 {
+    .slide{
+      .slide-image{
+        width: 1024px;
+      }
+    }
+  }
+
+  .publi-2 {
+    .slide{
+      .slide-image{
+        width: 507px;
+      }
+    }
+  }
+
+  .publi-3 {
+    .slide{
+      .slide-image{
+        width: 320px;
+      }
+    }
+  }
+
+  .publi-2,
+  .publi-3 {
+    .slide {
+      display: inline-block;
+    }
+    .dots{
+      display: none;
+      button{
+        background-color: $light-gray;
+        &.active{
+          background-color: $ofer-blue;
+        }
+      }
+    }
+  }
+
+  // Desktop only: flex layout for banners
+  @media (min-width: 561px) {
+    .publi-2,
+    .publi-3 {
+      .glider {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

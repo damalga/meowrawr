@@ -1,0 +1,38 @@
+{
+  "name": "meowrawr",
+  "version": "1.0.4",
+  "description": "Meowrawr - Enciclopedia Felina",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "npm-run-all build:assets --parallel dev:*",
+    "dev:eleventy": "eleventy --serve --watch",
+    "build": "npm-run-all build:clean build:assets build:eleventy",
+    "build:clean": "rm -rf dist 2>/dev/null || true",
+    "build:assets": "npm-run-all build:styles build:scripts build:glider build:images",
+    "build:styles": "node build-styles.js",
+    "build:scripts": "node build-scripts.js",
+    "build:glider": "mkdir -p dist/assets && cp node_modules/glider-js/glider.min.* dist/assets/",
+    "build:images": "mkdir -p dist/assets/images && cp -r src/assets/images/* dist/assets/images/",
+    "build:eleventy": "eleventy"
+  },
+  "author": "Damalga <damalga@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-bundle": "^3.0.7",
+    "handlebars": "^4.7.8",
+    "handlebars-utils": "^1.0.6",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.83.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^5.1.2",
+    "glider-js": "^1.7.8"
+  }
+}

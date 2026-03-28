@@ -1,0 +1,49 @@
+<!--slider-1-->
+<div class="slider slider-1">
+  <div id="slider-header-1" class="slider-header">
+    <div id="slider-header-title-1" class="slider-header-title">
+      <h2 class="titulo-slider"><a href="#">Meowrawr - Felinos</a></h2>
+    </div>
+    <div class="slider-header-cities">
+      <ul>
+        <li><a href="#">Pantherinae</a> |</li>
+        <li><a href="#">Felinae</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slider-main">
+    <div id="glider-1" class="glider">
+      {{#each (random-felids felids 9)}}
+      <!--slide-->
+      <div class="slide">
+        {{> card}}
+      </div>
+      <!--end-slide-->
+      {{/each}}
+      <!--slide-->
+      <div class="slide more">
+        <a href="/felinos">
+          <div class="slide-image">
+            <img
+              src="/assets/images/icon-mas-ofertas.svg"
+              alt="icon more felids"
+            />
+          </div>
+          <div class="slide-content">
+            <div class="slide-txt">
+              <p>CONOCER MÁS FELINOS</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!--end-slide-->
+    </div>
+    <!--controls-->
+    <div id="glider-arrows-1" class="glider-arrows">
+      <div id="prev-1" class="prev"></div>
+      <div id="next-1" class="next"></div>
+    </div>
+    <!--end-controls-->
+  </div>
+</div>

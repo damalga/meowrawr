@@ -1,0 +1,48 @@
+footer{
+  background: $ofer-blue;
+  padding: 2rem;
+  .footer-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .footer-logos-desktop{
+      width: 30%;
+      display: flex;
+      align-items: center;
+      img{
+        width: 50%;
+        height: auto;
+        padding: 0 1rem;
+      }
+    }
+    .footer-logos-mobile{
+      display: none;
+      img.logo-meowrawr{
+        width: 100%;
+      }
+    }
+    .footer-links{
+      ul{
+        li{
+          color: $white;
+          display: inline-block;
+          a{
+            color: $white;
+            padding: 0 .8rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: .8em;
+            transition: .2s;
+            &:hover{
+              opacity: .6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

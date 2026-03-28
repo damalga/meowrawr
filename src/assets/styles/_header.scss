@@ -1,0 +1,95 @@
+header {
+  background-color: $white;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem 64px;
+  /*logo*/
+  .header-logo {
+    width: 20%;
+    padding: .8rem 1.2rem;
+    img {
+      width: 100%;
+      max-width: 214px;
+    }
+  }
+  /*search*/
+  .header-search-desktop,
+  .header-search-mobile{
+    width: 60%;
+    padding: 2rem 3rem 1rem 2rem;
+    input {
+      width: 100%;
+      padding: 0.6rem 2rem;
+      border: 1px solid $ofer-blue;
+      border-radius: 0.25rem;
+      background-image: url("../images/lupa.svg");
+      background-repeat: no-repeat;
+      background-position: 0.4rem;
+      box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:not(:placeholder-shown) {
+        + .clear-icon {
+          visibility: visible;
+        }
+      }
+    }
+    .clear-icon {
+      visibility: hidden;
+      width: 16px;
+      height: 16px;
+      float: right;
+      position: relative;
+      bottom: 1.8rem;
+      right: .8rem;
+      cursor: pointer;
+    }
+  }
+  .header-search-mobile {
+    display: none;
+    width: 100%;
+    padding: 1rem 3rem 1rem 2rem;
+  }
+  /*plus*/
+  .header-plus {
+    width: 20%;
+    padding: .8rem 1.2rem;
+    display: flex;
+      justify-content: right;
+      align-items: flex-start;
+    .header-plus-img {
+      width: 2.4rem;
+      float: left;
+    }
+    .header-plus-txt {
+      display: inline-grid;
+      label {
+        margin-bottom: 0.4rem;
+        line-height: 1rem;
+      }
+      font-size: 0.8em;
+      font-weight: 700;
+      .header-plus-btn {
+        width: 110px;
+        margin-top: 0.4rem;
+        background-color: $white;
+        border: 1px solid $ofer-blue;
+        font-size: 0.8em;
+        padding: 0.4rem 1.2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        a {
+          color: $ofer-blue;
+          text-decoration: none;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
