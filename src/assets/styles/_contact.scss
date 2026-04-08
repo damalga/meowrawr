@@ -4,7 +4,7 @@
     padding: 2rem 24px;
     margin: 2rem auto 6rem;
     border: $ofer-green 1px solid;
-    border-radius: .4rem;
+    
     .contact-form-header {
       .contact-form-title,
       .contact-form-subtitle {
@@ -43,7 +43,7 @@
         width: 100%;
         padding: 0.5rem;
         border: $ofer-blue 1px solid;
-        border-radius: .2rem;
+        
         &:focus {
           outline: none;
           border-color: $ofer-blue;
@@ -91,7 +91,7 @@
           margin: 0 auto;
           padding: 0.8rem 2rem;
           border: 0;
-          border-radius: 0.4rem;
+          
           a {
             color: $white;
             text-decoration: none;
@@ -116,7 +116,7 @@
       text-align: center;
       padding: 2rem 24px;
       border: $ofer-green 1px solid;
-      border-radius: .4rem;
+      
       h3{
         color: $ofer-green;
         font-size: 1.6em;
@@ -137,7 +137,7 @@
         background-color: $ofer-blue;
         color: $white;
         padding: 0.8rem 2rem;
-        border-radius: 0.4rem;
+        
         border: 0;
         cursor: pointer;
         &:hover {

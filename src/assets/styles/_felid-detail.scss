@@ -1,0 +1,225 @@
+// Página de detalle de felino
+.felid-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    .felid-article {
+        background: $white;
+        overflow: hidden;
+        box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+
+        .felid-header {
+            background: linear-gradient(
+                135deg,
+                $ofer-green 0%,
+                $dark-green 100%
+            );
+            color: white;
+            padding: 2rem;
+            text-align: center;
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+                font-style: italic;
+            }
+
+            .common-name {
+                font-size: 1.2rem;
+                opacity: 0.9;
+            }
+        }
+
+        .felid-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+
+            .felid-image-container {
+                .felid-main-image {
+                    width: 100%;
+                    height: auto;
+                    max-height: 500px;
+                    object-fit: cover;
+                    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
+
+        .felid-info {
+            section {
+                margin-bottom: 2rem;
+
+                h2 {
+                    font-size: 1.3rem;
+                    color: $dark-green;
+                    margin-bottom: 1rem;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 2px solid $light-green;
+                }
+
+                dl {
+                    dt {
+                        font-weight: 600;
+                        color: $black;
+                        margin-top: 0.8rem;
+                        font-size: 0.9rem;
+                    }
+
+                    dd {
+                        margin-left: 0;
+                        color: $gray;
+                        padding-left: 1rem;
+                        font-size: 1rem;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 0.5rem;
+
+                        a {
+                            color: $ofer-green;
+                            text-decoration: none;
+                            transition: color 0.3s;
+
+                            &:hover {
+                                color: $dark-green;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+
+                .iucn-status {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+
+                    &.iucn-LC {
+                        background: #4caf50;
+                        color: white;
+                    }
+
+                    &.iucn-NT {
+                        background: #8bc34a;
+                        color: white;
+                    }
+
+                    &.iucn-VU {
+                        background: #ffc107;
+                        color: $black;
+                    }
+
+                    &.iucn-EN {
+                        background: #ff9800;
+                        color: white;
+                    }
+
+                    &.iucn-CR {
+                        background: #f44336;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .felid-navigation {
+        padding: 1.5rem 2rem;
+        background: $lighter-green;
+        text-align: center;
+
+        .btn-back {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: $ofer-green;
+            color: white;
+            text-decoration: none;
+
+            font-weight: 500;
+            transition:
+                background 0.3s,
+                transform 0.3s;
+
+            &:hover {
+                background: $dark-green;
+                transform: translateX(-0.3rem);
+            }
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 968px) {
+    .felid-detail {
+        .felid-article {
+            .felid-header {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+
+            .felid-content {
+                grid-template-columns: 1fr;
+
+                .felid-image-container {
+                    .felid-main-image {
+                        max-height: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .felid-detail {
+        padding: 1rem 0.5rem;
+
+        .felid-article {
+            .felid-header {
+                padding: 1.5rem 1rem;
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                .common-name {
+                    font-size: 1rem;
+                }
+            }
+
+            .felid-content {
+                padding: 1rem;
+                gap: 1rem;
+
+                .felid-image-container {
+                    .felid-main-image {
+                        max-height: 300px;
+                    }
+                }
+
+                .felid-info {
+                    section {
+                        h2 {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+
+            .felid-navigation {
+                padding: 1rem;
+            }
+        }
+    }
+}

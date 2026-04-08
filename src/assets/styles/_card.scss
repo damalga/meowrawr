@@ -1,97 +1,180 @@
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 2rem;
-  .card {
-    width: calc(25% - 1.2rem);
-    min-width: 260px;
-    margin: 1rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    .card {
+        width: calc(25% - 1.2rem);
+        min-width: 260px;
+        margin: 1rem 0.5rem;
+        box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide-image {
+            img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+        }
+        .slide-content {
+            padding: 1.2rem;
+            position: relative;
+            bottom: 2.8rem;
+            height: inherit;
+            .slide-ofer {
+                width: 100%;
+                background-color: $white;
+                text-align: center;
+                padding: 1rem;
+                box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+                span {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    &.disc {
+                        color: $ofer-green;
+                    }
+                    &.orig-price {
+                        color: $gray;
+                        font-weight: 400;
+                        display: inline-flex;
+                    }
+                    &.disc-price {
+                        color: $ofer-blue;
+                    }
+                }
+            }
+            .slide-txt {
+                h2 {
+                    font-size: 1em;
+                    font-weight: 400;
+                    margin: 1rem 0 1.5rem;
+                    line-height: 1.2em;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    text-overflow: ellipsis;
+                }
+                .location {
+                    display: flex;
+                    img {
+                        margin-right: 0.5rem;
+                        height: 1rem;
+                    }
+                    span {
+                        font-size: 0.8rem;
+                        line-height: 1.2em;
+                    }
+                }
+            }
+        }
+        .slide-btn {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            bottom: 1.2rem;
+            button {
+                font-size: 0.8rem;
+                background-color: $ofer-blue;
+                color: $white;
+                padding: 0.8rem 2rem;
+
+                border: 0;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+// Estilos para cards en el grid de felinos
+.felino-card {
     box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
-    a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     .slide-image {
-      img {
         width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+        height: 220px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
     }
+
     .slide-content {
-      padding: 1.2rem;
-      position: relative;
-      bottom: 2.8rem;
-      height: inherit;
-      .slide-ofer {
-        width: 100%;
-        background-color: $white;
-        text-align: center;
         padding: 1rem;
-        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
-        span {
-          font-weight: 700;
-          font-size: 1.2em;
-          &.disc {
-            color: $ofer-green;
-          }
-          &.orig-price {
-            color: $gray;
-            font-weight: 400;
-            display: inline-flex;
-          }
-          &.disc-price {
-            color: $ofer-blue;
-          }
+        flex: 1;
+
+        .slide-txt {
+            h3 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 0.8rem;
+                color: $black;
+                font-style: italic;
+            }
+
+            .location {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0.5rem;
+
+                img {
+                    margin-right: 0.5rem;
+                    height: 1rem;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                    color: $gray;
+                }
+            }
+
+            .scientific-info {
+                span {
+                    font-size: 0.8rem;
+                    color: $gray;
+                }
+            }
         }
-      }
-      .slide-txt {
-        h2 {
-          font-size: 1em;
-          font-weight: 400;
-          margin: 1rem 0 1.5rem;
-          line-height: 1.2em;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-          text-overflow: ellipsis;
-        }
-        .location {
-          display: flex;
-          img {
-            margin-right: 0.5rem;
-            height: 1rem;
-          }
-          span {
-            font-size: 0.8rem;
-            line-height: 1.2em;
-          }
-        }
-      }
     }
+
     .slide-btn {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      bottom: 1.2rem;
-      button {
-        font-size: 0.8rem;
-        background-color: $ofer-blue;
-        color: $white;
-        padding: 0.8rem 2rem;
-        border-radius: 0.4rem;
-        border: 0;
-        cursor: pointer;
-        &:hover {
-          opacity: 0.7;
+        padding: 0 1rem 1rem;
+
+        a {
+            display: block;
+            text-decoration: none;
         }
-      }
+
+        button {
+            width: 100%;
+            font-size: 0.85rem;
+            background-color: $ofer-green;
+            color: white;
+            padding: 0.7rem;
+            border: 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+
+            &:hover {
+                background-color: $dark-green;
+            }
+        }
     }
-  }
 }

@@ -1,16 +1,30 @@
 {{#> base}}
 {{> header}}
 {{> nav}}
-<main>
-  <h1 class="titulo-listado">Meowrawr: Las 41 Especies de Felinos (CCTF 2017)</h1>
-  <section class="cards">
+<main class="felinos-grid-page">
+  <div class="felinos-header">
+    <h1 class="titulo-listado">Meowrawr: Las 41 Especies de Felinos</h1>
+    <p class="subtitle">Catálogo completo basado en la clasificación CCTF 2017</p>
+  </div>
+
+  {{> filters}}
+
+  <section class="felinos-grid" id="felinosGrid">
     {{#each felids}}
-    <!--card-->
-    <div class="card">
+    <div class="felino-card"
+         data-genus="{{this.genus}}"
+         data-lineage="{{this.lineage}}"
+         data-subfamily="{{this.subfamily}}"
+         data-name="{{this.scientificName}}">
       {{> card}}
     </div>
     {{/each}}
   </section>
+
+  <div class="no-results" id="noResults" style="display: none;">
+    <p>No se encontraron felinos que coincidan con los filtros seleccionados.</p>
+  </div>
 </main>
 {{> footer}}
+<script src="/assets/scripts/filters.js"></script>
 {{/base}}

@@ -25,7 +25,7 @@ header {
       width: 100%;
       padding: 0.6rem 2rem;
       border: 1px solid $ofer-blue;
-      border-radius: 0.25rem;
+      
       background-image: url("../images/lupa.svg");
       background-repeat: no-repeat;
       background-position: 0.4rem;
@@ -82,7 +82,7 @@ header {
         border: 1px solid $ofer-blue;
         font-size: 0.8em;
         padding: 0.4rem 1.2rem;
-        border-radius: 0.5rem;
+        
         cursor: pointer;
         a {
           color: $ofer-blue;

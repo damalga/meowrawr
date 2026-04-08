@@ -2,7 +2,7 @@
   <div class="veil"></div>
   <div id="tickets" class="tickets">
     <!--Tickets de felinos simplificados-->
-    {{#each (random-felids felids 6)}}
+    {{#each (randomFelids felids 6)}}
     <div class="ticket-simple">
       <a href="/felino/{{this.id}}">
         <span>{{this.scientificName}}</span>

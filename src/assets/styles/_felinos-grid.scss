@@ -1,0 +1,191 @@
+// Página de rejilla de felinos con filtros
+.felinos-grid-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  .felinos-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .titulo-listado {
+      font-size: 2rem;
+      color: $black;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: $gray;
+    }
+  }
+
+  // Contenedor de filtros
+  .filters-container {
+    background: $white;
+    
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+
+    .search-box {
+      position: relative;
+      margin-bottom: 1.5rem;
+
+      input {
+        width: 100%;
+        padding: 0.8rem 2.5rem 0.8rem 1rem;
+        border: 2px solid $light-green;
+        
+        font-size: 1rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: $ofer-green;
+        }
+
+        &::placeholder {
+          color: $gray;
+        }
+      }
+
+      .clear-btn {
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $gray;
+        color: white;
+        border: none;
+        
+        width: 1.8rem;
+        height: 1.8rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        line-height: 1;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $dark-gray;
+        }
+      }
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+
+      .filter-group {
+        flex: 1;
+        min-width: 180px;
+
+        label {
+          display: block;
+          font-size: 0.9rem;
+          color: $black;
+          margin-bottom: 0.3rem;
+          font-weight: 500;
+        }
+
+        select {
+          width: 100%;
+          padding: 0.6rem;
+          border: 2px solid $light-green;
+          
+          font-size: 0.9rem;
+          background: white;
+          cursor: pointer;
+          transition: border-color 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: $ofer-green;
+          }
+        }
+      }
+
+      .reset-btn {
+        padding: 0.6rem 1.5rem;
+        background: $gray;
+        color: white;
+        border: none;
+        
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $dark-gray;
+        }
+      }
+    }
+
+    .results-count {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: $gray;
+
+      span {
+        font-weight: 700;
+        color: $ofer-green;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // Grid de felinos
+  .felinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .felino-card {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-0.3rem);
+      }
+    }
+  }
+
+  // Mensaje sin resultados
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: $lighter-green;
+    
+
+    p {
+      font-size: 1.1rem;
+      color: $gray;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .felinos-grid-page {
+    .filters-container {
+      .filters {
+        .filter-group {
+          flex: 1 1 100%;
+        }
+
+        .reset-btn {
+          width: 100%;
+        }
+      }
+    }
+
+    .felinos-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="filters-container">
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Buscar por nombre científico..."
+      autocomplete="off"
+    />
+    <button id="clearSearch" class="clear-btn" style="display: none;">×</button>
+  </div>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label for="subfamilyFilter">Subfamilia:</label>
+      <select id="subfamilyFilter">
+        <option value="">Todas</option>
+        <option value="Pantherinae">Pantherinae</option>
+        <option value="Felinae">Felinae</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="lineageFilter">Linaje:</label>
+      <select id="lineageFilter">
+        <option value="">Todos</option>
+        <option value="Panthera">Panthera</option>
+        <option value="Bay Cat">Bay Cat</option>
+        <option value="Caracal">Caracal</option>
+        <option value="Ocelot">Ocelot</option>
+        <option value="Lynx">Lynx</option>
+        <option value="Puma">Puma</option>
+        <option value="Felis">Felis</option>
+        <option value="Prionailurus">Prionailurus</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="genusFilter">Género:</label>
+      <select id="genusFilter">
+        <option value="">Todos</option>
+      </select>
+    </div>
+
+    <button id="resetFilters" class="reset-btn">Limpiar filtros</button>
+  </div>
+
+  <div class="results-count">
+    <span id="resultsCount">41</span> especies encontradas
+  </div>
+</div>
