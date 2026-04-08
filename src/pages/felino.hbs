@@ -30,6 +30,14 @@ eleventyComputed:
             </div>
             {{/each}}
           </div>
+          <div class="felid-gallery-controls">
+            <button class="gallery-prev" id="galleryPrev">‹</button>
+            <button class="gallery-next" id="galleryNext">›</button>
+          </div>
+          <div class="felid-gallery-info">
+            <div class="felid-gallery-counter" id="galleryCounter">1 / {{felid.images.length}}</div>
+            <div class="felid-gallery-dots" id="galleryDots"></div>
+          </div>
         </div>
         {{else if felid.image}}
         <img src="{{felid.image}}" alt="{{felid.scientificName}}" class="felid-main-image"/>

@@ -10,7 +10,7 @@ async function fetchWikidataByScientificNames(scientificNames) {
   const values = scientificNames.map(name => `"${name}"`).join(' ');
 
   const sparqlQuery = `
-    SELECT ?item ?scientificName ?image WHERE {
+    SELECT ?item ?scientificName ?image ?commonsCategory ?wikipediaES ?wikipediaEN WHERE {
       VALUES ?scientificName { ${values} }
       ?item wdt:P225 ?scientificName .
       ?item wdt:P105 ?taxonRank .
@@ -22,6 +22,16 @@ async function fetchWikidataByScientificNames(scientificNames) {
 
       # Get main image
       OPTIONAL { ?item wdt:P18 ?image }
+
+      # Get Wikipedia articles
+      OPTIONAL {
+        ?wikipediaES schema:about ?item ;
+                     schema:isPartOf <https://es.wikipedia.org/> .
+      }
+      OPTIONAL {
+        ?wikipediaEN schema:about ?item ;
+                     schema:isPartOf <https://en.wikipedia.org/> .
+      }
     }
   `;
 
@@ -46,23 +56,34 @@ async function fetchWikidataByScientificNames(scientificNames) {
     const data = await response.json();
     const results = {};
 
-    // Primero obtenemos IDs y categorías
+    // Primero obtenemos IDs, categorías y enlaces a Wikipedia
     data.results.bindings.forEach(binding => {
       const scientificName = binding.scientificName.value;
       const wikidataId = binding.item.value.split('/').pop();
       const commonsCategory = binding.commonsCategory?.value;
       const image = binding.image?.value;
+      const wikipediaES = binding.wikipediaES?.value;
+      const wikipediaEN = binding.wikipediaEN?.value;
 
       if (!results[scientificName]) {
         results[scientificName] = {
           wikidataId,
           commonsCategory,
-          images: []
+          images: [],
+          wikipedia: {}
         };
       }
 
       if (image && !results[scientificName].images.includes(image)) {
         results[scientificName].images.push(image);
+      }
+
+      if (wikipediaES) {
+        results[scientificName].wikipedia.es = wikipediaES;
+      }
+
+      if (wikipediaEN) {
+        results[scientificName].wikipedia.en = wikipediaEN;
       }
     });
 
@@ -138,13 +159,16 @@ export default async function () {
   // Fetch Wikidata IDs and images by scientific name
   const wikidataResults = await fetchWikidataByScientificNames(scientificNames);
 
-  // Enrich species with Wikidata IDs and images
+  // Enrich species with Wikidata IDs, images and Wikipedia links
   let enrichedCount = 0;
   baseSpecies.forEach(species => {
     const result = wikidataResults[species.scientificName];
     if (result) {
       species.wikidataId = result.wikidataId;
+      species.wikidataURI = `https://www.wikidata.org/wiki/${result.wikidataId}`;
       species.images = result.images || [];
+      species.wikipedia = result.wikipedia || {};
+
       // La primera imagen como imagen principal
       if (result.images && result.images.length > 0) {
         species.image = result.images[0];

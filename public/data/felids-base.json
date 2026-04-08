@@ -1,330 +1,330 @@
 [
   {
     "id": "panthera-leo",
+    "wikidataId": "Q140",
     "scientificName": "Panthera leo",
     "genus": "Panthera",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q140"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "panthera-tigris",
+    "wikidataId": "Q19939",
     "scientificName": "Panthera tigris",
     "genus": "Panthera",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q19939"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "panthera-pardus",
+    "wikidataId": "Q34706",
     "scientificName": "Panthera pardus",
     "genus": "Panthera",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q34706"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "panthera-onca",
+    "wikidataId": "Q35694",
     "scientificName": "Panthera onca",
     "genus": "Panthera",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q35694"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "panthera-uncia",
+    "wikidataId": "Q30197",
     "scientificName": "Panthera uncia",
     "genus": "Panthera",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q30197"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "neofelis-nebulosa",
+    "wikidataId": "Q36135",
     "scientificName": "Neofelis nebulosa",
     "genus": "Neofelis",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q36135"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "neofelis-diardi",
+    "wikidataId": "Q301715",
     "scientificName": "Neofelis diardi",
     "genus": "Neofelis",
     "lineage": "Panthera",
-    "subfamily": "Pantherinae",
-    "wikidataId": "Q301715"
+    "subfamily": "Pantherinae"
   },
   {
     "id": "catopuma-temminckii",
+    "wikidataId": "Q504026",
     "scientificName": "Catopuma temminckii",
     "genus": "Catopuma",
     "lineage": "Bay Cat",
-    "subfamily": "Felinae",
-    "wikidataId": "Q504026"
+    "subfamily": "Felinae"
   },
   {
     "id": "catopuma-badia",
+    "wikidataId": "Q225046",
     "scientificName": "Catopuma badia",
     "genus": "Catopuma",
     "lineage": "Bay Cat",
-    "subfamily": "Felinae",
-    "wikidataId": "Q225046"
+    "subfamily": "Felinae"
   },
   {
     "id": "pardofelis-marmorata",
+    "wikidataId": "Q219906",
     "scientificName": "Pardofelis marmorata",
     "genus": "Pardofelis",
     "lineage": "Bay Cat",
-    "subfamily": "Felinae",
-    "wikidataId": "Q219906"
+    "subfamily": "Felinae"
   },
   {
     "id": "caracal-caracal",
+    "wikidataId": "Q171401",
     "scientificName": "Caracal caracal",
     "genus": "Caracal",
     "lineage": "Caracal",
-    "subfamily": "Felinae",
-    "wikidataId": "Q171401"
+    "subfamily": "Felinae"
   },
   {
     "id": "caracal-aurata",
+    "wikidataId": "Q309495",
     "scientificName": "Caracal aurata",
     "genus": "Caracal",
     "lineage": "Caracal",
-    "subfamily": "Felinae",
-    "wikidataId": "Q309495"
+    "subfamily": "Felinae"
   },
   {
     "id": "leptailurus-serval",
+    "wikidataId": "Q184469",
     "scientificName": "Leptailurus serval",
     "genus": "Leptailurus",
     "lineage": "Caracal",
-    "subfamily": "Felinae",
-    "wikidataId": "Q184469"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-pardalis",
+    "wikidataId": "Q192947",
     "scientificName": "Leopardus pardalis",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q192947"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-wiedii",
+    "wikidataId": "Q226205",
     "scientificName": "Leopardus wiedii",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q226205"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-colocola",
+    "wikidataId": "Q1045726",
     "scientificName": "Leopardus colocola",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q1045726"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-geoffroyi",
+    "wikidataId": "Q633652",
     "scientificName": "Leopardus geoffroyi",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q633652"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-guigna",
+    "wikidataId": "Q691146",
     "scientificName": "Leopardus guigna",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q691146"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-tigrinus",
+    "wikidataId": "Q713408",
     "scientificName": "Leopardus tigrinus",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q713408"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-guttulus",
+    "wikidataId": "Q3266850",
     "scientificName": "Leopardus guttulus",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q3266850"
+    "subfamily": "Felinae"
   },
   {
     "id": "leopardus-jacobita",
+    "wikidataId": "Q835988",
     "scientificName": "Leopardus jacobita",
     "genus": "Leopardus",
     "lineage": "Ocelot",
-    "subfamily": "Felinae",
-    "wikidataId": "Q835988"
+    "subfamily": "Felinae"
   },
   {
     "id": "lynx-lynx",
+    "wikidataId": "Q25265",
     "scientificName": "Lynx lynx",
     "genus": "Lynx",
     "lineage": "Lynx",
-    "subfamily": "Felinae",
-    "wikidataId": "Q25265"
+    "subfamily": "Felinae"
   },
   {
     "id": "lynx-rufus",
+    "wikidataId": "Q25291",
     "scientificName": "Lynx rufus",
     "genus": "Lynx",
     "lineage": "Lynx",
-    "subfamily": "Felinae",
-    "wikidataId": "Q25291"
+    "subfamily": "Felinae"
   },
   {
     "id": "lynx-canadensis",
+    "wikidataId": "Q43709",
     "scientificName": "Lynx canadensis",
     "genus": "Lynx",
     "lineage": "Lynx",
-    "subfamily": "Felinae",
-    "wikidataId": "Q43709"
+    "subfamily": "Felinae"
   },
   {
     "id": "lynx-pardinus",
+    "wikidataId": "Q25349",
     "scientificName": "Lynx pardinus",
     "genus": "Lynx",
     "lineage": "Lynx",
-    "subfamily": "Felinae",
-    "wikidataId": "Q25349"
+    "subfamily": "Felinae"
   },
   {
     "id": "puma-concolor",
+    "wikidataId": "Q35255",
     "scientificName": "Puma concolor",
     "genus": "Puma",
     "lineage": "Puma",
-    "subfamily": "Felinae",
-    "wikidataId": "Q35255"
+    "subfamily": "Felinae"
   },
   {
     "id": "herpailurus-yagouaroundi",
+    "wikidataId": "Q208378",
     "scientificName": "Herpailurus yagouaroundi",
     "genus": "Herpailurus",
     "lineage": "Puma",
-    "subfamily": "Felinae",
-    "wikidataId": "Q208378"
+    "subfamily": "Felinae"
   },
   {
     "id": "acinonyx-jubatus",
+    "wikidataId": "Q43394",
     "scientificName": "Acinonyx jubatus",
     "genus": "Acinonyx",
     "lineage": "Puma",
-    "subfamily": "Felinae",
-    "wikidataId": "Q43394"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-catus",
+    "wikidataId": "Q146",
     "scientificName": "Felis catus",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q146"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-silvestris",
+    "wikidataId": "Q43576",
     "scientificName": "Felis silvestris",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q43576"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-lybica",
+    "wikidataId": "Q47482585",
     "scientificName": "Felis lybica",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q47482585"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-margarita",
+    "wikidataId": "Q211124",
     "scientificName": "Felis margarita",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q211124"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-nigripes",
+    "wikidataId": "Q219808",
     "scientificName": "Felis nigripes",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q219808"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-chaus",
+    "wikidataId": "Q463830",
     "scientificName": "Felis chaus",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q463830"
+    "subfamily": "Felinae"
   },
   {
     "id": "felis-bieti",
+    "wikidataId": "Q311398",
     "scientificName": "Felis bieti",
     "genus": "Felis",
     "lineage": "Felis",
-    "subfamily": "Felinae",
-    "wikidataId": "Q311398"
+    "subfamily": "Felinae"
   },
   {
     "id": "prionailurus-bengalensis",
+    "wikidataId": "Q219067",
     "scientificName": "Prionailurus bengalensis",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q219067"
+    "subfamily": "Felinae"
   },
   {
     "id": "prionailurus-viverrinus",
+    "wikidataId": "Q220301",
     "scientificName": "Prionailurus viverrinus",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q220301"
+    "subfamily": "Felinae"
   },
   {
     "id": "prionailurus-planiceps",
+    "wikidataId": "Q304103",
     "scientificName": "Prionailurus planiceps",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q304103"
+    "subfamily": "Felinae"
   },
   {
     "id": "prionailurus-rubiginosus",
+    "wikidataId": "Q220349",
     "scientificName": "Prionailurus rubiginosus",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q220349"
+    "subfamily": "Felinae"
   },
   {
     "id": "prionailurus-javanensis",
+    "wikidataId": "Q20743956",
     "scientificName": "Prionailurus javanensis",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q20743956"
+    "subfamily": "Felinae"
   },
   {
     "id": "otocolobus-manul",
+    "wikidataId": "Q184450",
     "scientificName": "Otocolobus manul",
     "genus": "Otocolobus",
     "lineage": "Prionailurus",
-    "subfamily": "Felinae",
-    "wikidataId": "Q184450"
+    "subfamily": "Felinae"
   }
 ]

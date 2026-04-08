@@ -4,6 +4,7 @@
   const prevBtn = document.getElementById('galleryPrev');
   const nextBtn = document.getElementById('galleryNext');
   const dotsContainer = document.getElementById('galleryDots');
+  const counter = document.getElementById('galleryCounter');
 
   if (!track) return; // No hay galería en esta página
 
@@ -15,6 +16,7 @@
   if (totalSlides <= 1) {
     if (prevBtn) prevBtn.style.display = 'none';
     if (nextBtn) nextBtn.style.display = 'none';
+    if (dotsContainer) dotsContainer.style.display = 'none';
     return;
   }
 
@@ -35,6 +37,11 @@
     dots.forEach((dot, index) => {
       dot.classList.toggle('active', index === currentSlide);
     });
+
+    // Actualizar contador
+    if (counter) {
+      counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
   }
 
   function goToSlide(index) {
@@ -52,8 +59,8 @@
     updateSlider();
   }
 
-  prevBtn.addEventListener('click', prevSlide);
-  nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 
   // Teclado
   document.addEventListener('keydown', (e) => {
