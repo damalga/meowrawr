@@ -1,49 +1,50 @@
 <!--slider-1-->
 <div class="slider slider-1">
-  <div id="slider-header-1" class="slider-header">
-    <div id="slider-header-title-1" class="slider-header-title">
-      <h2 class="titulo-slider"><a href="#">Meowrawr - Felinos</a></h2>
+    <div id="slider-header-1" class="slider-header">
+        <div id="slider-header-title-1" class="slider-header-title">
+            <h2 class="titulo-slider"><a href="#">Meowrawr - Felinos</a></h2>
+        </div>
+        <div class="slider-header-cities">
+            <ul>
+                <li><a href="#">Pantherinae</a> |</li>
+                <li><a href="#">Felinae</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="slider-header-cities">
-      <ul>
-        <li><a href="#">Pantherinae</a> |</li>
-        <li><a href="#">Felinae</a></li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="slider-main">
-    <div id="glider-1" class="glider">
-      {{#each (randomFelids felids 9)}}
-      <!--slide-->
-      <div class="slide">
-        {{> card}}
-      </div>
-      <!--end-slide-->
-      {{/each}}
-      <!--slide-->
-      <div class="slide more">
-        <a href="/felinos">
-          <div class="slide-image">
-            <img
-              src="/assets/images/icon-mas-ofertas.svg"
-              alt="icon more felids"
-            />
-          </div>
-          <div class="slide-content">
-            <div class="slide-txt">
-              <p>CONOCER MÁS FELINOS</p>
+    <div class="slider-main">
+        <div id="glider-1" class="glider" data-random-count="9">
+            {{#each felids}}
+            <!--slide-->
+            <div class="card felid-slide" data-felid-index="{{@index}}">
+                {{> card}}
             </div>
-          </div>
-        </a>
-      </div>
-      <!--end-slide-->
+            <!--end-slide-->
+            {{/each}}
+            <!--slide-->
+            <div class="slide more">
+                <a href="/felinos">
+                    <div class="slide-image">
+                        <img
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23ffffff' width='400' height='300'/%3E%3C/svg%3E"
+                            alt="placeholder"
+                            class="placeholder-bg"
+                        />
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-txt">
+                            <p>CONOCER MÁS FELINOS</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--end-slide-->
+        </div>
+        <!--controls-->
+        <div id="glider-arrows-1" class="glider-arrows">
+            <div id="prev-1" class="prev"></div>
+            <div id="next-1" class="next"></div>
+        </div>
+        <!--end-controls-->
     </div>
-    <!--controls-->
-    <div id="glider-arrows-1" class="glider-arrows">
-      <div id="prev-1" class="prev"></div>
-      <div id="next-1" class="next"></div>
-    </div>
-    <!--end-controls-->
-  </div>
 </div>

@@ -6,21 +6,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 async function fetchWikidataByScientificNames(scientificNames) {
-  // Build SPARQL query to find Wikidata IDs and ALL images from Wikimedia Commons
+  // Build SPARQL query to find Wikidata IDs and main image only
   const values = scientificNames.map(name => `"${name}"`).join(' ');
 
   const sparqlQuery = `
-    SELECT ?item ?scientificName ?image ?commonsCategory ?wikipediaES ?wikipediaEN WHERE {
+    SELECT ?item ?scientificName ?image ?wikipediaES ?wikipediaEN WHERE {
       VALUES ?scientificName { ${values} }
       ?item wdt:P225 ?scientificName .
       ?item wdt:P105 ?taxonRank .
 
-      # Get Commons category
-      OPTIONAL {
-        ?item wdt:P373 ?commonsCategory .
-      }
-
-      # Get main image
+      # Get main image only
       OPTIONAL { ?item wdt:P18 ?image }
 
       # Get Wikipedia articles
@@ -56,11 +51,10 @@ async function fetchWikidataByScientificNames(scientificNames) {
     const data = await response.json();
     const results = {};
 
-    // Primero obtenemos IDs, categorías y enlaces a Wikipedia
+    // Obtenemos IDs, imagen principal y enlaces a Wikipedia
     data.results.bindings.forEach(binding => {
       const scientificName = binding.scientificName.value;
       const wikidataId = binding.item.value.split('/').pop();
-      const commonsCategory = binding.commonsCategory?.value;
       const image = binding.image?.value;
       const wikipediaES = binding.wikipediaES?.value;
       const wikipediaEN = binding.wikipediaEN?.value;
@@ -68,14 +62,14 @@ async function fetchWikidataByScientificNames(scientificNames) {
       if (!results[scientificName]) {
         results[scientificName] = {
           wikidataId,
-          commonsCategory,
-          images: [],
+          image: null,
           wikipedia: {}
         };
       }
 
-      if (image && !results[scientificName].images.includes(image)) {
-        results[scientificName].images.push(image);
+      // Solo guardamos la primera imagen encontrada
+      if (image && !results[scientificName].image) {
+        results[scientificName].image = image;
       }
 
       if (wikipediaES) {
@@ -87,62 +81,11 @@ async function fetchWikidataByScientificNames(scientificNames) {
       }
     });
 
-    // Ahora obtenemos imágenes de Commons para cada categoría
-    for (const scientificName in results) {
-      const categoryName = results[scientificName].commonsCategory;
-      if (categoryName) {
-        const commonsImages = await fetchCommonsImages(categoryName);
-        results[scientificName].images.push(...commonsImages);
-      }
-    }
-
     console.log(`[felids] Successfully fetched ${Object.keys(results).length} species from Wikidata`);
     return results;
   } catch (error) {
     console.warn('[felids] Error fetching Wikidata data:', error.message);
     return {};
-  }
-}
-
-async function fetchCommonsImages(categoryName, limit = 10) {
-  try {
-    const url = `https://commons.wikimedia.org/w/api.php?` +
-      `action=query&` +
-      `format=json&` +
-      `generator=categorymembers&` +
-      `gcmtitle=Category:${encodeURIComponent(categoryName)}&` +
-      `gcmtype=file&` +
-      `gcmlimit=${limit}&` +
-      `prop=imageinfo&` +
-      `iiprop=url&` +
-      `origin=*`;
-
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Meowrawr/1.0 (Educational Project)'
-      }
-    });
-
-    if (!response.ok) {
-      return [];
-    }
-
-    const data = await response.json();
-    const images = [];
-
-    if (data.query?.pages) {
-      for (const page of Object.values(data.query.pages)) {
-        if (page.imageinfo?.[0]?.url) {
-          images.push(page.imageinfo[0].url);
-        }
-      }
-    }
-
-    console.log(`[felids] Found ${images.length} images in Commons category: ${categoryName}`);
-    return images;
-  } catch (error) {
-    console.warn(`[felids] Error fetching Commons images for ${categoryName}:`, error.message);
-    return [];
   }
 }
 
@@ -159,19 +102,18 @@ export default async function () {
   // Fetch Wikidata IDs and images by scientific name
   const wikidataResults = await fetchWikidataByScientificNames(scientificNames);
 
-  // Enrich species with Wikidata IDs, images and Wikipedia links
+  // Enrich species with Wikidata IDs, image and Wikipedia links
   let enrichedCount = 0;
   baseSpecies.forEach(species => {
     const result = wikidataResults[species.scientificName];
     if (result) {
       species.wikidataId = result.wikidataId;
       species.wikidataURI = `https://www.wikidata.org/wiki/${result.wikidataId}`;
-      species.images = result.images || [];
       species.wikipedia = result.wikipedia || {};
 
-      // La primera imagen como imagen principal
-      if (result.images && result.images.length > 0) {
-        species.image = result.images[0];
+      // Asignar la imagen principal si existe
+      if (result.image) {
+        species.image = result.image;
         enrichedCount++;
       }
     }

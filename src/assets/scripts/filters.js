@@ -9,7 +9,7 @@
   const resultsCount = document.getElementById('resultsCount');
   const noResults = document.getElementById('noResults');
   const felinosGrid = document.getElementById('felinosGrid');
-  const cards = Array.from(document.querySelectorAll('.felino-card'));
+  const cards = Array.from(document.querySelectorAll('.card'));
 
   // Poblar filtro de género dinámicamente
   function populateGenusFilter() {

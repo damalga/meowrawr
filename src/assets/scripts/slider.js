@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if it's a publi glider
     const isPubliGlider = gliderId.includes('publi');
 
+    // Randomize felid slides if data-random-count is present
+    const randomCount = gliderElement.getAttribute('data-random-count');
+    if (randomCount) {
+      randomizeFelids(gliderElement, parseInt(randomCount));
+    }
+
     if (isPubliGlider) {
       // Only initialize publi gliders on mobile (<= 560px)
       if (window.innerWidth <= 560) {
@@ -30,6 +36,24 @@ document.addEventListener("DOMContentLoaded", function () {
       setupSlider(`#${gliderId}`, prevArrow, nextArrow);
     }
   });
+
+  // Randomize and hide slides
+  function randomizeFelids(gliderElement, count) {
+    const felidSlides = Array.from(gliderElement.querySelectorAll('.felid-slide'));
+
+    // Shuffle array
+    const shuffled = felidSlides.sort(() => Math.random() - 0.5);
+
+    // Hide all felid slides first
+    felidSlides.forEach(slide => {
+      slide.style.display = 'none';
+    });
+
+    // Show only the first 'count' slides
+    shuffled.slice(0, count).forEach(slide => {
+      slide.style.display = '';
+    });
+  }
 
   // Setup Slider (for regular sliders with arrows)
   function setupSlider(selector, prevArrow, nextArrow) {

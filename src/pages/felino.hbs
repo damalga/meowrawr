@@ -21,25 +21,7 @@ eleventyComputed:
 
     <div class="felid-content">
       <div class="felid-image-container">
-        {{#if felid.images}}
-        <div class="felid-gallery-slider">
-          <div class="felid-gallery-track" id="galleryTrack">
-            {{#each felid.images}}
-            <div class="felid-gallery-slide">
-              <img src="{{this}}" alt="{{../felid.scientificName}}" class="felid-gallery-image"/>
-            </div>
-            {{/each}}
-          </div>
-          <div class="felid-gallery-controls">
-            <button class="gallery-prev" id="galleryPrev">‹</button>
-            <button class="gallery-next" id="galleryNext">›</button>
-          </div>
-          <div class="felid-gallery-info">
-            <div class="felid-gallery-counter" id="galleryCounter">1 / {{felid.images.length}}</div>
-            <div class="felid-gallery-dots" id="galleryDots"></div>
-          </div>
-        </div>
-        {{else if felid.image}}
+        {{#if felid.image}}
         <img src="{{felid.image}}" alt="{{felid.scientificName}}" class="felid-main-image"/>
         {{else}}
         <img src="https://via.placeholder.com/500x400/333/fff?text={{felid.scientificName}}" alt="{{felid.scientificName}}" class="felid-main-image"/>
@@ -136,5 +118,4 @@ eleventyComputed:
   </article>
 </main>
 {{> footer}}
-<script src="/assets/scripts/gallery-slider.js"></script>
 {{/base}}

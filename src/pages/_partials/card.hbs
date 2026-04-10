@@ -1,24 +1,21 @@
-<div class="slide-image">
-  {{#if this.image}}
-  <img src="{{this.image}}" alt="{{this.scientificName}}"/>
-  {{else}}
-  <img src="https://via.placeholder.com/400x300/333/fff?text={{this.scientificName}}" alt="{{this.scientificName}}"/>
-  {{/if}}
-</div>
-<div class="slide-content">
-  <div class="slide-txt">
-    <h3>{{this.scientificName}}</h3>
-    <div class="location">
-      <img src="/assets/images/location.svg" alt="lineage icon"/>
-      <span><b>{{this.genus}}</b> - Linaje: {{this.lineage}}</span>
-    </div>
-    <div class="scientific-info">
-      <span>Subfamilia: {{this.subfamily}}</span>
+<a href="/felino/{{this.id}}" class="card-link">
+  <div class="slide-image">
+    {{#if this.image}}
+    <img src="{{this.image}}" alt="{{this.scientificName}}"/>
+    {{else}}
+    <img src="https://via.placeholder.com/400x300/333/fff?text={{this.scientificName}}" alt="{{this.scientificName}}"/>
+    {{/if}}
+  </div>
+  <div class="slide-content">
+    <div class="slide-txt">
+      <h3>{{this.scientificName}}</h3>
+      <div class="location">
+        <img src="/assets/images/location.svg" alt="lineage icon"/>
+        <span><b>{{this.genus}}</b> - Linaje: {{this.lineage}}</span>
+      </div>
+      <div class="scientific-info">
+        <span>Subfamilia: {{this.subfamily}}</span>
+      </div>
     </div>
   </div>
-</div>
-<div class="slide-btn">
-  <a href="/felino/{{this.id}}">
-    <button>VER DETALLES</button>
-  </a>
-</div>
+</a>
