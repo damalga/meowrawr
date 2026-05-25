@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const veil = document.querySelector(".veil");
 
   if (felidsSelector && felidsOptions) {
-    felidsSelector.style.top = (headerHeight + heroHeight) / 1.5 + "px";
-    felidsOptions.style.top = -(heroHeight / 1.75) + "px";
+    felidsSelector.style.top = (headerHeight + heroHeight) / 1.2 + "px";
+    felidsOptions.style.top = -(heroHeight / 1.6) + "px";
 
-    felidsSelector.addEventListener("click", function () {
+    felidsSelector.addEventListener("click", function (e) {
+      e.stopPropagation();
       felidsOptions.classList.toggle("disp-none");
     });
 
@@ -28,11 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    if (veil) {
-      veil.addEventListener("click", function(){
-        felidsOptions.classList.toggle("disp-none");
-      });
-    }
+    document.addEventListener("click", function () {
+      felidsOptions.classList.add("disp-none");
+    });
   }
 
 });
