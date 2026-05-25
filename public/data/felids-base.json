@@ -90,7 +90,7 @@
   {
     "id": "caracal-aurata",
     "wikidataId": "Q309495",
-    "scientificName": "Caracal aurata",
+    "scientificName": "Caracal auratus",
     "genus": "Caracal",
     "lineage": "Caracal",
     "subfamily": "Felinae"
@@ -122,7 +122,7 @@
   {
     "id": "leopardus-colocola",
     "wikidataId": "Q1045726",
-    "scientificName": "Leopardus colocola",
+    "scientificName": "Leopardus garleppi",
     "genus": "Leopardus",
     "lineage": "Ocelot",
     "subfamily": "Felinae"
