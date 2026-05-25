@@ -2,9 +2,12 @@
   <div class="veil"></div>
   <div id="tickets" class="tickets">
     <!--Tickets de felinos simplificados-->
-    {{#each (randomFelids felids 6)}}
+    {{#each (randomFelids felids 9)}}
     <div class="ticket-simple">
       <a href="/felino/{{this.id}}">
+        {{#if this.image}}
+        <img src="{{this.image}}" alt="{{this.scientificName}}" class="ticket-img" />
+        {{/if}}
         <span>{{this.scientificName}}</span>
       </a>
     </div>
