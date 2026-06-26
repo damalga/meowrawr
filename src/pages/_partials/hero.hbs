@@ -1,9 +1,9 @@
 <section id="hero" class="hero">
   <div class="veil"></div>
-  <div id="tickets" class="tickets">
+  <div id="tickets" class="tickets" data-random-count="10">
     <!--Tickets de felinos simplificados-->
-    {{#each (randomFelids felids 9)}}
-    <div class="ticket-simple">
+    {{#each felids}}
+    <div class="ticket-simple felid-ticket">
       <a href="/felino/{{this.id}}">
         {{#if this.image}}
         <img src="{{this.image}}" alt="{{this.scientificName}}" class="ticket-img" />

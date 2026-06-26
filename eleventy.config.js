@@ -1,21 +1,16 @@
 import handlebarsPlugin from '@11ty/eleventy-plugin-handlebars';
 import Handlebars from 'handlebars';
 import felidImage from './src/helpers/felid-image.js';
-import randomFelids from './src/helpers/random-felids.js';
-import getFelidData from './public/data/felids-wikidata.js';
-import enrichWithLinks from './public/data/felids-links.js';
-import enrichWithImages from './public/data/felids-images.js';
+import getFelids from './public/data/felids.js';
 
 export default async function(eleventyConfig) {
   // Register Handlebars helpers BEFORE adding the plugin
   Handlebars.registerHelper('felidImage', felidImage);
-  Handlebars.registerHelper('randomFelids', randomFelids);
 
   // Add Handlebars plugin
   eleventyConfig.addPlugin(handlebarsPlugin);
 
-  const felidsData = await enrichWithImages(await enrichWithLinks(await getFelidData()));
-  eleventyConfig.addGlobalData('felids', felidsData);
+  eleventyConfig.addGlobalData('felids', await getFelids());
 
   // Copy assets to output
   eleventyConfig.addPassthroughCopy("src/assets");

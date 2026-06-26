@@ -19,23 +19,23 @@ eleventyComputed:
         </header>
 
         <div class="felid-content">
-            <div class="felid-image-container">
-                {{#if felid.image}}
-                <img
-                    src="{{felid.image}}"
-                    alt="{{felid.scientificName}}"
-                    class="felid-main-image"
-                />
-                {{else}}
-                <img
-                    src="https://via.placeholder.com/500x400/333/fff?text={{felid.scientificName}}"
-                    alt="{{felid.scientificName}}"
-                    class="felid-main-image"
-                />
-                {{/if}}
-            </div>
+            <div class="felid-left">
+                <div class="felid-image-container">
+                    {{#if felid.image}}
+                    <img
+                        src="{{felid.image}}"
+                        alt="{{felid.scientificName}}"
+                        class="felid-main-image"
+                    />
+                    {{else}}
+                    <img
+                        src="https://via.placeholder.com/500x400/333/fff?text={{felid.scientificName}}"
+                        alt="{{felid.scientificName}}"
+                        class="felid-main-image"
+                    />
+                    {{/if}}
+                </div>
 
-            <div class="felid-info">
                 <section class="taxonomy">
                     <h2>Taxonomía</h2>
                     <dl>
@@ -52,6 +52,69 @@ eleventyComputed:
                         <dd>{{felid.subfamily}}</dd>
                     </dl>
                 </section>
+
+                <section class="external-links">
+                    <h2>Enlaces Externos</h2>
+                    <ul>
+                        {{#if felid.wikipediaURI}}
+                        <li>
+                            <a
+                                href="{{felid.wikipediaURI}}"
+                                target="_blank"
+                                rel="noopener"
+                                >Wikipedia</a
+                            >
+                        </li>
+                        {{/if}} {{#if felid.wikidataURI}}
+                        <li>
+                            <a
+                                href="{{felid.wikidataURI}}"
+                                target="_blank"
+                                rel="noopener"
+                                >Wikidata</a
+                            >
+                        </li>
+                        {{/if}} {{#if felid.iNaturalistURI}}
+                        <li>
+                            <a
+                                href="{{felid.iNaturalistURI}}"
+                                target="_blank"
+                                rel="noopener"
+                                >iNaturalist</a
+                            >
+                        </li>
+                        {{/if}}
+                    </ul>
+                </section>
+
+                <div class="felid-navigation">
+                    <a href="/felinos" class="btn btn-back">← Volver al listado</a>
+                </div>
+            </div>
+
+            <div class="felid-info">
+                {{#if felid.wikipediaExtract}}
+                <section class="wikipedia-extract">
+                    <h2>
+                        Descripción
+                        {{#if felid.wikipediaExtractEn}}
+                        <span class="lang-badge">en inglés</span>
+                        {{/if}}
+                    </h2>
+                    {{{felid.wikipediaExtract}}}
+                    {{#if felid.wikipediaURI}}
+                    <p class="wiki-source">
+                        <a
+                            href="{{felid.wikipediaURI}}"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-forward"
+                            >Leer más en Wikipedia →</a
+                        >
+                    </p>
+                    {{/if}}
+                </section>
+                {{/if}}
 
                 {{#if felid.iucnStatus}}
                 <section class="conservation">
@@ -92,44 +155,7 @@ eleventyComputed:
                     </dl>
                 </section>
                 {{/if}}
-                <section class="external-links">
-                    <h2>Enlaces Externos</h2>
-                    <ul>
-                        {{#if felid.wikipediaURI}}
-                        <li>
-                            <a
-                                href="{{felid.wikipediaURI}}"
-                                target="_blank"
-                                rel="noopener"
-                                >Wikipedia</a
-                            >
-                        </li>
-                        {{/if}} {{#if felid.wikidataURI}}
-                        <li>
-                            <a
-                                href="{{felid.wikidataURI}}"
-                                target="_blank"
-                                rel="noopener"
-                                >Wikidata</a
-                            >
-                        </li>
-                        {{/if}} {{#if felid.iNaturalistURI}}
-                        <li>
-                            <a
-                                href="{{felid.iNaturalistURI}}"
-                                target="_blank"
-                                rel="noopener"
-                                >iNaturalist</a
-                            >
-                        </li>
-                        {{/if}}
-                    </ul>
-                </section>
             </div>
-        </div>
-
-        <div class="felid-navigation">
-            <a href="/felinos" class="btn-back">← Volver al listado</a>
         </div>
     </article>
 </main>

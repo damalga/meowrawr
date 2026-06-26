@@ -35,14 +35,14 @@
       input {
         width: 100%;
         padding: 0.8rem 2.5rem 0.8rem 1rem;
-        border: 2px solid $light-green;
+        border: 2px solid $black;
         
         font-size: 1rem;
         transition: border-color 0.3s;
 
         &:focus {
           outline: none;
-          border-color: $ofer-green;
+          border-color: $black;
         }
 
         &::placeholder {
@@ -93,7 +93,7 @@
         select {
           width: 100%;
           padding: 0.6rem;
-          border: 2px solid $light-green;
+          border: 2px solid $black;
           
           font-size: 0.9rem;
           background: white;
@@ -102,7 +102,7 @@
 
           &:focus {
             outline: none;
-            border-color: $ofer-green;
+            border-color: $black;
           }
         }
       }

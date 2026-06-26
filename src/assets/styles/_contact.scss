@@ -3,7 +3,7 @@
     width: 848px;
     padding: 2rem 24px;
     margin: 2rem auto 6rem;
-    border: $ofer-green 1px solid;
+    border: $black 1px solid;
     
     .contact-form-header {
       .contact-form-title,
@@ -42,15 +42,15 @@
         display: block;
         width: 100%;
         padding: 0.5rem;
-        border: $ofer-blue 1px solid;
+        border: $black 1px solid;
         
         &:focus {
           outline: none;
-          border-color: $ofer-blue;
+          border-color: $black;
         }
         &.error {
           outline: none;
-          border-color: $ofer-blue;
+          border-color: $black;
         }
       }
       textarea {
@@ -67,7 +67,7 @@
           input {
             width: 1rem;
             height: 1rem;
-            border: 1px solid $ofer-blue;
+            border: 1px solid $black;
             display: inline-block;
             appearance: none;
             &:checked {background-color: $ofer-blue;}
@@ -115,7 +115,7 @@
       width: 100%;
       text-align: center;
       padding: 2rem 24px;
-      border: $ofer-green 1px solid;
+      border: $black 1px solid;
       
       h3{
         color: $ofer-green;
