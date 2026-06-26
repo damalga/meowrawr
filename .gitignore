@@ -5,6 +5,9 @@ node_modules/
 dist/
 build/
 
+# eleventy-fetch cache
+.cache/
+
 # Environment variables
 .env
 .env.local

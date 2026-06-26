@@ -1,0 +1,28 @@
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: $ofer-green;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1;
+    transition:
+        background 0.3s,
+        transform 0.3s;
+
+    &:hover {
+        background: $dark-green;
+    }
+}
+
+.btn-back {
+    &:hover {
+        transform: translateX(-0.3rem);
+    }
+}
+
+.btn-forward {
+    &:hover {
+        transform: translateX(0.3rem);
+    }
+}

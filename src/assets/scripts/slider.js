@@ -37,22 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Randomize and hide slides
+  // Pick `count` random felid slides, remove the rest from the DOM.
+  // Must run BEFORE Glider initializes — Glider sizes its track from the slide count
+  // and doesn't account for display:none.
   function randomizeFelids(gliderElement, count) {
     const felidSlides = Array.from(gliderElement.querySelectorAll('.felid-slide'));
-
-    // Shuffle array
-    const shuffled = felidSlides.sort(() => Math.random() - 0.5);
-
-    // Hide all felid slides first
-    felidSlides.forEach(slide => {
-      slide.style.display = 'none';
-    });
-
-    // Show only the first 'count' slides
-    shuffled.slice(0, count).forEach(slide => {
-      slide.style.display = '';
-    });
+    const shuffled = [...felidSlides].sort(() => Math.random() - 0.5);
+    shuffled.slice(count).forEach(slide => slide.remove());
   }
 
   // Setup Slider (for regular sliders with arrows)

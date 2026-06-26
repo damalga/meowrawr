@@ -1,13 +1,7 @@
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import EleventyFetch from '@11ty/eleventy-fetch';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-async function fetchWikidataByScientificNames(scientificNames) {
-  const values = scientificNames.map(name => `"${name}"`).join(' ');
-
+async function fetchWikidataIds(scientificNames) {
+  const values = scientificNames.map(n => `"${n}"`).join(' ');
   const sparqlQuery = `
     SELECT ?item ?scientificName WHERE {
       VALUES ?scientificName { ${values} }
@@ -15,62 +9,50 @@ async function fetchWikidataByScientificNames(scientificNames) {
       ?item wdt:P105 ?taxonRank .
     }
   `;
-
   const url = 'https://query.wikidata.org/sparql?query=' +
     encodeURIComponent(sparqlQuery) + '&format=json';
 
   try {
-    console.log('[felids] Fetching species data from Wikidata...');
-
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Meowrawr/1.0 (Educational Project)',
-        'Accept': 'application/json'
+    const data = await EleventyFetch(url, {
+      duration: '1w',
+      type: 'json',
+      fetchOptions: {
+        headers: {
+          'User-Agent': 'Meowrawr/1.0 (Educational Project)',
+          'Accept': 'application/json'
+        }
       }
     });
 
-    if (!response.ok) {
-      console.warn('[felids] Wikidata query failed:', response.status);
-      return {};
-    }
-
-    const data = await response.json();
-    const results = {};
-
-    data.results.bindings.forEach(binding => {
-      const scientificName = binding.scientificName.value;
-      const wikidataId = binding.item.value.split('/').pop();
-      if (!results[scientificName]) {
-        results[scientificName] = { wikidataId };
-      }
+    const ids = {};
+    data.results.bindings.forEach(b => {
+      const name = b.scientificName.value;
+      const id = b.item.value.split('/').pop();
+      if (!ids[name]) ids[name] = id;
     });
-
-    console.log(`[felids] Successfully fetched ${Object.keys(results).length} species from Wikidata`);
-    return results;
-  } catch (error) {
-    console.warn('[felids] Error fetching Wikidata data:', error.message);
+    return ids;
+  } catch (e) {
+    console.warn('[felids] Wikidata ID resolution failed:', e.message);
     return {};
   }
 }
 
-export default async function () {
-  const baseSpecies = JSON.parse(
-    readFileSync(join(__dirname, 'felids-base.json'), 'utf-8')
-  );
+export default async function resolveWikidataIds(species) {
+  console.log('[felids] Resolving Wikidata IDs from scientific names...');
+  const ids = await fetchWikidataIds(species.map(s => s.scientificName));
 
-  console.log(`[felids] Loaded ${baseSpecies.length} felid species from base data`);
-
-  const scientificNames = baseSpecies.map(species => species.scientificName);
-
-  const wikidataResults = await fetchWikidataByScientificNames(scientificNames);
-
-  baseSpecies.forEach(species => {
-    const result = wikidataResults[species.scientificName];
-    if (result) {
-      species.wikidataId = result.wikidataId;
-      species.wikidataURI = `https://www.wikidata.org/wiki/${result.wikidataId}`;
+  let resolved = 0, corrected = 0;
+  species.forEach(s => {
+    const id = ids[s.scientificName];
+    if (!id) return;
+    if (s.wikidataId && s.wikidataId !== id) {
+      console.log(`[felids]   Corrected ${s.scientificName}: ${s.wikidataId} → ${id}`);
+      corrected++;
     }
+    s.wikidataId = id;
+    s.wikidataURI = `https://www.wikidata.org/wiki/${id}`;
+    resolved++;
   });
-
-  return baseSpecies;
+  console.log(`[felids] Resolved ${resolved} Wikidata IDs (${corrected} corrected)`);
+  return species;
 }
