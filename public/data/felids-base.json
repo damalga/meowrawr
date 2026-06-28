@@ -49,7 +49,7 @@
   },
   {
     "id": "neofelis-diardi",
-    "wikidataId": "Q301715",
+    "wikidataId": "Q275163",
     "scientificName": "Neofelis diardi",
     "genus": "Neofelis",
     "lineage": "Panthera",
@@ -57,7 +57,7 @@
   },
   {
     "id": "catopuma-temminckii",
-    "wikidataId": "Q504026",
+    "wikidataId": "Q23772769",
     "scientificName": "Catopuma temminckii",
     "genus": "Catopuma",
     "lineage": "Bay Cat",
@@ -65,7 +65,7 @@
   },
   {
     "id": "catopuma-badia",
-    "wikidataId": "Q225046",
+    "wikidataId": "Q23772801",
     "scientificName": "Catopuma badia",
     "genus": "Catopuma",
     "lineage": "Bay Cat",
@@ -73,7 +73,7 @@
   },
   {
     "id": "pardofelis-marmorata",
-    "wikidataId": "Q219906",
+    "wikidataId": "Q80191",
     "scientificName": "Pardofelis marmorata",
     "genus": "Pardofelis",
     "lineage": "Bay Cat",
@@ -81,7 +81,7 @@
   },
   {
     "id": "caracal-caracal",
-    "wikidataId": "Q171401",
+    "wikidataId": "Q30847",
     "scientificName": "Caracal caracal",
     "genus": "Caracal",
     "lineage": "Caracal",
@@ -89,7 +89,7 @@
   },
   {
     "id": "caracal-aurata",
-    "wikidataId": "Q309495",
+    "wikidataId": "Q134355622",
     "scientificName": "Caracal auratus",
     "genus": "Caracal",
     "lineage": "Caracal",
@@ -97,7 +97,7 @@
   },
   {
     "id": "leptailurus-serval",
-    "wikidataId": "Q184469",
+    "wikidataId": "Q42699",
     "scientificName": "Leptailurus serval",
     "genus": "Leptailurus",
     "lineage": "Caracal",
@@ -105,7 +105,7 @@
   },
   {
     "id": "leopardus-pardalis",
-    "wikidataId": "Q192947",
+    "wikidataId": "Q33261",
     "scientificName": "Leopardus pardalis",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -113,7 +113,7 @@
   },
   {
     "id": "leopardus-wiedii",
-    "wikidataId": "Q226205",
+    "wikidataId": "Q192421",
     "scientificName": "Leopardus wiedii",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -121,7 +121,7 @@
   },
   {
     "id": "leopardus-colocola",
-    "wikidataId": "Q1045726",
+    "wikidataId": "Q96575311",
     "scientificName": "Leopardus garleppi",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -129,7 +129,7 @@
   },
   {
     "id": "leopardus-geoffroyi",
-    "wikidataId": "Q633652",
+    "wikidataId": "Q42682",
     "scientificName": "Leopardus geoffroyi",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -137,7 +137,7 @@
   },
   {
     "id": "leopardus-guigna",
-    "wikidataId": "Q691146",
+    "wikidataId": "Q211042",
     "scientificName": "Leopardus guigna",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -145,7 +145,7 @@
   },
   {
     "id": "leopardus-tigrinus",
-    "wikidataId": "Q713408",
+    "wikidataId": "Q205948",
     "scientificName": "Leopardus tigrinus",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -153,7 +153,7 @@
   },
   {
     "id": "leopardus-guttulus",
-    "wikidataId": "Q3266850",
+    "wikidataId": "Q16590235",
     "scientificName": "Leopardus guttulus",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -161,7 +161,7 @@
   },
   {
     "id": "leopardus-jacobita",
-    "wikidataId": "Q835988",
+    "wikidataId": "Q213047",
     "scientificName": "Leopardus jacobita",
     "genus": "Leopardus",
     "lineage": "Ocelot",
@@ -169,7 +169,7 @@
   },
   {
     "id": "lynx-lynx",
-    "wikidataId": "Q25265",
+    "wikidataId": "Q43375",
     "scientificName": "Lynx lynx",
     "genus": "Lynx",
     "lineage": "Lynx",
@@ -177,7 +177,7 @@
   },
   {
     "id": "lynx-rufus",
-    "wikidataId": "Q25291",
+    "wikidataId": "Q131907",
     "scientificName": "Lynx rufus",
     "genus": "Lynx",
     "lineage": "Lynx",
@@ -185,7 +185,7 @@
   },
   {
     "id": "lynx-canadensis",
-    "wikidataId": "Q43709",
+    "wikidataId": "Q146457",
     "scientificName": "Lynx canadensis",
     "genus": "Lynx",
     "lineage": "Lynx",
@@ -193,7 +193,7 @@
   },
   {
     "id": "lynx-pardinus",
-    "wikidataId": "Q25349",
+    "wikidataId": "Q129727",
     "scientificName": "Lynx pardinus",
     "genus": "Lynx",
     "lineage": "Lynx",
@@ -209,7 +209,7 @@
   },
   {
     "id": "herpailurus-yagouaroundi",
-    "wikidataId": "Q208378",
+    "wikidataId": "Q27450846",
     "scientificName": "Herpailurus yagouaroundi",
     "genus": "Herpailurus",
     "lineage": "Puma",
@@ -217,7 +217,7 @@
   },
   {
     "id": "acinonyx-jubatus",
-    "wikidataId": "Q43394",
+    "wikidataId": "Q23907",
     "scientificName": "Acinonyx jubatus",
     "genus": "Acinonyx",
     "lineage": "Puma",
@@ -225,7 +225,7 @@
   },
   {
     "id": "felis-catus",
-    "wikidataId": "Q146",
+    "wikidataId": "Q20980826",
     "scientificName": "Felis catus",
     "genus": "Felis",
     "lineage": "Felis",
@@ -249,7 +249,7 @@
   },
   {
     "id": "felis-margarita",
-    "wikidataId": "Q211124",
+    "wikidataId": "Q175329",
     "scientificName": "Felis margarita",
     "genus": "Felis",
     "lineage": "Felis",
@@ -257,7 +257,7 @@
   },
   {
     "id": "felis-nigripes",
-    "wikidataId": "Q219808",
+    "wikidataId": "Q204814",
     "scientificName": "Felis nigripes",
     "genus": "Felis",
     "lineage": "Felis",
@@ -265,7 +265,7 @@
   },
   {
     "id": "felis-chaus",
-    "wikidataId": "Q463830",
+    "wikidataId": "Q42623",
     "scientificName": "Felis chaus",
     "genus": "Felis",
     "lineage": "Felis",
@@ -273,7 +273,7 @@
   },
   {
     "id": "felis-bieti",
-    "wikidataId": "Q311398",
+    "wikidataId": "Q204322",
     "scientificName": "Felis bieti",
     "genus": "Felis",
     "lineage": "Felis",
@@ -281,7 +281,7 @@
   },
   {
     "id": "prionailurus-bengalensis",
-    "wikidataId": "Q219067",
+    "wikidataId": "Q42627",
     "scientificName": "Prionailurus bengalensis",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
@@ -289,7 +289,7 @@
   },
   {
     "id": "prionailurus-viverrinus",
-    "wikidataId": "Q220301",
+    "wikidataId": "Q190674",
     "scientificName": "Prionailurus viverrinus",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
@@ -297,7 +297,7 @@
   },
   {
     "id": "prionailurus-planiceps",
-    "wikidataId": "Q304103",
+    "wikidataId": "Q274177",
     "scientificName": "Prionailurus planiceps",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
@@ -305,7 +305,7 @@
   },
   {
     "id": "prionailurus-rubiginosus",
-    "wikidataId": "Q220349",
+    "wikidataId": "Q309274",
     "scientificName": "Prionailurus rubiginosus",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
@@ -313,7 +313,7 @@
   },
   {
     "id": "prionailurus-javanensis",
-    "wikidataId": "Q20743956",
+    "wikidataId": "Q30693726",
     "scientificName": "Prionailurus javanensis",
     "genus": "Prionailurus",
     "lineage": "Prionailurus",
@@ -321,7 +321,7 @@
   },
   {
     "id": "otocolobus-manul",
-    "wikidataId": "Q184450",
+    "wikidataId": "Q166794",
     "scientificName": "Otocolobus manul",
     "genus": "Otocolobus",
     "lineage": "Prionailurus",
