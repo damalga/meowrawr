@@ -2,10 +2,85 @@
 permalink: /sobre-nosotros/
 title: Sobre nosotros
 ---
-{{#> base}}
-{{> header}}
-{{> nav}}
+
+{{#> base}} {{> header}} {{> nav}}
 <main>
+    <div class="static-page">
+        <h2>El proyecto</h2>
+        <p>
+            Esto es una wiki de felinos. ¿Por qué? Porque me fascinan estos
+            animales desde siempre. ¿Pero a quien le fascinan? A
+            <a href="https://damalga.com" alt="" target="_blank">Damalga</a>, el
+            Desarrollador de este sitio y alguien a quien le encantaria coger su
+            cámara y tirarse 8 horas quieto en un mismo sitio a la espera de
+            poder fotografiar o grabar a un
+            <a href="#" alt="" target="_blank">lince ibérico</a> en su habitat
+            natural, de ruta en busca de conejos, ratones, culebras...
+        </p>
+        <p>
+            Pero meowrawr no es solo otra web más de felinos. Es un proyecto con
+            un objetivo paralelo que pesa tanto como el propio contenido:
+            Aprender a autoalojar una web, en casa, sin depender de proveedores
+            de infraestructura, controlando unas cuantas capas en el proceso,
+            desde el hardware hasta que por fin es accesible desde cualquier
+            navegador web. Pasando por configurar el servidor web y afrontando
+            un montón de cuestiones relativas a la seguridad en internet.
+        </p>
+        <h2>El hardware</h2>
+        <p>
+            El servidor es una
+            <a href="#" alt="" target="_blank">Raspberry Pi 4 de 8 GB</a>. ¿Por
+            qué no la 5, que es más potente? Por consumo y calor. Este equipo va
+            a estar encendido 24/7, así que prioricé eficiencia sobre potencia
+            bruta. Para servir HTML estático no necesito un
+            <a href="#" alt="" target="_blank">guepardo</a> (sprint brutal de
+            110 km/h pero solo aguanta unos segundos antes de sobrecalentarse),
+            necesito un cacharro silencioso, fresco, y que no me dispare la
+            factura.
+        </p>
+        <p>
+            La metí en una
+            <a href="#" alt="" target="_blank">caja DeskPi Pro V3 de 52Pi</a>,
+            que "conseguí" a través de
+            <a href="#" alt="" target="_blank">Hackeed</a>. Le añadí un disco
+            SSD que tenía en un viejo portatil... Y bueno, no me extiendo más
+            con el hardware. Si te pica la curiosidad por el
+            <a href="#" alt="" target="_blank">homelab completo</a> (cada
+            cacharro tiene nombre propio, este en concreto se llama Alba), te
+            invito a explorar cada ricón.
+        </p>
+        <h2>El software</h2>
+        <p>
+            La Pi corre Debian (Trixie) sin entorno de escritorio (solo consola,
+            lo que necesite y nada más). Sobre ese sistema base voy montando el
+            stack del sitio (<a href="#" alt="" target="_blank">Nginx</a> como
+            servidor web, certificados gestionados, sitio estático generado con
+            <a href="#" alt="" target="_blank">11ty</a>) y, en paralelo,
+            herramientas para no tener que entrar a la Pi por SSH cada vez que
+            cambio cualquier cosa.
+        </p>
+        <p>
+            Justo ahora estoy preparándome para el
+            <a href="#" alt="" target="_blank">LPIC-1</a> (Linux Professional
+            Institute Certification, un examen de referencia para
+            administradores de sistemas GNU/Linux), así que aprovecho cada
+            decisión sobre meowrawr como excusa para profundizar en lo que
+            respecta a permisos, procesos, networking y scripting en bash. Como
+            buen linux nerd, mi objetivo es que la propia Pi se encargue del
+            trabajo repetitivo. Despliegue automático cuando hago push al
+            repositorio, renovación de certificados sin tocar nada,
+            monitorización para enterarme de si hay cualquier problema.
+        </p>
+        <h2>Conclusión</h2>
+        <p>
+            En resumen, meowrawr es el proyecto con el que consolido mis
+            capacidades como administrador de sistemas sin olvidar las de
+            desarrollador frontend (a lo que me he dedicado profesionalmente
+            estos últimos años), todo ello mientras transmito mi pasión por los
+            felinos. Y si dentro de unos años puedo permitirme ir a fotografiar
+            o grabar a estos animales en libertad con la excusa de que llevo
+            esta web, pues mira, habremos triunfao!
+        </p>
+    </div>
 </main>
-{{> footer}}
-{{/base}}
+{{> footer}} {{/base}}
