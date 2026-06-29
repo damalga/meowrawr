@@ -70,24 +70,24 @@
             border: 1px solid $black;
             display: inline-block;
             appearance: none;
-            &:checked {background-color: $ofer-blue;}
+            &:checked {background-color: $ofer-green;}
           }
           label {
             display: inline-block;
             vertical-align: middle;
             a{
-              color: $ofer-blue;
+              color: $ofer-green;
             }
           }
         }
 
         .contact-form-mandatory{
-          color: $dark-blue;
+          color: $dark-green;
           font-style: italic;
         }
         .contact-btn{
           width: 160px;
-          background-color: $ofer-blue;
+          background-color: $ofer-green;
           margin: 0 auto;
           padding: 0.8rem 2rem;
           border: 0;
@@ -134,7 +134,7 @@
       button {
         width: 16rem;
         font-size: 0.8rem;
-        background-color: $ofer-blue;
+        background-color: $ofer-green;
         color: $white;
         padding: 0.8rem 2rem;
         
