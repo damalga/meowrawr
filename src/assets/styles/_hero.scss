@@ -155,13 +155,14 @@ $timing: 1s;
             }
             ul.felids-options {
                 width: 320px;
-                height: 50vh;
+                max-height: 360px;
                 overflow: auto;
                 border: $black 2px solid;
                 position: absolute;
                 bottom: calc(100% + 0.5rem);
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translate(-50%, 65%);
+                text-align: center;
                 li.option {
                     background-color: $white;
                     font-size: 1em;
