@@ -21,7 +21,65 @@ eleventyComputed:
         <div class="felid-content">
             <div class="felid-left">
                 <div class="felid-image-container">
-                    {{#if felid.image}}
+                    {{#if felid.iNatPhotos}}
+                    <div class="felid-gallery-photos">
+                        <div class="gallery-main">
+                            <button
+                                type="button"
+                                class="gallery-arrow gallery-prev"
+                                aria-label="Anterior"
+                            >
+                                ‹
+                            </button>
+                            <a
+                                href="{{lookup (lookup felid.iNatPhotos 0) 'original'}}"
+                                target="_blank"
+                                rel="noopener"
+                                class="gallery-main-link"
+                                title="{{lookup (lookup felid.iNatPhotos 0) 'attribution'}}"
+                            >
+                                <img
+                                    src="{{lookup (lookup felid.iNatPhotos 0) 'main'}}"
+                                    alt="{{felid.scientificName}}"
+                                    class="gallery-main-img"
+                                />
+                            </a>
+                            <button
+                                type="button"
+                                class="gallery-arrow gallery-next"
+                                aria-label="Siguiente"
+                            >
+                                ›
+                            </button>
+                        </div>
+                        <div class="gallery-thumbs">
+                            {{#each felid.iNatPhotos}}
+                            <button
+                                type="button"
+                                class="gallery-thumb{{#if @first}} active{{/if}}"
+                                data-index="{{@index}}"
+                                data-main="{{this.main}}"
+                                data-original="{{this.original}}"
+                                data-attribution="{{this.attribution}}"
+                                aria-label="Foto {{@index}}"
+                            >
+                                <img src="{{this.thumb}}" alt="" loading="lazy" />
+                            </button>
+                            {{/each}}
+                        </div>
+                        {{#if felid.iNaturalistURI}}
+                        <p class="gallery-more">
+                            <a
+                                href="{{felid.iNaturalistURI}}"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-forward"
+                                >Ver más imágenes →</a
+                            >
+                        </p>
+                        {{/if}}
+                    </div>
+                    {{else if felid.image}}
                     <img
                         src="{{felid.image}}"
                         alt="{{felid.scientificName}}"
@@ -35,7 +93,9 @@ eleventyComputed:
                     />
                     {{/if}}
                 </div>
+            </div>
 
+            <div class="felid-info">
                 <section class="taxonomy">
                     <h2>Taxonomía</h2>
                     <ul>
@@ -45,6 +105,29 @@ eleventyComputed:
                         <li><strong>Subfamilia:</strong> {{felid.subfamily}}</li>
                     </ul>
                 </section>
+
+                {{#if felid.wikipediaExtract}}
+                <section class="wikipedia-extract">
+                    <h2>
+                        Descripción
+                        {{#if felid.wikipediaExtractEn}}
+                        <span class="lang-badge">en inglés</span>
+                        {{/if}}
+                    </h2>
+                    {{{felid.wikipediaExtract}}}
+                    {{#if felid.wikipediaURI}}
+                    <p class="wiki-source">
+                        <a
+                            href="{{felid.wikipediaURI}}"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-forward"
+                            >Leer más en Wikipedia →</a
+                        >
+                    </p>
+                    {{/if}}
+                </section>
+                {{/if}}
 
                 <section class="external-links">
                     <h2>Enlaces Externos</h2>
@@ -79,35 +162,6 @@ eleventyComputed:
                         {{/if}}
                     </ul>
                 </section>
-
-                <div class="felid-navigation">
-                    <a href="/felinos" class="btn btn-back">← Volver al listado</a>
-                </div>
-            </div>
-
-            <div class="felid-info">
-                {{#if felid.wikipediaExtract}}
-                <section class="wikipedia-extract">
-                    <h2>
-                        Descripción
-                        {{#if felid.wikipediaExtractEn}}
-                        <span class="lang-badge">en inglés</span>
-                        {{/if}}
-                    </h2>
-                    {{{felid.wikipediaExtract}}}
-                    {{#if felid.wikipediaURI}}
-                    <p class="wiki-source">
-                        <a
-                            href="{{felid.wikipediaURI}}"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-forward"
-                            >Leer más en Wikipedia →</a
-                        >
-                    </p>
-                    {{/if}}
-                </section>
-                {{/if}}
 
                 {{#if felid.iucnStatus}}
                 <section class="conservation">
