@@ -1,43 +1,43 @@
 main {
-    .static-page {
-        width: 800px;
-        margin: 0 auto;
-        padding: 2rem 0;
-        section {
-            margin-bottom: 2rem;
-        }
-        h1 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid $black;
-        }
-        h2 {
-            font-size: 1.6rem;
-            font-weight: $font-weight-regular;
-            margin-bottom: 0.8rem;
-        }
-        h3 {
-            margin-bottom: 0.6rem;
-        }
-        p {
-            margin-bottom: 1rem;
-            a {
-                color: $dark-green;
-            }
-        }
-        .tabulation {
-            padding-left: 2rem;
-        }
-        .dot {
-            color: $ofer-green;
-            margin-right: 0.2rem;
-        }
-        ul {
-            margin-bottom: 2rem;
-            li {
-                margin-bottom: 0.5rem;
-            }
-        }
+  .static-page {
+    width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    section {
+      margin-bottom: 2rem;
     }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid $black;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: $font-weight-regular;
+      margin-bottom: 0.8rem;
+    }
+    h3 {
+      margin-bottom: 0.6rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      a {
+        color: $dark-green;
+      }
+    }
+    .tabulation {
+      padding-left: 2rem;
+    }
+    .dot {
+      color: $ofer-green;
+      margin-right: 0.2rem;
+    }
+    ul {
+      margin-bottom: 2rem;
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
 }
