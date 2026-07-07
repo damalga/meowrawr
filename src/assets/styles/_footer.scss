@@ -1,47 +1,39 @@
 footer {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    background: $ofer-blue;
-=======
-    background: $ofer-green;
->>>>>>> dev
-=======
-    background: $ofer-green;
->>>>>>> dev
-    padding: 2rem;
-    .footer-wrapper {
-        width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        .footer-logos {
-            img {
-                width: 188px;
-                height: auto;
-                padding: 0 1rem;
-            }
-        }
-        .footer-links {
-            ul {
-                li {
-                    color: $white;
-                    display: inline-block;
-                    a {
-                        color: $white;
-                        padding: 0 0.8rem;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        font-weight: 400;
-                        font-size: 0.8em;
-                        transition: 0.2s;
-                        &:hover {
-                            opacity: 0.6;
-                        }
-                    }
-                }
-            }
-        }
+  background: $ofer-green;
+  padding: 2rem;
+  .footer-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .footer-logos {
+      img {
+        width: 188px;
+        height: auto;
+        padding: 0 1rem;
+      }
     }
+    .footer-links {
+      ul {
+        li {
+          color: $white;
+          display: inline-block;
+          a {
+            color: $white;
+            padding: 0 0.8rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 0.8em;
+            transition: 0.2s;
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
 }
