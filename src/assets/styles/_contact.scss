@@ -13,12 +13,12 @@
       }
       .contact-form-title {
         color: $ofer-green;
-        font-size: 1.8em;
+        font-size: $font-size-h1;
         margin-bottom: 1rem;
       }
       .contact-form-subtitle {
-        font-size: 1.2em;
-        font-weight: 400;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-regular;
         margin-bottom: 2rem;
       }
     }
@@ -34,7 +34,7 @@
       label {
         display: block;
         margin-bottom: 0.5rem;
-        font-size: .9em;
+        font-size: $font-size-sm;
       }
       input,
       textarea,
@@ -94,8 +94,7 @@
           
           a {
             color: $white;
-            text-decoration: none;
-            font-size: 0.8rem;
+            font-size: $font-size-sm;
             &:hover {
               opacity: 0.7;
             }
@@ -119,13 +118,12 @@
       
       h3{
         color: $ofer-green;
-        font-size: 1.6em;
-        line-height: 1.9rem;
+        font-size: $font-size-h2;
+        line-height: $line-height-tight;
         margin-bottom: 1.6rem;
       }
       p{
-        font-size: 1em;
-        line-height: 1.3rem;
+        line-height: $line-height-tight;
         margin-bottom: 1.6rem;
       }
     }
@@ -133,7 +131,7 @@
       text-align: center;
       button {
         width: 16rem;
-        font-size: 0.8rem;
+        font-size: $font-size-sm;
         background-color: $ofer-green;
         color: $white;
         padding: 0.8rem 2rem;

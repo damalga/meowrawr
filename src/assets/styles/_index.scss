@@ -6,8 +6,8 @@ header.index {
 main.index {
   h2.title {
     display: block;
-    font-size: 2em;
-    font-weight: 400;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-regular;
     margin-bottom: 2rem;
   }
   .index-item {
@@ -19,9 +19,8 @@ main.index {
     a {
       color: $white;
       display: block;
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       padding: 1.2rem 1.2rem 2.4rem;
-      text-decoration: none;
     }
   }
 }

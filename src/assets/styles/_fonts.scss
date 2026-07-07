@@ -1,14 +1,96 @@
-// Importar la fuente regular de Open Sans
+// ============================================================================
+// Tipografía — fuente única de verdad para tamaños, pesos, alturas de línea
+// y estilos base de elementos HTML. Los componentes deben heredar de aquí y
+// solo sobrescribir cuando tengan una razón muy específica.
+// ============================================================================
+
+// ─── Face ───────────────────────────────────────────────────────────────────
 @font-face {
-  font-family: 'Open Sans';
-  src: url('../fonts/open-sans-regular.woff');
+  font-family: "Open Sans";
+  src: url("../fonts/open-sans-regular.woff");
   font-weight: 400;
+  font-display: swap;
 }
 
-// Importar la fuente bold de Open Sans
 @font-face {
-  font-family: 'Open Sans';
-  src: url('../fonts/open-sans-bold.woff');
+  font-family: "Open Sans";
+  src: url("../fonts/open-sans-bold.woff");
   font-weight: 700;
+  font-display: swap;
 }
 
+// ─── Tokens ─────────────────────────────────────────────────────────────────
+$font-family-base: "Open Sans", sans-serif;
+
+// Escala tipográfica (rem, escalada desde 1rem = 16px)
+$font-size-xs:   0.75rem;   // 12px  — legales, badges, meta
+$font-size-sm:   0.85rem;   // 13.6px — captions, filtros, footer
+$font-size-base: 1rem;      // 16px  — cuerpo por defecto
+$font-size-lg:   1.15rem;   // 18.4px — subtítulos, ledes
+$font-size-h3:   1.3rem;    // 20.8px — h3
+$font-size-h2:   1.6rem;    // 25.6px — h2
+$font-size-h1:   2rem;      // 32px  — h1
+$font-size-xl:   2.5rem;    // 40px  — títulos hero
+
+// Pesos
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-semi:    600;
+$font-weight-bold:    700;
+
+// Alturas de línea
+$line-height-tight:  1.2;   // titulares
+$line-height-normal: 1.5;   // cuerpo
+$line-height-loose:  1.6;   // párrafos largos (wikipedia-extract)
+
+// ─── Base HTML ──────────────────────────────────────────────────────────────
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-base;
+  line-height: $line-height-tight;
+  color: $black;
+}
+
+h1 { font-size: $font-size-h1; font-weight: $font-weight-bold; }
+h2 { font-size: $font-size-h2; font-weight: $font-weight-semi; }
+h3 { font-size: $font-size-h3; font-weight: $font-weight-semi; }
+h4 { font-size: $font-size-lg; font-weight: $font-weight-semi; }
+h5 { font-size: $font-size-base; font-weight: $font-weight-semi; }
+h6 { font-size: $font-size-sm; font-weight: $font-weight-semi; }
+
+p {
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+}
+
+ul, ol {
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+}
+
+li { font-size: inherit; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+strong, b { font-weight: $font-weight-bold; }
+em, i    { font-style: italic; }
+
+small { font-size: $font-size-sm; }
+
+span, label { font-size: inherit; }
+
+button, input, select, textarea {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}

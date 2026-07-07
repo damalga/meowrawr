@@ -15,13 +15,12 @@
       padding: 0.4rem 0.8rem;
     }
     .slider-header-title {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
       display: flex;
       align-items: center;
       h2.titulo-slider {
-        font-size: 1.4em;
+        font-size: $font-size-h3;
         a {
-          text-decoration: none;
           color: $white;
           transition: 0.2s;
           &:hover {
@@ -33,7 +32,7 @@
     .slider-header-download {
       background-color: $light-green;
       color: $white;
-      font-size: 0.9rem;
+      font-size: $font-size-sm;
       transition: 0.2s;
       cursor: pointer;
       a {
@@ -47,7 +46,7 @@
         transition: 0.2s;
       }
       .header-goo-app {
-        font-weight: 700;
+        font-weight: $font-weight-bold;
       }
       .header-img-app {
         width: 2.8rem;
@@ -56,7 +55,7 @@
       span {
         float: right;
         color: $black;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
       }
       &:hover {
         .header-go-app {
@@ -85,9 +84,7 @@
           display: inline-block;
           color: $black;
           a {
-            text-decoration: none;
             color: $black;
-            font-size: 1em;
             transition: 0.2s;
             &:hover {
               color: $ofer-green;
@@ -139,7 +136,6 @@
           }
         }
         a {
-          text-decoration: none;
           color: inherit;
           display: flex;
           height: 100%;
@@ -166,14 +162,14 @@
             padding: 1rem;
             box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
             span {
-              font-weight: 700;
-              font-size: 1.2em;
+              font-weight: $font-weight-bold;
+              font-size: $font-size-lg;
               &.disc {
                 color: $ofer-green;
               }
               &.orig-price {
                 color: $gray;
-                font-weight: 400;
+                font-weight: $font-weight-regular;
                 display: inline-flex;
               }
               &.disc-price {
@@ -183,10 +179,10 @@
           }
           .slide-txt {
             h3 {
-              font-size: 1rem;
-              font-weight: 400;
+              font-size: $font-size-base;
+              font-weight: $font-weight-regular;
               margin: 1rem 0;
-              line-height: 1.2em;
+              line-height: $line-height-tight;
               overflow: hidden;
               display: -webkit-box;
               box-orient: vertical;
@@ -206,8 +202,8 @@
                 height: 1rem;
               }
               span {
-                font-size: 0.8rem;
-                line-height: 1.2em;
+                font-size: $font-size-sm;
+                line-height: $line-height-tight;
                 overflow: hidden;
                 display: -webkit-box;
                 box-orient: vertical;
@@ -223,7 +219,7 @@
           position: relative;
           bottom: 1.2rem;
           button {
-            font-size: 0.8rem;
+            font-size: $font-size-sm;
             background-color: $ofer-green;
             color: $white;
             padding: 0.8rem 2rem;
@@ -264,8 +260,8 @@
             position: initial;
             .slide-txt {
               p {
-                font-size: 1.2em;
-                font-weight: 700;
+                font-size: $font-size-lg;
+                font-weight: $font-weight-bold;
                 color: $ofer-green;
               }
             }

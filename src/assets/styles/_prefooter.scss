@@ -11,17 +11,15 @@
         background-color: unset;
         .prefooter-title {
             color: $ofer-green;
-            font-size: 1.5em;
+            font-size: $font-size-h3;
             display: inline-block;
         }
         .prefooter-list {
             .prefooter-list-item {
                 display: inline-block;
                 margin: 0.4rem 0.6rem;
-                font-size: 1em;
                 a {
                     color: $white;
-                    text-decoration: none;
                     transition: 0.2s;
                     &:hover {
                         color: $ofer-green;

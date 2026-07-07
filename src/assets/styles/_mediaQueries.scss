@@ -118,7 +118,7 @@
                 padding: 1rem;
                 float: right;
                 .header-plus-txt {
-                    font-size: 0.8em;
+                    font-size: $font-size-sm;
                 }
             }
         }
@@ -134,7 +134,7 @@
             ul {
                 li {
                     a {
-                        font-size: 0.8em;
+                        font-size: $font-size-sm;
                     }
                 }
             }
@@ -145,10 +145,10 @@
                 .contact-form-header {
                     margin-bottom: 1.5rem;
                     .contact-form-title {
-                        font-size: 1.6em;
+                        font-size: $font-size-h2;
                     }
                     .contact-form-subtitle {
-                        font-size: 1em;
+                        font-size: $font-size-base;
                     }
                 }
                 .contact-form-inputs {
@@ -166,7 +166,7 @@
                 .slider-header {
                     .slider-header-title {
                         h2.titulo-slider {
-                            font-size: 1.2em;
+                            font-size: $font-size-lg;
                         }
                     }
                     .slider-header-download {
@@ -185,16 +185,16 @@
                 .boost-header {
                     .boost-header-txt {
                         .boost-header-title {
-                            font-size: 1.8rem;
+                            font-size: $font-size-h2;
                         }
                         .boost-header-subtitle {
-                            font-size: 1rem;
+                            font-size: $font-size-base;
                         }
                     }
                 }
                 .question {
-                    font-size: 1.4rem;
-                    line-height: 1.7rem;
+                    font-size: $font-size-h3;
+                    line-height: $line-height-tight;
                     margin-top: 3rem;
                 }
                 .boost-list {
@@ -220,7 +220,7 @@
                             display: block;
                             margin-bottom: 1.6rem;
                             a {
-                                font-size: 1em;
+                                font-size: $font-size-base;
                             }
                         }
                     }
@@ -249,7 +249,7 @@
                 .felids-selector {
                     .felids-input {
                         width: 340px;
-                        font-size: 1.1em;
+                        font-size: $font-size-base;
                         padding: 1rem 1.5rem;
                     }
                 }
@@ -306,7 +306,7 @@
                     .felids-input {
                         width: 320px;
                         height: 4rem;
-                        font-size: 1em;
+                        font-size: $font-size-base;
                     }
                     .felids-arrow {
                         width: 0.8rem;
@@ -327,14 +327,14 @@
                     .slider-header-title {
                         padding: 0.8rem;
                         h2.titulo-slider {
-                            font-size: 1em;
+                            font-size: $font-size-base;
                         }
                     }
                     .slider-header-download {
                         padding: 0.8rem 0.6rem;
                     }
                     .slider-header-cities {
-                        font-size: 0.9em;
+                        font-size: $font-size-sm;
                         padding: 0.4rem 0.6rem;
                     }
                 }

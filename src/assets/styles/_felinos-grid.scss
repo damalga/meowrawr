@@ -9,13 +9,11 @@
     margin-bottom: 2rem;
 
     .titulo-listado {
-      font-size: 2rem;
-      color: $black;
+      font-size: $font-size-h1;
       margin-bottom: 0.5rem;
     }
 
     .subtitle {
-      font-size: 1rem;
       color: $gray;
     }
   }
@@ -84,18 +82,16 @@
 
         label {
           display: block;
-          font-size: 0.9rem;
-          color: $black;
+          font-size: $font-size-sm;
           margin-bottom: 0.3rem;
-          font-weight: 500;
+          font-weight: $font-weight-medium;
         }
 
         select {
           width: 100%;
           padding: 0.6rem;
           border: 2px solid $black;
-          
-          font-size: 0.9rem;
+          font-size: $font-size-sm;
           background: white;
           cursor: pointer;
           transition: border-color 0.3s;
@@ -112,10 +108,9 @@
         background: $gray;
         color: white;
         border: none;
-        
         cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 500;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
         transition: background 0.3s;
 
         &:hover {
@@ -127,13 +122,13 @@
     .results-count {
       margin-top: 1rem;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: $font-size-sm;
       color: $gray;
 
       span {
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         color: $ofer-green;
-        font-size: 1.1rem;
+        font-size: $font-size-lg;
       }
     }
   }
@@ -162,7 +157,7 @@
     
 
     p {
-      font-size: 1.1rem;
+      font-size: $font-size-lg;
       color: $gray;
     }
   }

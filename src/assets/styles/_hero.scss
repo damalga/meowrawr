@@ -2,183 +2,173 @@ $rotation-size: 8px;
 $timing: 1s;
 
 .hero {
-    background: linear-gradient(to bottom, $ofer-green, $dark-green);
-    height: 400px;
-    margin-bottom: 2rem;
+  background: linear-gradient(to bottom, $ofer-green, $dark-green);
+  height: 400px;
+  margin-bottom: 1.68rem;
+  display: flex;
+  overflow: hidden;
+  .veil {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    z-index: 2;
+    display: none;
+  }
+  .tickets {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
-    overflow: hidden;
-    .veil {
-        width: 100%;
-        height: inherit;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: unset;
+    position: relative;
+    @keyframes float {
+      from {
+        transform: rotate(0deg) translate3d(8px, 0, 0) rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg) translate3d(8px, 0, 0) rotate(-360deg);
+      }
+    }
+    @keyframes float2 {
+      from {
+        transform: rotate(0deg) translate3d(8px, 0, 0) rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg) translate3d(8px, 0, 0) rotate(360deg);
+      }
+    }
+    .ticket-container {
+      clip-path: polygon(0 -100%, 100% 25%, 100% 75%, 80% 100%, 0 100%);
+      min-width: 150px;
+      opacity: 0.88;
+      margin: -0.4rem -0.8rem;
+      rotate: -9deg;
+      transition: all 0.3s ease-out;
+      position: relative;
+      left: 0;
+      top: 0;
+      cursor: pointer;
+      &:nth-child(odd) {
+        animation: float $timing * 8 infinite linear;
+      }
+      &:nth-child(even) {
+        animation: float2 $timing * 6 infinite linear;
+      }
+      &:hover {
+        opacity: 0.96;
+        margin: -0.2rem -0.4rem;
+        rotate: 1deg;
+        scale: 1.2;
+        rotate: 1deg;
+        z-index: 1;
+      }
+      &::before {
+        content: "";
         position: absolute;
-        z-index: 2;
-        display: none;
+        top: 2.2rem;
+        right: 1rem;
+        border: $black solid;
+        border-width: 0.75rem;
+        clip-path: circle(50%);
+      }
+      .ticket {
+        color: $dark-gray;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        padding: 2.4rem 3.6rem 2.4rem 1.6rem;
+      }
     }
-    .tickets {
-        width: 1200px;
-        margin: 0 auto;
+
+    .ticket-simple {
+      background: $lighter-green;
+      border: 2px solid $black;
+      padding: 0;
+      margin: 0.5rem;
+      min-width: 150px;
+      text-align: center;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      &:hover {
+        background: $light-green;
+        transform: scale(1.05);
+      }
+      a {
+        color: $dark-green;
+        font-weight: $font-weight-semi;
+        font-size: $font-size-sm;
+        display: block;
+      }
+      .ticket-img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+      }
+      span {
+        color: $black;
+        display: block;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .felids-selector {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.9;
+      z-index: 2;
+      .felids-input {
+        text-align: left;
+        background: linear-gradient(to bottom, $light-green, $ofer-green);
+        width: 400px;
+        height: 5rem;
         padding: 1rem 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        background-color: unset;
-        position: relative;
-        @keyframes float {
-            from {
-                transform: rotate(0deg) translate3d(8px, 0, 0) rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg) translate3d(8px, 0, 0) rotate(-360deg);
-            }
+        border: 0;
+        color: $white;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
+        caret-color: transparent;
+        cursor: pointer;
+        &:focus {
+          outline: none;
         }
-        @keyframes float2 {
-            from {
-                transform: rotate(0deg) translate3d(8px, 0, 0) rotate(0deg);
-            }
-            to {
-                transform: rotate(-360deg) translate3d(8px, 0, 0) rotate(360deg);
-            }
-        }
-        .ticket-container {
-            clip-path: polygon(0 -100%, 100% 25%, 100% 75%, 80% 100%, 0 100%);
-            min-width: 150px;
-            opacity: 0.88;
-            margin: -0.4rem -0.8rem;
-            rotate: -9deg;
-            transition: all 0.3s ease-out;
-            position: relative;
-            left: 0;
-            top: 0;
-            cursor: pointer;
-            &:nth-child(odd) {
-                animation: float $timing * 8 infinite linear;
-            }
-            &:nth-child(even) {
-                animation: float2 $timing * 6 infinite linear;
-            }
+      }
+      .felids-arrow {
+        width: 1em;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      ul.felids-options {
+        width: 320px;
+        max-height: 360px;
+        overflow: auto;
+        border: $black 2px solid;
+        position: absolute;
+        bottom: calc(100% + 0.5rem);
+        left: 50%;
+        transform: translate(-50%, 65%);
+        text-align: center;
+        li.option {
+          background-color: $white;
+          a {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            color: $black;
             &:hover {
-                opacity: 0.96;
-                margin: -0.2rem -0.4rem;
-                rotate: 1deg;
-                scale: 1.2;
-                rotate: 1deg;
-                z-index: 1;
+              background-color: $lighter-green;
+              font-weight: $font-weight-bold;
             }
-            &::before {
-                content: "";
-                position: absolute;
-                top: 2.2rem;
-                right: 1rem;
-                border: $black solid;
-                border-width: 0.75rem;
-                clip-path: circle(50%);
-            }
-            a {
-                text-decoration: none;
-            }
-            .ticket {
-                color: $dark-gray;
-                font-size: 14px;
-                font-weight: 700;
-                padding: 2.4rem 3.6rem 2.4rem 1.6rem;
-            }
+          }
         }
-
-        .ticket-simple {
-            background: $lighter-green;
-            border: 2px solid $black;
-            padding: 0;
-            margin: 0.5rem;
-            min-width: 150px;
-            text-align: center;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            &:hover {
-                background: $light-green;
-                transform: scale(1.05);
-            }
-            a {
-                text-decoration: none;
-                color: $dark-green;
-                font-weight: 600;
-                font-size: 0.9em;
-                display: block;
-            }
-            .ticket-img {
-                width: 100%;
-                height: 100px;
-                object-fit: cover;
-                display: block;
-            }
-            span {
-                color: $black;
-                display: block;
-                padding: 0.5rem 1rem;
-            }
-        }
-
-        .felids-selector {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.9;
-            z-index: 2;
-            .felids-input {
-                text-align: left;
-                background: linear-gradient(
-                    to bottom,
-                    $light-green,
-                    $ofer-green
-                );
-                width: 400px;
-                height: 5rem;
-                padding: 1rem 2rem;
-                border: 0;
-                color: $white;
-                font-size: 1.2em;
-                font-weight: 700;
-                box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
-                caret-color: transparent;
-                cursor: pointer;
-                &:focus {
-                    outline: none;
-                }
-            }
-            .felids-arrow {
-                width: 1em;
-                position: absolute;
-                top: 50%;
-                right: 1.5rem;
-                transform: translateY(-50%);
-                pointer-events: none;
-            }
-            ul.felids-options {
-                width: 320px;
-                max-height: 360px;
-                overflow: auto;
-                border: $black 2px solid;
-                position: absolute;
-                bottom: calc(100% + 0.5rem);
-                left: 50%;
-                transform: translate(-50%, 65%);
-                text-align: center;
-                li.option {
-                    background-color: $white;
-                    font-size: 1em;
-                    a {
-                        display: block;
-                        width: 100%;
-                        padding: 0.5rem;
-                        color: $black;
-                        text-decoration: none;
-                        &:hover {
-                            background-color: $lighter-green;
-                            font-weight: 700;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }

@@ -15,14 +15,13 @@
       padding: 1.2rem 2rem;
       text-align: center;
 
-      h1 {
-        font-size: 2.5rem;
+      h2 {
+        color: $white;
         margin-bottom: 0.5rem;
-        font-style: italic;
       }
 
       .common-name {
-        font-size: 1.2rem;
+        font-size: $font-size-lg;
         opacity: 0.9;
       }
     }
@@ -49,10 +48,9 @@
         .felid-gallery-photos {
           .gallery-main {
             position: relative;
-            background: black;
+            background: $black;
             height: 500px;
-            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
-
+            border: $black solid 2px;
             .gallery-main-link {
               display: block;
               width: 100%;
@@ -71,12 +69,12 @@
               top: 50%;
               transform: translateY(-50%);
               background: $lighter-green;
-              color: #2d5016;
+              color: $dark-green;
               border: 0;
               width: 2.5rem;
               height: 2.5rem;
-              font-size: 1.8rem;
-              line-height: 1;
+              font-size: $font-size-h2;
+              line-height: $line-height-tight;
               cursor: pointer;
               z-index: 2;
               transition: background 0.2s;
@@ -140,26 +138,17 @@
       margin-bottom: 2rem;
 
       h2 {
-        font-size: 1.3rem;
-        color: $black;
+        font-size: $font-size-h3;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid $black;
       }
 
-      dl {
-        dt {
-          font-weight: 600;
-          color: $black;
-          margin-top: 0.8rem;
-          font-size: 0.9rem;
-        }
-
-        dd {
-          margin-left: 0;
-          color: $gray;
-          padding-left: 1rem;
-          font-size: 1rem;
+      .external-links {
+        ul {
+          li {
+            text-align: right;
+          }
         }
       }
 
@@ -172,7 +161,6 @@
 
           a {
             color: $ofer-green;
-            text-decoration: none;
             transition: color 0.3s;
 
             &:hover {
@@ -187,9 +175,9 @@
         display: inline-block;
         padding: 0.5rem 1rem;
 
-        font-weight: 600;
+        font-weight: $font-weight-semi;
         text-transform: uppercase;
-        font-size: 0.9rem;
+        font-size: $font-size-sm;
 
         &.iucn-LC {
           background: #4caf50;
@@ -221,8 +209,7 @@
     .wikipedia-extract {
       p {
         margin-bottom: 1rem;
-        line-height: 1.6;
-        color: $black;
+        line-height: $line-height-loose;
       }
 
       .wiki-source {
@@ -236,8 +223,8 @@
         padding: 0.15rem 0.5rem;
         background: $lighter-green;
         color: $dark-green;
-        font-size: 0.7rem;
-        font-weight: 600;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semi;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         vertical-align: middle;
@@ -252,7 +239,7 @@
     .felid-article {
       .felid-header {
         h1 {
-          font-size: 2rem;
+          font-size: $font-size-h1;
         }
       }
 
@@ -283,11 +270,11 @@
         padding: 1.5rem 1rem;
 
         h1 {
-          font-size: 1.5rem;
+          font-size: $font-size-h2;
         }
 
         .common-name {
-          font-size: 1rem;
+          font-size: $font-size-base;
         }
       }
 
@@ -309,7 +296,7 @@
 
       section {
         h2 {
-          font-size: 1.1rem;
+          font-size: $font-size-lg;
         }
       }
     }

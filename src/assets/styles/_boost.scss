@@ -26,13 +26,13 @@
                 }
                 .boost-header-title {
                     color: $dark-green;
-                    font-size: 2em;
-                    line-height: 2.2rem;
+                    font-size: $font-size-h1;
+                    line-height: $line-height-tight;
                     margin-bottom: 0.8rem;
                 }
                 .boost-header-subtitle {
-                    font-size: 1.2em;
-                    line-height: 1.2rem;
+                    font-size: $font-size-lg;
+                    line-height: $line-height-tight;
                     margin-bottom: 1rem;
                 }
                 button {
@@ -43,8 +43,7 @@
                     cursor: pointer;
                     a {
                         color: $white;
-                        text-decoration: none;
-                        font-size: 0.8rem;
+                        font-size: $font-size-sm;
                     }
                     &:hover {
                         opacity: 0.7;
@@ -54,7 +53,7 @@
         }
         /*end-boost-header*/
         .question {
-            font-size: 1.6em;
+            font-size: $font-size-h2;
             margin-top: 2rem;
             margin-bottom: 2.5rem;
             text-align: center;
@@ -104,8 +103,8 @@
                 }
                 .boost-list-item-txt {
                     color: $white;
-                    font-size: 1.2em;
-                    line-height: 1.5rem;
+                    font-size: $font-size-lg;
+                    line-height: $line-height-tight;
                     padding: 1rem 0;
                 }
                 .boost-list-item-bg {
