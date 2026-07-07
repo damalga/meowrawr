@@ -92,7 +92,24 @@
     applyFilters();
   });
 
+  // Preseleccionar filtros desde la query string (ej: /felinos/?subfamily=Pantherinae).
+  // Sólo aplica valores que existen como <option>; ignora inputs inválidos.
+  function applyQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    const set = (select, value) => {
+      if (!value) return;
+      const opt = Array.from(select.options).find(o => o.value === value);
+      if (opt) select.value = value;
+    };
+    set(subfamilyFilter, params.get('subfamily'));
+    set(lineageFilter, params.get('lineage'));
+    set(genusFilter, params.get('genus'));
+    const search = params.get('q');
+    if (search) searchInput.value = search;
+  }
+
   // Inicializar
   populateGenusFilter();
+  applyQueryParams();
   applyFilters();
 })();
