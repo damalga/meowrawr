@@ -5,10 +5,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6rem 64px;
+  padding: $spacing-2 64px;
   /*logo*/
   .header-logo {
-    padding: 0.8rem 1.2rem;
+    padding: $spacing-2 $spacing-3;
     img {
       width: 100%;
       max-width: 224px;
@@ -18,15 +18,15 @@ header {
   .header-search-desktop,
   .header-search-mobile {
     width: 60%;
-    padding: 2rem 3rem 1rem 2rem;
+    padding: $spacing-5 $spacing-8 $spacing-3 $spacing-5;
     input {
       width: 100%;
-      padding: 0.6rem 2rem;
+      padding: $spacing-2 $spacing-5;
       border: 1px solid $black;
 
       background-image: url("../images/lupa.svg");
       background-repeat: no-repeat;
-      background-position: 0.4rem;
+      background-position: $spacing-1;
       box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.25);
       cursor: pointer;
       &:focus {
@@ -44,25 +44,25 @@ header {
       height: 16px;
       float: right;
       position: relative;
-      bottom: 1.8rem;
-      right: 0.8rem;
+      bottom: $spacing-5;
+      right: $spacing-2;
       cursor: pointer;
     }
   }
   .header-search-mobile {
     display: none;
     width: 100%;
-    padding: 1rem 3rem 1rem 2rem;
+    padding: $spacing-3 $spacing-8 $spacing-3 $spacing-5;
   }
   /*plus*/
   .header-plus {
     width: 20%;
-    padding: 0.8rem 1.2rem;
+    padding: $spacing-2 $spacing-3;
     display: flex;
     justify-content: right;
     align-items: flex-start;
     .header-plus-img {
-      width: 2.4rem;
+      width: $spacing-6;
       float: left;
     }
     .header-plus-txt {
@@ -70,16 +70,16 @@ header {
       font-size: $font-size-sm;
       font-weight: $font-weight-bold;
       label {
-        margin-bottom: 0.4rem;
+        margin-bottom: $spacing-1;
         line-height: $line-height-tight;
       }
       .header-plus-btn {
         width: 110px;
-        margin-top: 0.4rem;
+        margin-top: $spacing-1;
         background-color: $white;
         border: 1px solid $black;
         font-size: $font-size-xs;
-        padding: 0.4rem 1.2rem;
+        padding: $spacing-1 $spacing-3;
 
         cursor: pointer;
         a {

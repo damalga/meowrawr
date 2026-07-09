@@ -1,5 +1,5 @@
 .slider {
-  padding-bottom: 4rem;
+  padding-bottom: $spacing-10;
   .slider-header {
     background-color: $ofer-green;
     color: $white;
@@ -9,10 +9,10 @@
     justify-content: space-between;
     .slider-header-title,
     .slider-header-download {
-      padding: 0.8rem 1.2rem;
+      padding: $spacing-2 $spacing-3;
     }
     .slider-header-cities {
-      padding: 0.4rem 0.8rem;
+      padding: $spacing-1 $spacing-2;
     }
     .slider-header-title {
       font-weight: $font-weight-bold;
@@ -49,8 +49,8 @@
         font-weight: $font-weight-bold;
       }
       .header-img-app {
-        width: 2.8rem;
-        margin: 0 0.8rem;
+        width: $spacing-7;
+        margin: 0 $spacing-2;
       }
       span {
         float: right;
@@ -109,7 +109,7 @@
     }
     .glider {
       .card {
-        margin: 1rem 0.5rem;
+        margin: $spacing-3 $spacing-1;
         display: inline-block;
         position: relative;
         left: 0;
@@ -120,7 +120,7 @@
         }
       }
       .slide {
-        margin: 1rem 0.5rem;
+        margin: $spacing-3 $spacing-1;
         display: inline-block;
         box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
         position: relative;
@@ -152,14 +152,14 @@
         }
         .slide-content {
           position: relative;
-          bottom: 2.8rem;
-          padding: 1.2rem;
+          bottom: $spacing-7;
+          padding: $spacing-3;
           height: inherit;
           .slide-ofer {
             width: 100%;
             background-color: $white;
             text-align: center;
-            padding: 1rem;
+            padding: $spacing-3;
             box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
             span {
               font-weight: $font-weight-bold;
@@ -181,7 +181,7 @@
             h3 {
               font-size: $font-size-base;
               font-weight: $font-weight-regular;
-              margin: 1rem 0;
+              margin: $spacing-3 0;
               line-height: $line-height-tight;
               overflow: hidden;
               display: -webkit-box;
@@ -198,8 +198,8 @@
             .location {
               display: flex;
               img {
-                margin-right: 0.5rem;
-                height: 1rem;
+                margin-right: $spacing-1;
+                height: $spacing-3;
               }
               span {
                 font-size: $font-size-sm;
@@ -217,12 +217,12 @@
           display: flex;
           justify-content: center;
           position: relative;
-          bottom: 1.2rem;
+          bottom: $spacing-3;
           button {
             font-size: $font-size-sm;
             background-color: $ofer-green;
             color: $white;
-            padding: 0.8rem 2rem;
+            padding: $spacing-2 $spacing-5;
 
             border: 0;
             cursor: pointer;

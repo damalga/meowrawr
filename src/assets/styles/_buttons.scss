@@ -1,6 +1,6 @@
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: $spacing-2 $spacing-5;
     background: $ofer-green;
     color: white;
     font-weight: $font-weight-medium;
@@ -16,6 +16,6 @@
 
 .btn-forward {
     &:hover {
-        transform: translateX(0.3rem);
+        transform: translateX($spacing-1);
     }
 }

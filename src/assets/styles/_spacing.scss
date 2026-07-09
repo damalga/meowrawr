@@ -1,0 +1,59 @@
+// ============================================================================
+// Espaciado — escala derivada del $font-size-base.
+//
+// La unidad base = $font-size-base × 0.4 (= 0.968 × 0.4 = 0.3872rem, ~6.2px).
+// Cada nivel es la unidad × N, así el ritmo del espaciado sigue la misma
+// proporción que la tipografía: si $font-size-base cambia, todo se reescala.
+//
+//   $spacing-1   ≈ 0.387rem   (~6.2px)
+//   $spacing-2   ≈ 0.774rem   (~12.4px)
+//   $spacing-3   ≈ 1.162rem   (~18.6px)
+//   $spacing-4   ≈ 1.549rem   (~24.8px)
+//   $spacing-5   ≈ 1.936rem   (~31.0px)
+//   $spacing-6   ≈ 2.323rem   (~37.2px)
+//   $spacing-7   ≈ 2.710rem   (~43.4px)
+//   $spacing-8   ≈ 3.098rem   (~49.6px)
+//   $spacing-9   ≈ 3.485rem   (~55.8px)
+//   $spacing-10  ≈ 3.872rem   (~62.0px)
+//   $spacing-11  ≈ 4.259rem   (~68.2px)
+//   $spacing-12  ≈ 4.646rem   (~74.4px)
+//   $spacing-13  ≈ 5.034rem   (~80.6px)
+//   $spacing-14  ≈ 5.421rem   (~86.8px)
+//   $spacing-15  ≈ 5.808rem   (~93.0px)
+//
+// Regla: cualquier valor en rem usado como padding/margin/gap/offset debe
+// mapearse al múltiplo más cercano de $spacing-unit. Ningún valor "redondo"
+// (0.4, 0.8, 1, 1.5, 2, 3, 4, …) coincide exactamente con la escala — se
+// aproxima siempre al múltiplo más próximo. Ejemplos:
+//   0.4rem   → $spacing-1   (0.3872, diff 0.0128)
+//   0.5rem   → $spacing-1   (0.3872, diff 0.1128)
+//   0.8rem   → $spacing-2   (0.7744, diff 0.0256)
+//   1rem     → $spacing-3   (1.1616, diff 0.1616)
+//   1.5rem   → $spacing-4   (1.5488, diff 0.0488)
+//   2rem     → $spacing-5   (1.9360, diff 0.0640)  ← no es $spacing-6
+//   2.4rem   → $spacing-6   (2.3232, diff 0.0768)
+//   3rem     → $spacing-8   (3.0976, diff 0.0976)
+//   4rem     → $spacing-10  (3.8720, diff 0.1280)
+//   6rem     → $spacing-15  (5.8080, diff 0.1920)
+//
+// Valores decorativos (box-shadow, border-width, tamaños de iconos) NO se
+// mapean a la escala: no forman parte del ritmo de layout.
+// ============================================================================
+
+$spacing-unit: $font-size-base * 0.4;
+
+$spacing-1:  $spacing-unit * 1;
+$spacing-2:  $spacing-unit * 2;
+$spacing-3:  $spacing-unit * 3;
+$spacing-4:  $spacing-unit * 4;
+$spacing-5:  $spacing-unit * 5;
+$spacing-6:  $spacing-unit * 6;
+$spacing-7:  $spacing-unit * 7;
+$spacing-8:  $spacing-unit * 8;
+$spacing-9:  $spacing-unit * 9;
+$spacing-10: $spacing-unit * 10;
+$spacing-11: $spacing-unit * 11;
+$spacing-12: $spacing-unit * 12;
+$spacing-13: $spacing-unit * 13;
+$spacing-14: $spacing-unit * 14;
+$spacing-15: $spacing-unit * 15;

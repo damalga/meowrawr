@@ -1,10 +1,10 @@
 .prefooter {
     background: linear-gradient(180deg, $dark-green 0%, $ofer-green 100%);
-    padding: 0 2rem;
+    padding: 0 $spacing-5;
     nav.prefooter-wrapper {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 2rem 1rem;
+        padding: $spacing-5 $spacing-3;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -17,7 +17,7 @@
         .prefooter-list {
             .prefooter-list-item {
                 display: inline-block;
-                margin: 0.4rem 0.6rem;
+                margin: $spacing-1 $spacing-2;
                 a {
                     color: $white;
                     transition: 0.2s;

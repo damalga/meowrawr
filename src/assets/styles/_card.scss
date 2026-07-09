@@ -32,25 +32,25 @@
 
   .slide-content {
     background: $white;
-    padding: 1rem;
+    padding: $spacing-3;
     flex: 1;
 
     .slide-txt {
       h3 {
         font-size: $font-size-lg;
         font-weight: $font-weight-semi;
-        margin-bottom: 0.8rem;
+        margin-bottom: $spacing-2;
         font-style: italic;
       }
 
       .location {
         display: flex;
         align-items: center;
-        margin-bottom: 0.5rem;
+        margin-bottom: $spacing-1;
 
         img {
-          margin-right: 0.5rem;
-          height: 1rem;
+          margin-right: $spacing-1;
+          height: $spacing-3;
         }
 
         span {

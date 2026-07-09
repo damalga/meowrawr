@@ -4,7 +4,7 @@ $timing: 1s;
 .hero {
   background: linear-gradient(to bottom, $ofer-green, $dark-green);
   height: 400px;
-  margin-bottom: 1.68rem;
+  margin-bottom: $spacing-4;
   display: flex;
   overflow: hidden;
   .veil {
@@ -17,7 +17,7 @@ $timing: 1s;
   .tickets {
     width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: $spacing-3 $spacing-5;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -43,7 +43,7 @@ $timing: 1s;
       clip-path: polygon(0 -100%, 100% 25%, 100% 75%, 80% 100%, 0 100%);
       min-width: 150px;
       opacity: 0.88;
-      margin: -0.4rem -0.8rem;
+      margin: (-$spacing-1) (-$spacing-2);
       rotate: -9deg;
       transition: all 0.3s ease-out;
       position: relative;
@@ -58,7 +58,7 @@ $timing: 1s;
       }
       &:hover {
         opacity: 0.96;
-        margin: -0.2rem -0.4rem;
+        margin: (-$spacing-1) (-$spacing-1);
         rotate: 1deg;
         scale: 1.2;
         rotate: 1deg;
@@ -67,8 +67,8 @@ $timing: 1s;
       &::before {
         content: "";
         position: absolute;
-        top: 2.2rem;
-        right: 1rem;
+        top: $spacing-6;
+        right: $spacing-3;
         border: $black solid;
         border-width: 0.75rem;
         clip-path: circle(50%);
@@ -77,7 +77,7 @@ $timing: 1s;
         color: $dark-gray;
         font-size: $font-size-sm;
         font-weight: $font-weight-bold;
-        padding: 2.4rem 3.6rem 2.4rem 1.6rem;
+        padding: $spacing-6 $spacing-9 $spacing-6 $spacing-4;
       }
     }
 
@@ -85,7 +85,7 @@ $timing: 1s;
       background: $lighter-green;
       border: 2px solid $black;
       padding: 0;
-      margin: 0.5rem;
+      margin: $spacing-1;
       min-width: 150px;
       text-align: center;
       overflow: hidden;
@@ -109,7 +109,7 @@ $timing: 1s;
       span {
         color: $black;
         display: block;
-        padding: 0.5rem 1rem;
+        padding: $spacing-1 $spacing-3;
       }
     }
 
@@ -124,8 +124,8 @@ $timing: 1s;
         text-align: left;
         background: linear-gradient(to bottom, $light-green, $ofer-green);
         width: 380px;
-        height: 3.6rem;
-        padding: 1rem 1.6rem;
+        height: $spacing-9;
+        padding: $spacing-3 $spacing-4;
         border: 0;
         color: $white;
         font-size: $font-size-lg;
@@ -141,7 +141,7 @@ $timing: 1s;
         width: 1em;
         position: absolute;
         top: 50%;
-        right: 1.5rem;
+        right: $spacing-4;
         transform: translateY(-50%);
         pointer-events: none;
       }
@@ -151,7 +151,7 @@ $timing: 1s;
         overflow: auto;
         border: $black 2px solid;
         position: absolute;
-        bottom: calc(100% + 0.5rem);
+        bottom: calc(100% + $spacing-1);
         left: 50%;
         transform: translate(-50%, 65%);
         text-align: center;
@@ -160,7 +160,7 @@ $timing: 1s;
           a {
             display: block;
             width: 100%;
-            padding: 0.5rem;
+            padding: $spacing-1;
             color: $black;
             &:hover {
               background-color: $lighter-green;

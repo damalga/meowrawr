@@ -9,12 +9,12 @@
       width: 100%;
       .tickets {
         .ticket-container {
-          margin: 0 -0.8rem;
+          margin: 0 (-$spacing-2);
           &::after {
-            top: 1.8rem;
+            top: $spacing-5;
           }
           .ticket {
-            padding: 2rem 3.2rem 2rem 1.2rem;
+            padding: $spacing-5 $spacing-8 $spacing-5 $spacing-3;
           }
         }
       }
@@ -38,7 +38,7 @@
         display: block;
         .footer-logos {
           margin: 0 auto;
-          margin-bottom: 2rem;
+          margin-bottom: $spacing-5;
           text-align: center;
         }
         .footer-links {
@@ -46,7 +46,7 @@
           ul {
             li {
               display: inline;
-              margin-bottom: 0.5rem;
+              margin-bottom: $spacing-1;
             }
           }
         }
@@ -77,12 +77,12 @@
     .hero {
       .tickets {
         .ticket-container {
-          margin: -0.8rem;
+          margin: -$spacing-2;
           &::after {
-            top: 1.8rem;
+            top: $spacing-5;
           }
           .ticket {
-            padding: 2rem 3.2rem 2rem 1.2rem;
+            padding: $spacing-5 $spacing-8 $spacing-5 $spacing-3;
           }
         }
       }
@@ -111,11 +111,11 @@
       }
       .header-search-mobile {
         display: block;
-        padding: 1rem 1.5rem 0;
+        padding: $spacing-3 $spacing-4 0;
       }
       .header-plus {
         width: 55%;
-        padding: 1rem;
+        padding: $spacing-3;
         float: right;
         .header-plus-txt {
           font-size: $font-size-sm;
@@ -125,12 +125,12 @@
     .hero {
       .tickets {
         .ticket-container {
-          margin: -1.2rem -0.8rem;
+          margin: (-$spacing-3) (-$spacing-2);
         }
       }
     }
     nav {
-      padding-bottom: 0.5rem;
+      padding-bottom: $spacing-1;
       ul {
         li {
           a {
@@ -141,9 +141,9 @@
     }
     .contact {
       .contact-form {
-        padding: 2rem 1rem;
+        padding: $spacing-5 $spacing-3;
         .contact-form-header {
-          margin-bottom: 1.5rem;
+          margin-bottom: $spacing-4;
           .contact-form-title {
             font-size: $font-size-h2;
           }
@@ -153,7 +153,7 @@
         }
         .contact-form-inputs {
           display: block;
-          padding: 0 2rem;
+          padding: 0 $spacing-5;
           [class^="contact-form-col"] {
             width: 100%;
             margin: 0;
@@ -174,7 +174,7 @@
               width: 12px;
             }
             .header-img-app {
-              width: 2.4rem;
+              width: $spacing-6;
             }
           }
         }
@@ -195,7 +195,7 @@
         .question {
           font-size: $font-size-h3;
           line-height: $line-height-tight;
-          margin-top: 3rem;
+          margin-top: $spacing-8;
         }
         .boost-list {
           display: block;
@@ -205,20 +205,20 @@
     .prefooter {
       .prefooter-wrapper {
         height: auto;
-        padding: 2rem 0;
+        padding: $spacing-5 0;
       }
     }
     footer {
       .footer-wrapper {
         .footer-logos {
-          margin: 0 auto 1.5rem;
+          margin: 0 auto $spacing-4;
         }
         .footer-links {
-          margin-bottom: 2rem;
+          margin-bottom: $spacing-5;
           ul {
             li {
               display: block;
-              margin-bottom: 1.6rem;
+              margin-bottom: $spacing-4;
               a {
                 font-size: $font-size-base;
               }
@@ -234,24 +234,24 @@
   body {
     nav {
       ul {
-        padding: 1rem 24px;
+        padding: $spacing-3 24px;
       }
     }
     .hero {
-      padding: 0 1rem;
+      padding: 0 $spacing-3;
       .veil {
         display: block;
       }
       .tickets {
-        padding: 1rem;
+        padding: $spacing-3;
         .ticket-container {
-          margin: -2rem -1rem;
+          margin: (-$spacing-5) (-$spacing-3);
         }
         .felids-selector {
           .felids-input {
             width: 340px;
             font-size: $font-size-base;
-            padding: 1rem 1.5rem;
+            padding: $spacing-3 $spacing-4;
           }
         }
       }
@@ -274,7 +274,7 @@
         .slider-header {
           .slider-header-download {
             .header-img-app {
-              width: 2.4rem;
+              width: $spacing-6;
               margin-right: 0;
             }
             span {
@@ -304,7 +304,7 @@
       .tickets {
         .felids-selector {
           .felids-arrow {
-            width: 0.8rem;
+            width: $spacing-2;
           }
         }
       }
@@ -314,23 +314,23 @@
         .index-item {
           width: 100%;
           height: 100px;
-          margin: 0 0 1rem 0;
+          margin: 0 0 $spacing-3 0;
         }
       }
       .slider {
         .slider-header {
           .slider-header-title {
-            padding: 0.8rem;
+            padding: $spacing-2;
             h2.titulo-slider {
               font-size: $font-size-base;
             }
           }
           .slider-header-download {
-            padding: 0.8rem 0.6rem;
+            padding: $spacing-2 $spacing-2;
           }
           .slider-header-cities {
             font-size: $font-size-sm;
-            padding: 0.4rem 0.6rem;
+            padding: $spacing-1 $spacing-2;
           }
         }
       }
@@ -345,14 +345,14 @@
       .slider {
         .slider-header {
           .slider-header-title {
-            padding: 0.8rem 0.6rem;
+            padding: $spacing-2 $spacing-2;
           }
         }
       }
     }
     .contact {
       .contact-form {
-        margin-bottom: 3rem;
+        margin-bottom: $spacing-8;
         .contact-form-inputs {
           padding: 0;
         }

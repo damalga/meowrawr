@@ -2,15 +2,15 @@
 .felinos-grid-page {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: $spacing-5 $spacing-3;
 
   .felinos-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: $spacing-5;
 
     .titulo-listado {
       font-size: $font-size-h1;
-      margin-bottom: 0.5rem;
+      margin-bottom: $spacing-1;
     }
 
     .subtitle {
@@ -22,17 +22,17 @@
   .filters-container {
     background: $white;
     
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: $spacing-4;
+    margin-bottom: $spacing-5;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 
     .search-box {
       position: relative;
-      margin-bottom: 1.5rem;
+      margin-bottom: $spacing-4;
 
       input {
         width: 100%;
-        padding: 0.8rem 2.5rem 0.8rem 1rem;
+        padding: $spacing-2 $spacing-6 $spacing-2 $spacing-3;
         border: 2px solid $black;
         
         font-size: 1rem;
@@ -50,7 +50,7 @@
 
       .clear-btn {
         position: absolute;
-        right: 0.5rem;
+        right: $spacing-1;
         top: 50%;
         transform: translateY(-50%);
         background: $gray;
@@ -73,7 +73,7 @@
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: $spacing-3;
       align-items: flex-end;
 
       .filter-group {
@@ -83,13 +83,13 @@
         label {
           display: block;
           font-size: $font-size-sm;
-          margin-bottom: 0.3rem;
+          margin-bottom: $spacing-1;
           font-weight: $font-weight-medium;
         }
 
         select {
           width: 100%;
-          padding: 0.6rem;
+          padding: $spacing-2;
           border: 2px solid $black;
           font-size: $font-size-sm;
           background: white;
@@ -104,7 +104,7 @@
       }
 
       .reset-btn {
-        padding: 0.6rem 1.5rem;
+        padding: $spacing-2 $spacing-4;
         background: $gray;
         color: white;
         border: none;
@@ -120,7 +120,7 @@
     }
 
     .results-count {
-      margin-top: 1rem;
+      margin-top: $spacing-3;
       text-align: center;
       font-size: $font-size-sm;
       color: $gray;
@@ -137,14 +137,14 @@
   .felinos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: $spacing-4;
+    margin-bottom: $spacing-5;
 
     .card {
       transition: transform 0.3s;
 
       &:hover {
-        transform: translateY(-0.3rem);
+        transform: translateY(-$spacing-1);
       }
     }
   }
@@ -152,7 +152,7 @@
   // Mensaje sin resultados
   .no-results {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: $spacing-8 $spacing-3;
     background: $lighter-green;
     
 
@@ -180,7 +180,7 @@
 
     .felinos-grid {
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1rem;
+      gap: $spacing-3;
     }
   }
 }

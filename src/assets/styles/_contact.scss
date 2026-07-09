@@ -1,8 +1,8 @@
 .contact{
   .contact-form {
     width: 848px;
-    padding: 2rem 24px;
-    margin: 2rem auto 6rem;
+    padding: $spacing-5 24px;
+    margin: $spacing-5 auto $spacing-15;
     border: $black 1px solid;
     
     .contact-form-header {
@@ -14,26 +14,26 @@
       .contact-form-title {
         color: $ofer-green;
         font-size: $font-size-h1;
-        margin-bottom: 1rem;
+        margin-bottom: $spacing-3;
       }
       .contact-form-subtitle {
         font-size: $font-size-lg;
         font-weight: $font-weight-regular;
-        margin-bottom: 2rem;
+        margin-bottom: $spacing-5;
       }
     }
     .contact-form-inputs {
       display: flex;
       [class^="contact-form-col"] {
         width: 50%;
-        margin: 1rem;
+        margin: $spacing-3;
         [class^="contact-form"]{
-          margin-bottom: 1rem;
+          margin-bottom: $spacing-3;
         }
       }
       label {
         display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: $spacing-1;
         font-size: $font-size-sm;
       }
       input,
@@ -41,7 +41,7 @@
       select{
         display: block;
         width: 100%;
-        padding: 0.5rem;
+        padding: $spacing-1;
         border: $black 1px solid;
         
         &:focus {
@@ -89,9 +89,9 @@
           width: 160px;
           background-color: $ofer-green;
           margin: 0 auto;
-          padding: 0.8rem 2rem;
+          padding: $spacing-2 $spacing-5;
           border: 0;
-          
+
           a {
             color: $white;
             font-size: $font-size-sm;
@@ -105,26 +105,26 @@
   }
   .gracias{
     width: 848px;
-    margin: 2rem auto 6rem;
+    margin: $spacing-5 auto $spacing-15;
     .gracias-txt,
     .gracias-btn{
-      padding: 2rem 24px;
+      padding: $spacing-5 24px;
     }
     .gracias-txt{
       width: 100%;
       text-align: center;
-      padding: 2rem 24px;
+      padding: $spacing-5 24px;
       border: $black 1px solid;
-      
+
       h3{
         color: $ofer-green;
         font-size: $font-size-h2;
         line-height: $line-height-tight;
-        margin-bottom: 1.6rem;
+        margin-bottom: $spacing-4;
       }
       p{
         line-height: $line-height-tight;
-        margin-bottom: 1.6rem;
+        margin-bottom: $spacing-4;
       }
     }
     .gracias-btn{
@@ -134,8 +134,8 @@
         font-size: $font-size-sm;
         background-color: $ofer-green;
         color: $white;
-        padding: 0.8rem 2rem;
-        
+        padding: $spacing-2 $spacing-5;
+
         border: 0;
         cursor: pointer;
         &:hover {

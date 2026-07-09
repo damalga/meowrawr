@@ -2,7 +2,7 @@
 .felid-detail {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: $spacing-5 $spacing-3;
 
   .felid-article {
     background: $white;
@@ -12,12 +12,11 @@
     .felid-header {
       background: linear-gradient(135deg, $ofer-green 0%, $dark-green 100%);
       color: white;
-      padding: 1.2rem 2rem;
+      padding: $spacing-3 $spacing-5;
       text-align: center;
 
       h2 {
         color: $white;
-        margin-bottom: 0.5rem;
       }
 
       .common-name {
@@ -29,8 +28,8 @@
     .felid-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      padding: 2rem;
+      gap: $spacing-5;
+      padding: $spacing-5;
       .felid-info {
         .external-links {
           ul {
@@ -44,7 +43,7 @@
 
     .felid-left {
       .felid-image-container {
-        margin-bottom: 2rem;
+        margin-bottom: $spacing-5;
 
         .felid-main-image {
           width: 100%;
@@ -80,8 +79,8 @@
               background: $lighter-green;
               color: $dark-green;
               border: 0;
-              width: 2.5rem;
-              height: 2.5rem;
+              width: $spacing-6;
+              height: $spacing-6;
               font-size: $font-size-h2;
               line-height: $line-height-tight;
               cursor: pointer;
@@ -93,10 +92,10 @@
               }
 
               &.gallery-prev {
-                left: 0.5rem;
+                left: $spacing-1;
               }
               &.gallery-next {
-                right: 0.5rem;
+                right: $spacing-1;
               }
             }
           }
@@ -104,8 +103,8 @@
           .gallery-thumbs {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 0.3rem;
-            margin-top: 0.5rem;
+            gap: $spacing-1;
+            margin-top: $spacing-1;
 
             .gallery-thumb {
               aspect-ratio: 1;
@@ -136,7 +135,7 @@
           }
 
           .gallery-more {
-            margin-top: 1rem;
+            margin-top: $spacing-3;
             text-align: right;
           }
         }
@@ -144,12 +143,12 @@
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-bottom: $spacing-5;
 
       h2 {
         font-size: $font-size-h3;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
+        margin-bottom: $spacing-3;
+        padding-bottom: $spacing-1;
         border-bottom: 2px solid $black;
       }
 
@@ -166,7 +165,7 @@
         padding: 0;
 
         li {
-          margin-bottom: 0.5rem;
+          margin-bottom: $spacing-1;
 
           a {
             color: $ofer-green;
@@ -182,7 +181,7 @@
 
       .iucn-status {
         display: inline-block;
-        padding: 0.5rem 1rem;
+        padding: $spacing-1 $spacing-3;
 
         font-weight: $font-weight-semi;
         text-transform: uppercase;
@@ -217,19 +216,19 @@
 
     .wikipedia-extract {
       p {
-        margin-bottom: 1rem;
+        margin-bottom: $spacing-3;
         line-height: $line-height-loose;
       }
 
       .wiki-source {
-        margin-top: 1.5rem;
+        margin-top: $spacing-4;
         text-align: right;
       }
 
       .lang-badge {
         display: inline-block;
-        margin-left: 0.5rem;
-        padding: 0.15rem 0.5rem;
+        margin-left: $spacing-1;
+        padding: $spacing-1 $spacing-1;
         background: $lighter-green;
         color: $dark-green;
         font-size: $font-size-xs;
@@ -272,11 +271,11 @@
 
 @media (max-width: 600px) {
   .felid-detail {
-    padding: 1rem 0.5rem;
+    padding: $spacing-3 $spacing-1;
 
     .felid-article {
       .felid-header {
-        padding: 1.5rem 1rem;
+        padding: $spacing-4 $spacing-3;
 
         h1 {
           font-size: $font-size-h2;
@@ -288,8 +287,8 @@
       }
 
       .felid-content {
-        padding: 1rem;
-        gap: 1rem;
+        padding: $spacing-3;
+        gap: $spacing-3;
       }
 
       .felid-left {
