@@ -40,7 +40,7 @@ eleventyComputed:
                             >
                                 <img
                                     src="{{lookup (lookup felid.iNatPhotos 0) 'main'}}"
-                                    alt="{{felid.scientificName}}"
+                                    alt="{{felid.scientificName}} — {{lookup (lookup felid.iNatPhotos 0) 'attribution'}}"
                                     class="gallery-main-img"
                                 />
                             </a>
@@ -52,6 +52,9 @@ eleventyComputed:
                                 ›
                             </button>
                         </div>
+                        <p class="gallery-attribution">
+                            {{lookup (lookup felid.iNatPhotos 0) 'attribution'}}
+                        </p>
                         <div class="gallery-thumbs">
                             {{#each felid.iNatPhotos}}
                             <button

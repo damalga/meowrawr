@@ -100,6 +100,16 @@
             }
           }
 
+          .gallery-attribution {
+            font-size: $font-size-xs;
+            color: $gray;
+            font-style: italic;
+            text-align: right;
+            margin: $spacing-1 0 0;
+            line-height: $line-height-tight;
+            min-height: 1em;
+          }
+
           .gallery-thumbs {
             display: grid;
             grid-template-columns: repeat(6, 1fr);

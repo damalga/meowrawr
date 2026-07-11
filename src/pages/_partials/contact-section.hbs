@@ -32,10 +32,11 @@
             id="contact-form-reason-select"
             form="contact-form-reason-select"
           >
-            <option value="motivo-1">Cuenta de usuario</option>
-            <option value="motivo-2">Motivo 2</option>
-            <option value="motivo-3">Motivo 3</option>
-            <option value="motivo-4">Motivo 4</option>
+            <option value="consulta">Consulta general</option>
+            <option value="correccion">Corrección de contenido</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="error">Reporte de error</option>
+            <option value="otro">Otro</option>
           </select>
           <label class="disp-none">Campo Requerido</label>
         </div>
@@ -58,9 +59,20 @@
             <!-- Captcha placeholder - implementation pending -->
           </div>
         </div>
+        <div class="contact-form-privacy-notice">
+          <p>
+            Los datos que nos facilites serán tratados por Damalga con la única
+            finalidad de responder a tu consulta. No se ceden a terceros. Más
+            información en la
+            <a href="/privacidad/">Política de Privacidad</a>.
+          </p>
+        </div>
         <div class="contact-form-accept">
-          <input type="checkbox" />
-          <label>Acepto las <a href="#">condiciones</a>.*</label>
+          <input type="checkbox" id="contact-form-accept-privacy" required />
+          <label for="contact-form-accept-privacy">
+            He leído y acepto la
+            <a href="/privacidad/">Política de Privacidad</a>. *
+          </label>
         </div>
         <div class="contact-form-mandatory disp-none">
           <label>Los campos marcados con * son obligatorios</label>
