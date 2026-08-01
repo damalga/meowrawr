@@ -41,3 +41,6 @@ coverage/
 
 # GEO audit local report
 GEO-AUDIT-REPORT.md
+
+# Claude Code local guidance
+CLAUDE.md
