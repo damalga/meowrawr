@@ -87,6 +87,7 @@ $timing: 1s;
       padding: 0;
       margin: $spacing-1;
       min-width: 150px;
+      height: max-content;
       text-align: center;
       overflow: hidden;
       transition: all 0.3s ease;

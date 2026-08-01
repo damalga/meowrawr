@@ -1,22 +1,58 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--Browsers - Theme Colors-->
 <meta name="theme-color" content="#BBEAFF" />
-<meta name="msapplication-navbutton-color" content="#BBEAFF" />
-<meta name="apple-mobile-web-app-status-bar-style" content="#BBEAFF" />
-<!--Favicon-->
 <link rel="icon" type="image/png" href="/assets/extra/fav.png" />
-<!--Title-->
-<title>Meowrawr</title>
-<!--Meta Description-->
-<meta name="description" content="Meowrawr - Enciclopedia Felina" />
-<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before
-  "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var
-  u="//stats.damalga.com/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '2']); var d=document,
-  g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.async=true; g.src=u+'matomo.js';
-  s.parentNode.insertBefore(g,s); })();
+
+<title>{{#if titleOverride}}{{titleOverride}}{{else}}{{#if title}}{{title}} — {{site.name}}{{else}}{{site.name}} — {{site.tagline}}{{/if}}{{/if}}</title>
+<meta name="description" content="{{#if description}}{{metaDescription description}}{{else}}{{site.description}}{{/if}}" />
+
+<link rel="canonical" href="{{absoluteUrl page.url}}" />
+
+<meta property="og:type" content="{{#if ogType}}{{ogType}}{{else}}website{{/if}}" />
+<meta property="og:site_name" content="{{site.name}}" />
+<meta property="og:locale" content="{{site.locale}}" />
+<meta property="og:url" content="{{absoluteUrl page.url}}" />
+<meta property="og:title" content="{{#if titleOverride}}{{titleOverride}}{{else}}{{#if title}}{{title}} — {{site.name}}{{else}}{{site.name}} — {{site.tagline}}{{/if}}{{/if}}" />
+<meta property="og:description" content="{{#if description}}{{metaDescription description}}{{else}}{{site.description}}{{/if}}" />
+<meta property="og:image" content="{{#if ogImage}}{{absoluteUrl ogImage}}{{else}}{{site.logo}}{{/if}}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{#if titleOverride}}{{titleOverride}}{{else}}{{#if title}}{{title}} — {{site.name}}{{else}}{{site.name}} — {{site.tagline}}{{/if}}{{/if}}" />
+<meta name="twitter:description" content="{{#if description}}{{metaDescription description}}{{else}}{{site.description}}{{/if}}" />
+<meta name="twitter:image" content="{{#if ogImage}}{{absoluteUrl ogImage}}{{else}}{{site.logo}}{{/if}}" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{site.url}}/#organization",
+      "name": "{{site.name}}",
+      "url": "{{site.url}}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{site.logo}}"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "{{site.author.name}}",
+        "url": "{{site.author.url}}",
+        "email": "{{site.author.email}}"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{site.url}}/#website",
+      "url": "{{site.url}}",
+      "name": "{{site.name}}",
+      "description": "{{site.description}}",
+      "inLanguage": "{{site.language}}",
+      "publisher": { "@id": "{{site.url}}/#organization" }
+    }
+  ]
+}
 </script>
-<!-- End Matomo Code -->
+
+<script src="/assets/scripts/matomo.js" defer></script>

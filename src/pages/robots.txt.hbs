@@ -1,0 +1,17 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# Meowrawr — robots.txt
+# Content-signals per https://github.com/ai-robots-txt/ai.robots.txt (Cloudflare-compatible).
+# search:   permitido — indexación tradicional y snippets.
+# ai-input: permitido — recuperación en tiempo real por asistentes IA (RAG, grounding, citas).
+# ai-train: NO permitido — entrenamiento de modelos generativos.
+# Motivo: el contenido textual y las imágenes se redistribuyen bajo licencias CC (algunas NC-ND);
+# el titular no puede autorizar entrenamiento en nombre de los autores originales.
+
+User-agent: *
+Content-signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: {{site.url}}/sitemap.xml

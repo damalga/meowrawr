@@ -43,32 +43,32 @@ $font-family-base: "Open Sans", sans-serif;
 
 // φ y √φ como constantes (útiles si algún componente quiere calcular su propio
 // tamaño derivado, ej. `padding: $font-size-base * $phi-sqrt`).
-$phi:      1.618;
+$phi: 1.618;
 $phi-sqrt: 1.272;
 
 // Base del sistema: cambiándolo se recalculan todos los demás automáticamente.
-$font-size-base: 0.968rem;   // ~15.5px — cuerpo
+$font-size-base: 0.968rem; // ~15.5px — cuerpo
 
 // Escala geométrica derivada de $font-size-base × √φ (o ÷ φ, ÷ √φ para bajar).
-$font-size-xs:   $font-size-base * 0.618;                // ~9.6px  (base ÷ φ)
-$font-size-sm:   $font-size-base * 0.786;                // ~12.2px (base ÷ √φ)
-$font-size-lg:   $font-size-base * $phi-sqrt;            // ~19.7px
-$font-size-h3:   $font-size-base * $phi;                 // ~25.1px
-$font-size-h2:   $font-size-base * $phi * $phi-sqrt;     // ~31.9px
-$font-size-h1:   $font-size-base * $phi * $phi;          // ~40.5px
-$font-size-xl:   $font-size-base * $phi * $phi * $phi-sqrt; // ~51.6px
+$font-size-xs: $font-size-base * 0.618; // ~9.6px  (base ÷ φ)
+$font-size-sm: $font-size-base * 0.786; // ~12.2px (base ÷ √φ)
+$font-size-lg: $font-size-base * $phi-sqrt; // ~19.7px
+$font-size-h3: $font-size-base * $phi; // ~25.1px
+$font-size-h2: $font-size-base * $phi * $phi-sqrt; // ~31.9px
+$font-size-h1: $font-size-base * $phi * $phi; // ~40.5px
+$font-size-xl: $font-size-base * $phi * $phi * $phi-sqrt; // ~51.6px
 
 // Pesos (no dependen de φ, siguen la convención estándar 400-700).
 $font-weight-regular: 400;
-$font-weight-medium:  500;
-$font-weight-semi:    600;
-$font-weight-bold:    700;
+$font-weight-medium: 500;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
 
 // Alturas de línea. La "loose" es exactamente φ — óptima para leer párrafos
 // largos (mejora la percepción de ritmo y densidad del texto).
-$line-height-tight:  1.2;      // titulares
-$line-height-normal: 1.5;      // cuerpo
-$line-height-loose:  $phi;     // párrafos largos (wikipedia-extract, static-page)
+$line-height-tight: 1.2; // titulares
+$line-height-normal: 1.5; // cuerpo
+$line-height-loose: $phi; // párrafos largos (wikipedia-extract, static-page)
 
 // Ancho de contenido óptimo para lectura: 30em = ~480px con base 16px.
 // A esta anchura una línea tiene ~50-75 caracteres, el rango que la
@@ -84,30 +84,56 @@ body {
   color: $black;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-family-base;
   line-height: $line-height-tight;
   color: $black;
 }
 
-h1 { font-size: $font-size-h1; font-weight: $font-weight-bold; }
-h2 { font-size: $font-size-h2; font-weight: $font-weight-semi; }
-h3 { font-size: $font-size-h3; font-weight: $font-weight-semi; }
-h4 { font-size: $font-size-lg;  font-weight: $font-weight-semi; }
-h5 { font-size: $font-size-base; font-weight: $font-weight-semi; }
-h6 { font-size: $font-size-sm;  font-weight: $font-weight-semi; }
+h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-semi;
+}
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-semi;
+}
+h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-semi;
+}
+h4 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semi;
+}
+h5 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semi;
+}
+h6 {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi;
+}
 
 p {
   font-size: $font-size-base;
   line-height: $line-height-normal;
 }
 
-ul, ol {
+ul,
+ol {
   font-size: $font-size-base;
   line-height: $line-height-normal;
 }
 
-li { font-size: inherit; }
+li {
+  font-size: inherit;
+}
 
 a {
   color: inherit;
@@ -115,14 +141,28 @@ a {
   transition: color 0.2s;
 }
 
-strong, b { font-weight: $font-weight-bold; }
-em, i    { font-style: italic; }
+strong,
+b {
+  font-weight: $font-weight-bold;
+}
+em,
+i {
+  font-style: italic;
+}
 
-small { font-size: $font-size-sm; }
+small {
+  font-size: $font-size-sm;
+}
 
-span, label { font-size: inherit; }
+span,
+label {
+  font-size: inherit;
+}
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: $font-family-base;
   font-size: $font-size-base;
 }

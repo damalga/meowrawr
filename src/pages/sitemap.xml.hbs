@@ -1,0 +1,45 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{site.url}}/</loc>
+    <lastmod>{{formatDate buildDate 'iso-date'}}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{site.url}}/felinos/</loc>
+    <lastmod>{{formatDate buildDate 'iso-date'}}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>{{site.url}}/sobre-meowrawr/</loc>
+    <lastmod>{{formatDate buildDate 'iso-date'}}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>{{site.url}}/privacidad/</loc>
+    <lastmod>{{formatDate buildDate 'iso-date'}}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>{{site.url}}/aviso-legal/</loc>
+    <lastmod>{{formatDate buildDate 'iso-date'}}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+{{#each felids}}
+  <url>
+    <loc>{{../site.url}}/felino/{{this.id}}/</loc>
+    <lastmod>{{formatDate ../buildDate 'iso-date'}}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{{/each}}
+</urlset>

@@ -6,13 +6,67 @@ pagination:
 eleventyComputed:
     permalink: "/felino/{{ felid.id }}/"
     title: "{{ felid.scientificName }}"
+    description: "{{#if felid.wikipediaExtract}}{{ metaDescription felid.wikipediaExtract }}{{else}}Ficha divulgativa de {{ felid.scientificName }}: taxonomía, descripción y fuentes.{{/if}}"
+    ogType: "article"
+    ogImage: "{{#if felid.iNatPhotos}}{{lookup (lookup felid.iNatPhotos 0) 'main'}}{{else if felid.image}}{{felid.image}}{{/if}}"
 ---
 
 {{#> base}} {{> header}} {{> nav}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{absoluteUrl page.url}}" },
+  "headline": "{{felid.scientificName}}{{#if felid.names.es}} ({{felid.names.es}}){{/if}}",
+  "url": "{{absoluteUrl page.url}}",
+  "inLanguage": "{{site.language}}",
+  "datePublished": "{{formatDate page.date 'iso-date'}}",
+  "dateModified": "{{formatDate buildDate 'iso-date'}}",
+  "author": {
+    "@type": "Person",
+    "name": "{{site.author.name}}",
+    "url": "{{site.author.url}}"
+  },
+  "publisher": { "@id": "{{site.url}}/#organization" },
+  "description": "{{metaDescription felid.wikipediaExtract}}",
+  {{#if felid.iNatPhotos}}
+  "image": [
+    {{#each felid.iNatPhotos}}"{{this.main}}"{{#unless @last}},{{/unless}}{{/each}}
+  ],
+  {{else if felid.image}}
+  "image": "{{felid.image}}",
+  {{/if}}
+  "about": {
+    "@type": "Taxon",
+    "name": "{{felid.scientificName}}",
+    "alternateName": [
+      "{{felid.scientificName}}"{{#if felid.names.es}},"{{felid.names.es}}"{{/if}}{{#if felid.names.en}},"{{felid.names.en}}"{{/if}}
+    ],
+    "taxonRank": "species",
+    "parentTaxon": {
+      "@type": "Taxon",
+      "name": "{{felid.genus}}",
+      "taxonRank": "genus",
+      "parentTaxon": {
+        "@type": "Taxon",
+        "name": "{{felid.subfamily}}",
+        "taxonRank": "subfamily"
+      }
+    }{{#if felid.wikidataURI}},
+    "sameAs": [
+      "{{felid.wikidataURI}}"{{#if felid.wikipediaURI}},"{{felid.wikipediaURI}}"{{/if}}{{#if felid.iNaturalistURI}},"{{felid.iNaturalistURI}}"{{/if}}
+    ]{{/if}}
+  },
+  "isBasedOn": [
+    {{#if felid.wikipediaURI}}"{{felid.wikipediaURI}}"{{/if}}{{#if felid.wikidataURI}}{{#if felid.wikipediaURI}},{{/if}}"{{felid.wikidataURI}}"{{/if}}{{#if felid.iNaturalistURI}}{{#if felid.wikidataURI}},{{else if felid.wikipediaURI}},{{/if}}"{{felid.iNaturalistURI}}"{{/if}}
+  ],
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+}
+</script>
 <main class="felid-detail">
     <article class="felid-article">
         <header class="felid-header">
-            <h2>{{felid.scientificName}}</h2>
+            <h1>{{felid.scientificName}}</h1>
             {{#if felid.names.es}}
             <p class="common-name">{{felid.names.es}}</p>
             {{/if}}

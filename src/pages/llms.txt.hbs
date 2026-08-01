@@ -1,0 +1,37 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{site.name}}
+
+> {{site.description}}
+
+{{site.name}} es una enciclopedia divulgativa en español sobre las 41 especies de felinos actualmente reconocidas, mantenida como proyecto personal sin ánimo de lucro. El contenido textual procede de Wikipedia y Wikidata bajo licencia Creative Commons Atribución-CompartirIgual 4.0; las fotografías proceden de iNaturalist con la licencia declarada por cada autor.
+
+Autor: {{site.author.name}} — {{site.author.url}}
+Contacto: {{site.author.email}}
+Idioma: español (es)
+Uso permitido por IA: search=yes, ai-input=yes, ai-train=no
+
+## Páginas principales
+
+- [Portada]({{site.url}}/): experimento sobre felinos e internet.
+- [Catálogo de felinos]({{site.url}}/felinos/): las 41 especies agrupadas por subfamilia, linaje y género según la clasificación CCTF 2017.
+- [Sobre Meowrawr]({{site.url}}/sobre-meowrawr/): motivación, hardware (Raspberry Pi 4), software (Debian, Nginx, 11ty, Handlebars) y fuentes de datos.
+- [Aviso legal]({{site.url}}/aviso-legal/)
+- [Política de privacidad]({{site.url}}/privacidad/)
+
+## Fichas de especies
+
+{{#each felids}}- [{{this.scientificName}}]({{../site.url}}/felino/{{this.id}}/) — {{this.subfamily}} / {{this.lineage}} / {{this.genus}}
+{{/each}}
+
+## Fuentes primarias
+
+- Wikidata: https://www.wikidata.org (identificación de especies)
+- Wikipedia: https://es.wikipedia.org (descripciones)
+- iNaturalist: https://www.inaturalist.org (fotografías)
+
+## Optional
+
+- [Sitemap XML]({{site.url}}/sitemap.xml)
