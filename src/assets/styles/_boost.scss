@@ -1,6 +1,6 @@
 .boost {
     background: $ofer-green; /* Fallback color */
-    background: linear-gradient(to bottom, $lighter-green, $ofer-green);
+    background: $lighter-green;
     .boost-wrapper {
         width: 848px;
         margin: 0 auto;
