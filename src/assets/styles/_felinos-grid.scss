@@ -58,12 +58,12 @@ body main.home-grid {
     input {
       width: 100%;
       padding: $spacing-2 $spacing-6 $spacing-2 $spacing-3;
-      border: 2px solid $ink;
+      border: 1px solid $ink;
       background: $cream;
       font-size: $font-size-base;
 
       &:focus {
-        outline: 3px solid $ink;
+        outline: 1px solid $ink;
         outline-offset: 1px;
       }
 
@@ -118,13 +118,13 @@ body main.home-grid {
         flex: 1;
         min-width: 0;
         padding: $spacing-1 $spacing-2;
-        border: 2px solid $ink;
+        border: 1px solid $ink;
         background: $cream;
         font-size: $font-size-sm;
         cursor: pointer;
 
         &:focus {
-          outline: 3px solid $ink;
+          outline: 1px solid $ink;
           outline-offset: 1px;
         }
       }
@@ -132,7 +132,7 @@ body main.home-grid {
 
     .reset-btn {
       padding: $spacing-1 $spacing-3;
-      border: 2px solid $ink;
+      border: 1px solid $ink;
       background: $ink;
       color: $cream;
       font-size: $font-size-sm;
@@ -166,7 +166,7 @@ body main.home-grid {
 }
 
 .home-grid .fcard-placeholder {
-  border: 2px dashed rgba(1, 18, 42, 0.18);
+  border: 1px dashed rgba(1, 18, 42, 0.18);
 }
 
 .home-grid .no-results {
@@ -199,7 +199,7 @@ body main.home-grid {
     inset: 0;
     overflow: hidden;
     background: $cream;
-    border: 2px solid $ink;
+    border: 1px solid $ink;
     box-shadow: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -223,7 +223,7 @@ body main.home-grid {
     }
 
     &:focus-visible {
-      outline: 3px solid $ink;
+      outline: 1px solid $ink;
       outline-offset: 2px;
     }
   }
@@ -364,7 +364,7 @@ body main.home-grid {
     text-align: center;
     background: $cream;
     color: $ink;
-    border-bottom: 2px solid $ink;
+    border-bottom: 1px solid $ink;
 
     h2 {
       color: $ink;
@@ -386,7 +386,7 @@ body main.home-grid {
     width: 2.4rem;
     height: 2.4rem;
     background: $cream;
-    border: 2px solid $ink;
+    border: 1px solid $ink;
     color: $ink;
     font-size: 1.6rem;
     line-height: 1;
@@ -449,7 +449,7 @@ body main.home-grid {
         height: $spacing-6;
         border: 0;
         background: $cream;
-        border: 2px solid $ink;
+        border: 1px solid $ink;
         color: $ink;
         font-size: $font-size-h3;
         line-height: 1;
@@ -490,7 +490,7 @@ body main.home-grid {
         aspect-ratio: 1;
         padding: 0;
         overflow: hidden;
-        border: 2px solid transparent;
+        border: 1px solid transparent;
         background: $cream;
         cursor: pointer;
 
@@ -520,7 +520,7 @@ body main.home-grid {
       font-size: $font-size-lg;
       margin-bottom: $spacing-2;
       padding-bottom: $spacing-1;
-      border-bottom: 2px solid $ink;
+      border-bottom: 1px solid $ink;
     }
 
     ul {
@@ -579,7 +579,7 @@ body main.home-grid {
   .iucn-status {
     display: inline-block;
     padding: $spacing-1 $spacing-3;
-    border: 2px solid $ink;
+    border: 1px solid $ink;
     color: $ink;
     font-weight: $font-weight-semi;
     font-size: $font-size-sm;
