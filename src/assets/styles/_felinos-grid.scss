@@ -1,18 +1,13 @@
 // Home: título + barra de filtros + grid de cards volteables (flip-cards.js)
 
-// Paleta: pasteles claros para superficies, tonos oscuros solo para texto y trazos.
-$pastel-mint: #dcf5bf;
-$pastel-cream: #eff8cf;
-$pastel-sky: #cfeeff;
-$pastel-peach: #ffe6d4;
-$pastel-lilac: #e8def7;
-$pastel-lemon: #fff6c9;
-$ink: $black;
+// Paleta: un único crema de fondo y el azul oscuro para texto y trazos.
+$cream: #f6f0e0;
+$ink: #01122a;
 $card-height: 340px;
 $flip-duration: 0.65s;
 $flip-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-$shadow-soft: 0 0.15rem 0.6rem rgba(1, 18, 42, 0.10);
-$shadow-lift: 0 0.6rem 1.6rem rgba(1, 18, 42, 0.22);
+$shadow-soft: none;
+$shadow-lift: 0.4rem 0.4rem 0 $ink;
 
 html.fcard-lock {
   overflow: hidden;
@@ -36,7 +31,7 @@ body main.home-grid {
     }
 
     .subtitle {
-      color: $dark-green;
+      color: $ink;
       font-size: $font-size-sm;
     }
   }
@@ -53,7 +48,7 @@ body main.home-grid {
   gap: $spacing-2 $spacing-3;
   padding: $spacing-2 $spacing-3;
   margin-bottom: $spacing-5;
-  background: $white;
+  background: $cream;
   box-shadow: $shadow-soft;
 
   .search-box {
@@ -63,8 +58,8 @@ body main.home-grid {
     input {
       width: 100%;
       padding: $spacing-2 $spacing-6 $spacing-2 $spacing-3;
-      border: 2px solid $black;
-      background: white;
+      border: 2px solid $ink;
+      background: $cream;
       font-size: $font-size-base;
 
       &:focus {
@@ -73,7 +68,7 @@ body main.home-grid {
       }
 
       &::placeholder {
-        color: $gray;
+        color: $ink;
       }
 
       &::-webkit-search-cancel-button {
@@ -90,13 +85,13 @@ body main.home-grid {
       height: 1.8rem;
       border: 0;
       background: $ink;
-      color: $pastel-cream;
+      color: $cream;
       font-size: 1.2rem;
       line-height: 1;
       cursor: pointer;
 
       &:hover {
-        background: $dark-green;
+        background: $ink;
       }
     }
   }
@@ -123,8 +118,8 @@ body main.home-grid {
         flex: 1;
         min-width: 0;
         padding: $spacing-1 $spacing-2;
-        border: 2px solid $black;
-        background: white;
+        border: 2px solid $ink;
+        background: $cream;
         font-size: $font-size-sm;
         cursor: pointer;
 
@@ -137,28 +132,28 @@ body main.home-grid {
 
     .reset-btn {
       padding: $spacing-1 $spacing-3;
-      border: 2px solid $black;
+      border: 2px solid $ink;
       background: $ink;
-      color: $pastel-cream;
+      color: $cream;
       font-size: $font-size-sm;
       font-weight: $font-weight-semi;
       cursor: pointer;
       transition: background 0.2s;
 
       &:hover {
-        background: $dark-green;
+        background: $ink;
       }
     }
   }
 
   .results-count {
     font-size: $font-size-sm;
-    color: $gray;
+    color: $ink;
     white-space: nowrap;
 
     span {
       font-weight: $font-weight-bold;
-      color: $dark-green;
+      color: $ink;
     }
   }
 }
@@ -177,11 +172,11 @@ body main.home-grid {
 .home-grid .no-results {
   text-align: center;
   padding: $spacing-8 $spacing-3;
-  background: $white;
+  background: $cream;
 
   p {
     font-size: $font-size-lg;
-    color: $gray;
+    color: $ink;
   }
 }
 
@@ -203,8 +198,9 @@ body main.home-grid {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    background: $white;
-    box-shadow: $shadow-soft;
+    background: $cream;
+    border: 2px solid $ink;
+    box-shadow: none;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
@@ -242,7 +238,7 @@ body main.home-grid {
   .fcard-img {
     flex: 0 0 62%;
     overflow: hidden;
-    background: $pastel-sky;
+    background: $cream;
 
     img {
       display: block;
@@ -257,6 +253,9 @@ body main.home-grid {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: $spacing-1;
     padding: $spacing-2 $spacing-3;
     min-height: 0;
@@ -269,28 +268,10 @@ body main.home-grid {
 
     .fcard-common {
       font-size: $font-size-sm;
-      color: $dark-green;
+      color: $ink;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .fcard-meta {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: $spacing-1;
-    }
-  }
-
-  .tag {
-    padding: 2px $spacing-2;
-    background: $pastel-sky;
-    font-size: $font-size-xs * 1.25;
-    font-weight: $font-weight-semi;
-
-    &.tag-alt {
-      background: $pastel-peach;
     }
   }
 
@@ -341,7 +322,7 @@ body main.home-grid {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(239, 248, 207, 0.78);
+  background: rgba(246, 240, 224, 0.85);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   opacity: 0;
@@ -388,7 +369,7 @@ body main.home-grid {
     flex: 0 0 auto;
     padding: $spacing-3 $spacing-8;
     text-align: center;
-    background: $pastel-mint;
+    background: $cream;
     color: $ink;
     border-bottom: 2px solid $ink;
 
@@ -411,7 +392,7 @@ body main.home-grid {
     z-index: 2;
     width: 2.4rem;
     height: 2.4rem;
-    background: $pastel-cream;
+    background: $cream;
     border: 2px solid $ink;
     color: $ink;
     font-size: 1.6rem;
@@ -450,7 +431,7 @@ body main.home-grid {
     .gallery-main {
       position: relative;
       height: 340px;
-      background: $pastel-sky;
+      background: $cream;
       overflow: hidden;
 
       .gallery-main-link {
@@ -474,7 +455,7 @@ body main.home-grid {
         width: $spacing-6;
         height: $spacing-6;
         border: 0;
-        background: $pastel-cream;
+        background: $cream;
         border: 2px solid $ink;
         color: $ink;
         font-size: $font-size-h3;
@@ -501,7 +482,7 @@ body main.home-grid {
       margin-top: $spacing-1;
       font-size: $font-size-xs * 1.2;
       font-style: italic;
-      color: $gray;
+      color: $ink;
       text-align: right;
       line-height: $line-height-tight;
     }
@@ -517,7 +498,7 @@ body main.home-grid {
         padding: 0;
         overflow: hidden;
         border: 2px solid transparent;
-        background: $lighter-green;
+        background: $cream;
         cursor: pointer;
 
         img {
@@ -528,7 +509,7 @@ body main.home-grid {
         }
 
         &.active {
-          border-color: $black;
+          border-color: $ink;
         }
       }
     }
@@ -546,7 +527,7 @@ body main.home-grid {
       font-size: $font-size-lg;
       margin-bottom: $spacing-2;
       padding-bottom: $spacing-1;
-      border-bottom: 2px solid $black;
+      border-bottom: 2px solid $ink;
     }
 
     ul {
@@ -577,8 +558,8 @@ body main.home-grid {
       display: inline-block;
       margin-left: $spacing-1;
       padding: 2px $spacing-1;
-      background: $lighter-green;
-      color: $dark-green;
+      background: $cream;
+      color: $ink;
       font-size: $font-size-xs;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -611,12 +592,7 @@ body main.home-grid {
     font-size: $font-size-sm;
     text-transform: uppercase;
 
-    &.iucn-LC { background: $pastel-mint; }
-    &.iucn-NT { background: $pastel-lemon; }
-    &.iucn-VU { background: $pastel-peach; }
-    &.iucn-EN { background: $pastel-lilac; }
-    &.iucn-CR { background: $pastel-sky; }
-  }
+      }
 }
 
 // ─── Responsive ─────────────────────────────────────────────────────────────
