@@ -1,4 +1,4 @@
-// Filtros y búsqueda reactiva para la página de felinos
+// Filtros y búsqueda reactiva del grid de felinos (home)
 (function() {
   const searchInput = document.getElementById('searchInput');
   const clearSearch = document.getElementById('clearSearch');
@@ -9,18 +9,16 @@
   const resultsCount = document.getElementById('resultsCount');
   const noResults = document.getElementById('noResults');
   const felinosGrid = document.getElementById('felinosGrid');
-  const cards = Array.from(document.querySelectorAll('.card'));
+  if (!felinosGrid || !searchInput) return;
+  const cards = Array.from(felinosGrid.querySelectorAll('.fcard'));
+
+  // Normaliza para buscar sin tildes ni mayúsculas
+  const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 
   // Poblar filtro de género dinámicamente
   function populateGenusFilter() {
-    const genera = new Set();
-    cards.forEach(card => {
-      const genus = card.dataset.genus;
-      if (genus) genera.add(genus);
-    });
-
-    const sortedGenera = Array.from(genera).sort();
-    sortedGenera.forEach(genus => {
+    const genera = new Set(cards.map(card => card.dataset.genus).filter(Boolean));
+    Array.from(genera).sort().forEach(genus => {
       const option = document.createElement('option');
       option.value = genus;
       option.textContent = genus;
@@ -28,9 +26,8 @@
     });
   }
 
-  // Función principal de filtrado
   function applyFilters() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
+    const searchTerm = norm(searchInput.value.trim());
     const subfamily = subfamilyFilter.value;
     const lineage = lineageFilter.value;
     const genus = genusFilter.value;
@@ -38,41 +35,22 @@
     let visibleCount = 0;
 
     cards.forEach(card => {
-      const cardName = card.dataset.name.toLowerCase();
-      const cardSubfamily = card.dataset.subfamily;
-      const cardLineage = card.dataset.lineage;
-      const cardGenus = card.dataset.genus;
+      const visible =
+        (!searchTerm || norm(card.dataset.search || card.dataset.name).includes(searchTerm)) &&
+        (!subfamily || card.dataset.subfamily === subfamily) &&
+        (!lineage || card.dataset.lineage === lineage) &&
+        (!genus || card.dataset.genus === genus);
 
-      const matchesSearch = !searchTerm || cardName.includes(searchTerm);
-      const matchesSubfamily = !subfamily || cardSubfamily === subfamily;
-      const matchesLineage = !lineage || cardLineage === lineage;
-      const matchesGenus = !genus || cardGenus === genus;
-
-      if (matchesSearch && matchesSubfamily && matchesLineage && matchesGenus) {
-        card.style.display = '';
-        visibleCount++;
-      } else {
-        card.style.display = 'none';
-      }
+      card.hidden = !visible;
+      if (visible) visibleCount++;
     });
 
-    // Actualizar contador
     resultsCount.textContent = visibleCount;
-
-    // Mostrar/ocultar mensaje de "sin resultados"
-    if (visibleCount === 0) {
-      noResults.style.display = 'block';
-      felinosGrid.style.display = 'none';
-    } else {
-      noResults.style.display = 'none';
-      felinosGrid.style.display = 'grid';
-    }
-
-    // Mostrar/ocultar botón de limpiar búsqueda
-    clearSearch.style.display = searchTerm ? 'block' : 'none';
+    noResults.hidden = visibleCount !== 0;
+    felinosGrid.hidden = visibleCount === 0;
+    clearSearch.hidden = !searchTerm;
   }
 
-  // Event listeners
   searchInput.addEventListener('input', applyFilters);
   subfamilyFilter.addEventListener('change', applyFilters);
   lineageFilter.addEventListener('change', applyFilters);
@@ -92,7 +70,7 @@
     applyFilters();
   });
 
-  // Preseleccionar filtros desde la query string (ej: /felinos/?subfamily=Pantherinae).
+  // Preseleccionar filtros desde la query string (ej: /?subfamily=Pantherinae).
   // Sólo aplica valores que existen como <option>; ignora inputs inválidos.
   function applyQueryParams() {
     const params = new URLSearchParams(window.location.search);
@@ -108,7 +86,6 @@
     if (search) searchInput.value = search;
   }
 
-  // Inicializar
   populateGenusFilter();
   applyQueryParams();
   applyFilters();

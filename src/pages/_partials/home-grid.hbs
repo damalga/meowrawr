@@ -1,0 +1,23 @@
+{{!-- Home: título, barra de filtros y grid de cards volteables.
+     `openId` (opcional) deja abierta la ficha de ese felino al cargar (/felino/:id/). --}}
+<main class="home-grid">
+  <div class="home-header">
+    <h1 class="titulo-portada">Las 41 especies de felinos</h1>
+    <p class="subtitle">Pulsa una card para ver su ficha</p>
+  </div>
+
+  {{> filters}}
+
+  <section class="felinos-grid" id="felinosGrid"{{#if openId}} data-open="{{openId}}"{{/if}} data-home-title="{{site.name}} — {{site.tagline}}">
+    {{#each felids}}
+    {{> felid-card}}
+    {{/each}}
+  </section>
+
+  <div class="no-results" id="noResults" hidden>
+    <p>No se encontraron felinos que coincidan con los filtros seleccionados.</p>
+  </div>
+</main>
+<div class="fcard-backdrop" id="fcardBackdrop" hidden></div>
+<script src="/assets/scripts/filters.js"></script>
+<script src="/assets/scripts/flip-cards.js"></script>

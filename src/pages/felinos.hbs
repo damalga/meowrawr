@@ -1,37 +1,16 @@
 ---
 permalink: /felinos/
-title: Las 41 Especies de Felinos
-titleOverride: "MeowRawr | Una Wiki de Felinos"
-description: Catálogo completo de las 41 especies de felinos según la clasificación CCTF 2017, agrupadas por subfamilia, linaje y género.
+eleventyExcludeFromCollections: true
 ---
-
-{{#> base}}
-{{> header}}
-{{> nav}}
-<main class="felinos-grid-page">
-  <div class="felinos-header">
-    <h1 class="titulo-listado">Meowrawr: Las 41 Especies de Felinos</h1>
-    <p class="subtitle">Catálogo completo basado en la clasificación CCTF 2017</p>
-  </div>
-
-  {{> filters}}
-
-  <section class="felinos-grid" id="felinosGrid">
-    {{#each felids}}
-    <div class="card"
-         data-genus="{{this.genus}}"
-         data-lineage="{{this.lineage}}"
-         data-subfamily="{{this.subfamily}}"
-         data-name="{{this.scientificName}}">
-      {{> card}}
-    </div>
-    {{/each}}
-  </section>
-
-  <div class="no-results" id="noResults" style="display: none;">
-    <p>No se encontraron felinos que coincidan con los filtros seleccionados.</p>
-  </div>
-</main>
-{{> footer}}
-<script src="/assets/scripts/filters.js"></script>
-{{/base}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{site.name}}</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="{{site.url}}/" />
+  <meta http-equiv="refresh" content="0; url=/" />
+  <script>location.replace('/' + location.search);</script>
+</head>
+<body><p>El catálogo está ahora en la <a href="/">portada</a>.</p></body>
+</html>

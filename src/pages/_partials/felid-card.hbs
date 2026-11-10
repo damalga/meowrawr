@@ -1,0 +1,129 @@
+{{!-- Card volteable: cara frontal (resumen) y trasera (ficha completa).
+     La trasera se rellena de imágenes al abrirse (data-src) para no cargar 41 galerías. --}}
+<article class="fcard"
+         id="felino-{{this.id}}"
+         data-id="{{this.id}}"
+         data-genus="{{this.genus}}"
+         data-lineage="{{this.lineage}}"
+         data-subfamily="{{this.subfamily}}"
+         data-name="{{this.scientificName}}"
+         data-search="{{this.scientificName}} {{this.names.es}} {{this.names.en}}"
+         data-title="{{this.scientificName}}{{#if this.names.es}} ({{this.names.es}}){{/if}}">
+  <div class="fcard-inner">
+    <a class="fcard-face fcard-front" href="/felino/{{this.id}}/" aria-label="Ver ficha de {{this.scientificName}}">
+      <div class="fcard-img">
+        {{#if this.image}}
+        <img src="{{this.image}}" alt="{{this.scientificName}}" loading="lazy" />
+        {{/if}}
+      </div>
+      <div class="fcard-txt">
+        <h2 class="fcard-name">{{this.scientificName}}</h2>
+        {{#if this.names.es}}<p class="fcard-common">{{this.names.es}}</p>{{/if}}
+        <p class="fcard-meta">
+          <span class="tag">{{this.subfamily}}</span>
+          <span class="tag tag-alt">{{this.lineage}}</span>
+        </p>
+      </div>
+    </a>
+
+    <div class="fcard-face fcard-back" role="dialog" aria-modal="true" aria-label="Ficha de {{this.scientificName}}" tabindex="-1">
+      <button type="button" class="ficha-close" aria-label="Cerrar ficha">×</button>
+      <header class="ficha-header">
+        <h2>{{this.scientificName}}</h2>
+        {{#if this.names.es}}<p class="common-name">{{this.names.es}}</p>{{/if}}
+      </header>
+
+      <div class="ficha-content">
+        <div class="ficha-left">
+          {{#if this.iNatPhotos}}
+          <div class="felid-gallery-photos">
+            <div class="gallery-main">
+              <button type="button" class="gallery-arrow gallery-prev" aria-label="Anterior">‹</button>
+              <a href="{{lookup (lookup this.iNatPhotos 0) 'original'}}" target="_blank" rel="noopener"
+                 class="gallery-main-link" title="{{lookup (lookup this.iNatPhotos 0) 'attribution'}}">
+                <img data-src="{{lookup (lookup this.iNatPhotos 0) 'main'}}"
+                     alt="{{this.scientificName}} — {{lookup (lookup this.iNatPhotos 0) 'attribution'}}"
+                     class="gallery-main-img" />
+              </a>
+              <button type="button" class="gallery-arrow gallery-next" aria-label="Siguiente">›</button>
+            </div>
+            <p class="gallery-attribution">{{lookup (lookup this.iNatPhotos 0) 'attribution'}}</p>
+            <div class="gallery-thumbs">
+              {{#each this.iNatPhotos}}
+              <button type="button" class="gallery-thumb{{#if @first}} active{{/if}}"
+                      data-main="{{this.main}}" data-original="{{this.original}}"
+                      data-attribution="{{this.attribution}}" aria-label="Foto {{@index}}">
+                <img data-src="{{this.thumb}}" alt="" />
+              </button>
+              {{/each}}
+            </div>
+            {{#if this.iNaturalistURI}}
+            <p class="gallery-more">
+              <a href="{{this.iNaturalistURI}}" target="_blank" rel="noopener" class="btn btn-forward">Ver más imágenes →</a>
+            </p>
+            {{/if}}
+          </div>
+          {{else if this.image}}
+          <img data-src="{{this.image}}" alt="{{this.scientificName}}" class="ficha-main-image" />
+          {{/if}}
+
+          <section class="taxonomy">
+            <h3>Taxonomía</h3>
+            <ul>
+              <li><strong>Nombre científico:</strong> <em>{{this.scientificName}}</em></li>
+              <li><strong>Género:</strong> {{this.genus}}</li>
+              <li><strong>Linaje:</strong> {{this.lineage}}</li>
+              <li><strong>Subfamilia:</strong> {{this.subfamily}}</li>
+            </ul>
+          </section>
+
+          {{#if this.iucnStatus}}
+          <section class="conservation">
+            <h3>Estado de conservación</h3>
+            <p class="iucn-status iucn-{{this.iucnStatus}}">{{this.iucnStatus}}</p>
+          </section>
+          {{/if}}
+        </div>
+
+        <div class="ficha-info">
+          {{#if this.wikipediaExtract}}
+          <section class="wikipedia-extract">
+            <h3>Descripción{{#if this.wikipediaExtractEn}} <span class="lang-badge">en inglés</span>{{/if}}</h3>
+            {{{this.wikipediaExtract}}}
+            {{#if this.wikipediaURI}}
+            <p class="wiki-source">
+              <a href="{{this.wikipediaURI}}" target="_blank" rel="noopener" class="btn btn-forward">Leer más en Wikipedia →</a>
+            </p>
+            {{/if}}
+          </section>
+          {{/if}}
+
+          {{#if this.names}}
+          <section class="common-names">
+            <h3>Nombres comunes</h3>
+            <dl>
+              {{#if this.names.en}}<dt>English</dt><dd>{{this.names.en}}</dd>{{/if}}
+              {{#if this.names.es}}<dt>Español</dt><dd>{{this.names.es}}</dd>{{/if}}
+              {{#if this.names.fr}}<dt>Français</dt><dd>{{this.names.fr}}</dd>{{/if}}
+              {{#if this.names.de}}<dt>Deutsch</dt><dd>{{this.names.de}}</dd>{{/if}}
+              {{#if this.names.pt}}<dt>Português</dt><dd>{{this.names.pt}}</dd>{{/if}}
+              {{#if this.names.ja}}<dt>日本語</dt><dd>{{this.names.ja}}</dd>{{/if}}
+              {{#if this.names.zh}}<dt>中文</dt><dd>{{this.names.zh}}</dd>{{/if}}
+              {{#if this.names.ar}}<dt>العربية</dt><dd>{{this.names.ar}}</dd>{{/if}}
+            </dl>
+          </section>
+          {{/if}}
+
+          <section class="external-links">
+            <h3>Enlaces externos</h3>
+            <ul>
+              {{#if this.wikipediaURI}}<li><a href="{{this.wikipediaURI}}" target="_blank" rel="noopener">Wikipedia</a></li>{{/if}}
+              {{#if this.wikidataURI}}<li><a href="{{this.wikidataURI}}" target="_blank" rel="noopener">Wikidata</a></li>{{/if}}
+              {{#if this.iNaturalistURI}}<li><a href="{{this.iNaturalistURI}}" target="_blank" rel="noopener">iNaturalist</a></li>{{/if}}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
