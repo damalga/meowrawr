@@ -214,15 +214,22 @@ body main.home-grid {
     display: flex;
     flex-direction: column;
     color: inherit;
-    transition: box-shadow 0.25s, transform 0.25s;
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0));
+    transition: box-shadow 0.25s, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+
+    // Mientras sigue al ratón, el giro es inmediato; al soltarlo vuelve suave
+    &.is-tilting {
+      transition: box-shadow 0.25s, transform 0.08s linear;
+    }
 
     &:hover,
     &:focus-visible {
+      --ty: -4px;
       box-shadow: $shadow-lift;
-      transform: translateY(-4px);
 
       .fcard-img img {
-        transform: scale(1.06);
+        transform: translate(var(--px, 0), var(--py, 0)) scale(1.12);
       }
     }
 
@@ -371,26 +378,6 @@ body main.home-grid {
   &.is-active {
     opacity: 1;
     transform: none;
-  }
-}
-
-// Foco visible por teclado: la card con el cursor de teclado se marca
-.fcard.kb-focus .fcard-front {
-  outline: 3px solid $ink;
-  outline-offset: 3px;
-}
-
-.kbd-hint {
-  margin-top: $spacing-1;
-  font-size: $font-size-sm;
-  color: $dark-green;
-
-  kbd {
-    padding: 0 $spacing-1;
-    border: 1px solid $ink;
-    background: $pastel-cream;
-    font-family: inherit;
-    font-size: $font-size-xs * 1.25;
   }
 }
 

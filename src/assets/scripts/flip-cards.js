@@ -1,4 +1,4 @@
-/* Cards volteables del grid de la home (con aparición al scroll y teclado).
+/* Cards volteables del grid de la home (aparición al scroll y movimiento con el ratón).
  *
  * Click en una card: se saca del grid (dejando un hueco del mismo tamaño), se
  * centra en pantalla creciendo y gira 180° para mostrar la ficha. La URL pasa a
@@ -200,99 +200,41 @@
     cards.forEach((c) => io.observe(c));
   }
 
-  /* ── Teclado ──
-   * Grid: flechas mueven el foco a la card vecina según su posición en pantalla
-   *       (←/→ la anterior/siguiente, ↑/↓ la de la fila de arriba/abajo), Inicio/Fin
-   *       saltan a la primera/última, Enter abre.
-   * Ficha abierta: ←/→ pasan al felino anterior/siguiente, Tab queda dentro de la
-   *       ficha y Escape cierra.
-   * Global: "/" enfoca la búsqueda; ↓ desde la búsqueda baja a la primera card. */
-  const fronts = () => visibleCards().map((c) => c.querySelector(".fcard-front"));
+  /* ── Movimiento según la posición del ratón ──
+   * La card bajo el cursor se inclina hacia él y la foto se desplaza en sentido
+   * contrario (parallax). Solo con puntero fino y sin prefers-reduced-motion. */
+  if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const MAX_TILT = 9; // grados
+    const MAX_SHIFT = 12; // px de parallax de la foto
+    let hovered = null;
 
-  function neighbour(from, dir) {
-    const list = fronts();
-    const i = list.indexOf(from);
-    if (i < 0) return list[0];
-    if (dir === "next") return list[i + 1] || from;
-    if (dir === "prev") return list[i - 1] || from;
-    if (dir === "first") return list[0];
-    if (dir === "last") return list[list.length - 1];
-    // arriba/abajo: la card más cercana en horizontal de la fila contigua
-    const r = from.getBoundingClientRect();
-    const cx = r.left + r.width / 2;
-    const rows = list
-      .map((el) => ({ el, r: el.getBoundingClientRect() }))
-      .filter((o) => (dir === "down" ? o.r.top > r.top + 4 : o.r.top < r.top - 4));
-    if (!rows.length) return from;
-    const nearestTop = dir === "down" ? Math.min(...rows.map((o) => o.r.top)) : Math.max(...rows.map((o) => o.r.top));
-    return rows
-      .filter((o) => Math.abs(o.r.top - nearestTop) < 4)
-      .sort((a, b) => Math.abs(a.r.left + a.r.width / 2 - cx) - Math.abs(b.r.left + b.r.width / 2 - cx))[0].el;
+    const reset = (front) => {
+      front.style.removeProperty("--rx");
+      front.style.removeProperty("--ry");
+      front.style.removeProperty("--px");
+      front.style.removeProperty("--py");
+      front.classList.remove("is-tilting");
+    };
+
+    grid.addEventListener("pointermove", (e) => {
+      const front = e.target.closest(".fcard-front");
+      if (hovered && hovered !== front) { reset(hovered); hovered = null; }
+      if (!front || openCard || front.closest(".fcard").classList.contains("is-active")) return;
+      hovered = front;
+      const r = front.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5; // -0.5 … 0.5
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      front.classList.add("is-tilting");
+      front.style.setProperty("--ry", (x * 2 * MAX_TILT).toFixed(2) + "deg");
+      front.style.setProperty("--rx", (-y * 2 * MAX_TILT).toFixed(2) + "deg");
+      front.style.setProperty("--px", (-x * 2 * MAX_SHIFT).toFixed(1) + "px");
+      front.style.setProperty("--py", (-y * 2 * MAX_SHIFT).toFixed(1) + "px");
+    });
+
+    grid.addEventListener("pointerleave", () => {
+      if (hovered) { reset(hovered); hovered = null; }
+    });
   }
-
-  function focusFront(el) {
-    el.focus({ preventScroll: true });
-    el.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
-  }
-
-  grid.addEventListener("focusin", (e) => {
-    cards.forEach((c) => c.classList.remove("kb-focus"));
-    const front = e.target.closest(".fcard-front");
-    if (front && e.target.matches(":focus-visible")) front.closest(".fcard").classList.add("kb-focus");
-  });
-  grid.addEventListener("focusout", () => cards.forEach((c) => c.classList.remove("kb-focus")));
-
-  function step(dir) {
-    const list = visibleCards();
-    const i = list.indexOf(openCard);
-    const next = list[i + (dir === "next" ? 1 : -1)];
-    if (!next) return;
-    next.classList.add("is-in"); // por si aún no había aparecido
-    next.scrollIntoView({ block: "center" });
-    open(next);
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
-    const tag = (e.target.tagName || "").toLowerCase();
-    const typing = tag === "input" || tag === "textarea" || tag === "select";
-
-    if (openCard) {
-      if (e.key === "Tab") {
-        const f = Array.from(
-          openCard.querySelectorAll(".fcard-back button, .fcard-back a[href], .fcard-back [tabindex='0']")
-        ).filter((el) => el.offsetParent !== null);
-        const back = openCard.querySelector(".fcard-back");
-        if (!f.length) { e.preventDefault(); back.focus(); return; }
-        const first = f[0], last = f[f.length - 1];
-        if (e.shiftKey && (document.activeElement === first || document.activeElement === back)) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      } else if (!typing && (e.key === "ArrowRight" || e.key === "ArrowLeft") && !busy) {
-        e.preventDefault();
-        step(e.key === "ArrowRight" ? "next" : "prev");
-      }
-      return;
-    }
-
-    if (e.key === "/" && !typing) {
-      e.preventDefault();
-      document.getElementById("searchInput")?.focus();
-      return;
-    }
-    if (e.target.id === "searchInput" && e.key === "ArrowDown") {
-      const first = fronts()[0];
-      if (first) { e.preventDefault(); focusFront(first); }
-      return;
-    }
-    const front = e.target.closest && e.target.closest(".fcard-front");
-    if (!front) return;
-    const map = { ArrowRight: "next", ArrowLeft: "prev", ArrowDown: "down", ArrowUp: "up", Home: "first", End: "last" };
-    if (!map[e.key]) return;
-    e.preventDefault();
-    const target = neighbour(front, map[e.key]);
-    if (target === front && e.key === "ArrowUp") document.getElementById("searchInput")?.focus();
-    else focusFront(target);
-  });
 
   // Carga directa de /felino/:id/
   const initial = grid.dataset.open;
