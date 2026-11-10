@@ -1,4 +1,4 @@
-/* Cards volteables del grid de la home (aparición al scroll y movimiento con el ratón).
+/* Cards volteables del grid de la home (aparición al scroll).
  *
  * Click en una card: se saca del grid (dejando un hueco del mismo tamaño), se
  * centra en pantalla creciendo y gira 180° para mostrar la ficha. La URL pasa a
@@ -198,42 +198,6 @@
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
     );
     cards.forEach((c) => io.observe(c));
-  }
-
-  /* ── Movimiento según la posición del ratón ──
-   * La card bajo el cursor se inclina hacia él y la foto se desplaza en sentido
-   * contrario (parallax). Solo con puntero fino y sin prefers-reduced-motion. */
-  if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    const MAX_TILT = 9; // grados
-    const MAX_SHIFT = 12; // px de parallax de la foto
-    let hovered = null;
-
-    const reset = (front) => {
-      front.style.removeProperty("--rx");
-      front.style.removeProperty("--ry");
-      front.style.removeProperty("--px");
-      front.style.removeProperty("--py");
-      front.classList.remove("is-tilting");
-    };
-
-    grid.addEventListener("pointermove", (e) => {
-      const front = e.target.closest(".fcard-front");
-      if (hovered && hovered !== front) { reset(hovered); hovered = null; }
-      if (!front || openCard || front.closest(".fcard").classList.contains("is-active")) return;
-      hovered = front;
-      const r = front.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5; // -0.5 … 0.5
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      front.classList.add("is-tilting");
-      front.style.setProperty("--ry", (x * 2 * MAX_TILT).toFixed(2) + "deg");
-      front.style.setProperty("--rx", (-y * 2 * MAX_TILT).toFixed(2) + "deg");
-      front.style.setProperty("--px", (-x * 2 * MAX_SHIFT).toFixed(1) + "px");
-      front.style.setProperty("--py", (-y * 2 * MAX_SHIFT).toFixed(1) + "px");
-    });
-
-    grid.addEventListener("pointerleave", () => {
-      if (hovered) { reset(hovered); hovered = null; }
-    });
   }
 
   // Carga directa de /felino/:id/

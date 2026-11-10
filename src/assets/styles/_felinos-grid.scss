@@ -210,22 +210,15 @@ body main.home-grid {
     display: flex;
     flex-direction: column;
     color: inherit;
-    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0));
-    transition: box-shadow 0.25s, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    will-change: transform;
-
-    // Mientras sigue al ratón, el giro es inmediato; al soltarlo vuelve suave
-    &.is-tilting {
-      transition: box-shadow 0.25s, transform 0.08s linear;
-    }
+    transition: box-shadow 0.25s, transform 0.25s;
 
     &:hover,
     &:focus-visible {
-      --ty: -4px;
+      transform: translate(-3px, -3px);
       box-shadow: $shadow-lift;
 
       .fcard-img img {
-        transform: translate(var(--px, 0), var(--py, 0)) scale(1.12);
+        transform: scale(1.06);
       }
     }
 
