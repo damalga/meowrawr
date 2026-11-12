@@ -63,8 +63,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("public");
   eleventyConfig.addPassthroughCopy({ "public/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "node_modules/glider-js/glider.min.js": "assets/libs/glider/glider.min.js" });
-  eleventyConfig.addPassthroughCopy({ "node_modules/glider-js/glider.min.css": "assets/libs/glider/glider.min.css" });
 
   return {
     dir: {

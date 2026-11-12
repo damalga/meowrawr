@@ -1,5 +1,4 @@
 footer {
-  background: $ofer-green;
   padding: $spacing-5;
   .footer-wrapper {
     width: 1200px;
@@ -18,10 +17,10 @@ footer {
     .footer-links {
       ul {
         li {
-          color: $white;
+          color: $black;
           display: inline-block;
           a {
-            color: $white;
+            color: $black;
             padding: 0 $spacing-2;
             text-transform: uppercase;
             font-size: $font-size-sm;

@@ -5,32 +5,8 @@
         width: 100%;
       }
     }
-    .hero {
+    main {
       width: 100%;
-      .tickets {
-        .ticket-container {
-          margin: 0 (-$spacing-2);
-          &::after {
-            top: $spacing-5;
-          }
-          .ticket {
-            padding: $spacing-5 $spacing-8 $spacing-5 $spacing-3;
-          }
-        }
-      }
-    }
-    main,
-    .contact {
-      width: 100%;
-    }
-    .contact {
-      padding: 0 24px;
-    }
-    .prefooter {
-      .prefooter-wrapper {
-        width: 100%;
-        padding: 0;
-      }
     }
     footer {
       .footer-wrapper {
@@ -60,43 +36,8 @@
     header {
       padding: 0 24px;
     }
-    .publi {
-      div[class^="publi-"] {
-        .slide {
-          .slide-image {
-            width: 100%;
-          }
-        }
-      }
-    }
     main {
       .static-page {
-        width: 100%;
-      }
-    }
-    .hero {
-      .tickets {
-        .ticket-container {
-          margin: -$spacing-2;
-          &::after {
-            top: $spacing-5;
-          }
-          .ticket {
-            padding: $spacing-5 $spacing-8 $spacing-5 $spacing-3;
-          }
-        }
-      }
-    }
-    .contact {
-      .contact-form {
-        width: 100%;
-      }
-      .gracias {
-        width: 100%;
-      }
-    }
-    .boost {
-      .boost-wrapper {
         width: 100%;
       }
     }
@@ -105,30 +46,6 @@
 
 @media (max-width: 764px) {
   body {
-    header {
-      .header-search-desktop {
-        display: none;
-      }
-      .header-search-mobile {
-        display: block;
-        padding: $spacing-3 $spacing-4 0;
-      }
-      .header-plus {
-        width: 55%;
-        padding: $spacing-3;
-        float: right;
-        .header-plus-txt {
-          font-size: $font-size-sm;
-        }
-      }
-    }
-    .hero {
-      .tickets {
-        .ticket-container {
-          margin: (-$spacing-3) (-$spacing-2);
-        }
-      }
-    }
     nav {
       padding-bottom: $spacing-1;
       ul {
@@ -137,75 +54,6 @@
             font-size: $font-size-sm;
           }
         }
-      }
-    }
-    .contact {
-      .contact-form {
-        padding: $spacing-5 $spacing-3;
-        .contact-form-header {
-          margin-bottom: $spacing-4;
-          .contact-form-title {
-            font-size: $font-size-h2;
-          }
-          .contact-form-subtitle {
-            font-size: $font-size-base;
-          }
-        }
-        .contact-form-inputs {
-          display: block;
-          padding: 0 $spacing-5;
-          [class^="contact-form-col"] {
-            width: 100%;
-            margin: 0;
-          }
-        }
-      }
-    }
-    main {
-      .slider {
-        .slider-header {
-          .slider-header-title {
-            h2.titulo-slider {
-              font-size: $font-size-lg;
-            }
-          }
-          .slider-header-download {
-            .header-goo-app {
-              width: 12px;
-            }
-            .header-img-app {
-              width: $spacing-6;
-            }
-          }
-        }
-      }
-    }
-    .boost {
-      .boost-wrapper {
-        .boost-header {
-          .boost-header-txt {
-            .boost-header-title {
-              font-size: $font-size-h2;
-            }
-            .boost-header-subtitle {
-              font-size: $font-size-base;
-            }
-          }
-        }
-        .question {
-          font-size: $font-size-h3;
-          line-height: $line-height-tight;
-          margin-top: $spacing-8;
-        }
-        .boost-list {
-          display: block;
-        }
-      }
-    }
-    .prefooter {
-      .prefooter-wrapper {
-        height: auto;
-        padding: $spacing-5 0;
       }
     }
     footer {
@@ -230,158 +78,10 @@
   }
 }
 
-@media (max-width: 560px) {
-  body {
-    nav {
-      ul {
-        padding: $spacing-3 24px;
-      }
-    }
-    .hero {
-      padding: 0 $spacing-3;
-      .veil {
-        display: block;
-      }
-      .tickets {
-        padding: $spacing-3;
-        .ticket-container {
-          margin: (-$spacing-5) (-$spacing-3);
-        }
-        .felids-selector {
-          .felids-input {
-            width: 340px;
-            font-size: $font-size-base;
-            padding: $spacing-3 $spacing-4;
-          }
-        }
-      }
-    }
-    .publi {
-      div[class^="publi-"] {
-        .slide-image {
-          display: none;
-        }
-        .slide-image-mobile {
-          display: block;
-        }
-        .dots {
-          display: flex;
-        }
-      }
-    }
-    main {
-      .slider {
-        .slider-header {
-          .slider-header-download {
-            .header-img-app {
-              width: $spacing-6;
-              margin-right: 0;
-            }
-            span {
-              display: none;
-            }
-          }
-        }
-        .glider-arrows {
-          .prev,
-          .next {
-            width: 48px;
-          }
-        }
-      }
-      .cards {
-        .card {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    .hero {
-      .tickets {
-        .felids-selector {
-          .felids-arrow {
-            width: $spacing-2;
-          }
-        }
-      }
-    }
-    main {
-      &.index {
-        .index-item {
-          width: 100%;
-          height: 100px;
-          margin: 0 0 $spacing-3 0;
-        }
-      }
-      .slider {
-        .slider-header {
-          .slider-header-title {
-            padding: $spacing-2;
-            h2.titulo-slider {
-              font-size: $font-size-base;
-            }
-          }
-          .slider-header-download {
-            padding: $spacing-2 $spacing-2;
-          }
-          .slider-header-cities {
-            font-size: $font-size-sm;
-            padding: $spacing-1 $spacing-2;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 400px) {
   body {
     main {
       padding: 0;
-      .slider {
-        .slider-header {
-          .slider-header-title {
-            padding: $spacing-2 $spacing-2;
-          }
-        }
-      }
-    }
-    .contact {
-      .contact-form {
-        margin-bottom: $spacing-8;
-        .contact-form-inputs {
-          padding: 0;
-        }
-      }
-    }
-    .boost {
-      .boost-wrapper {
-        .boost-header {
-          .boost-header-img {
-            min-width: 120px;
-          }
-        }
-      }
-    }
-  }
-}
-
-/*EXTRA*/
-@media (min-width: 36em) {
-  main {
-    .slider {
-      .slider-main {
-        &::-webkit-scrollbar-thumb {
-          opacity: 1;
-          height: 6px;
-          width: 10px;
-          background-color: $ofer-green;
-        }
-      }
     }
   }
 }

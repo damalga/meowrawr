@@ -1,5 +1,19 @@
+$yarn-normal: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='black' stroke='white' stroke-width='1'/><path d='M4 10 Q12 5 20 10 M4 14 Q12 9 20 14 M8 4 Q10 12 8 20 M16 4 Q14 12 16 20' fill='none' stroke='white' stroke-width='1' stroke-linecap='round'/></svg>";
+$yarn-hover: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='black' stroke='white' stroke-width='1'/><path d='M4 10 Q12 5 20 10 M4 14 Q12 9 20 14 M8 4 Q10 12 8 20 M16 4 Q14 12 16 20' fill='none' stroke='white' stroke-width='1' stroke-linecap='round'/></svg>";
+$yarn-inverted: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='white' stroke='black' stroke-width='1'/><path d='M4 10 Q12 5 20 10 M4 14 Q12 9 20 14 M8 4 Q10 12 8 20 M16 4 Q14 12 16 20' fill='none' stroke='black' stroke-width='1' stroke-linecap='round'/></svg>";
+$yarn-inverted-hover: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='white' stroke='black' stroke-width='1'/><path d='M4 10 Q12 5 20 10 M4 14 Q12 9 20 14 M8 4 Q10 12 8 20 M16 4 Q14 12 16 20' fill='none' stroke='black' stroke-width='1' stroke-linecap='round'/></svg>";
+
 body {
-  background-color: #f6f0e0;
+  background-color: $ofer-green;
+  cursor: url("#{$yarn-normal}") 10 10, auto !important;
+
+  a, button, [role="button"], label[for], select, summary,
+  input[type="submit"], input[type="button"], input[type="reset"] {
+    cursor: url("#{$yarn-hover}") 13 13, auto !important;
+  }
+  .neko {
+    cursor: url("#{$yarn-inverted-hover}") 13 13, auto !important;
+  }
   main {
     width: 1200px;
     padding: 0 24px;
